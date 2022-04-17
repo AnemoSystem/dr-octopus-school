@@ -152,7 +152,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -131.8038, y: -150.96756}
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreDisplay: {fileID: 2145494572}
+  gameOver: {fileID: 1817161263}
 --- !u!1 &268699456
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +309,7 @@ GameObject:
   - component: {fileID: 292204313}
   - component: {fileID: 292204315}
   - component: {fileID: 292204316}
-  - component: {fileID: 292204317}
+  - component: {fileID: 292204318}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -394,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Yincrement: 4
-  speed: 20
+  speed: 50
   maxHeight: 4
   minHeight: -4
   health: 3
@@ -421,7 +422,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &292204317
+--- !u!61 &292204318
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -828,7 +829,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2023622747}
   - component: {fileID: 2023622746}
-  - component: {fileID: 2023622749}
   - component: {fileID: 2023622748}
   m_Layer: 0
   m_Name: Spawner
@@ -855,7 +855,7 @@ MonoBehaviour:
   - {fileID: 8485865790622204887, guid: 1dff5b92af425404181873d74220fed6, type: 3}
   startTimeBtwSpawn: 2
   decreaseTime: 0.1
-  minTime: 1
+  minTime: 1.2
 --- !u!4 &2023622747
 Transform:
   m_ObjectHideFlags: 0
@@ -891,32 +891,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &2023622749
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023622745}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -24.653217, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7200718, y: 11.134352}
-  m_EdgeRadius: 0
 --- !u!1 &2089736836
 GameObject:
   m_ObjectHideFlags: 0

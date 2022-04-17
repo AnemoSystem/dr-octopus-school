@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerRunner : MonoBehaviour
@@ -24,10 +23,12 @@ public class PlayerRunner : MonoBehaviour
         }
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight) {
-            targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-        } else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight) {
-            targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+        if (transform.position.y == 0 || transform.position.y == maxHeight || transform.position.y == minHeight) {
+            if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight) {
+                targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+            } else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight) {
+                targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+            }
         }
     }
 }

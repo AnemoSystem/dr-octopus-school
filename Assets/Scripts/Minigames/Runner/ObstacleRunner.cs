@@ -13,6 +13,7 @@ public class ObstacleRunner : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
+            Debug.Log("eae");
             // Player takes damage
             other.GetComponent<PlayerRunner>().health -= damage;
             Destroy(gameObject);

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreManagerRunner : MonoBehaviour
 {
-    public int score;
+    public float score;
     public Text scoreDisplay;
     public GameObject gameOver;
 
@@ -15,7 +15,7 @@ public class ScoreManagerRunner : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("ObstacleRunner") && !gameOver.activeSelf) {
-            score++;
+            score += 0.5f;
             Destroy(other.gameObject);
         }
     }

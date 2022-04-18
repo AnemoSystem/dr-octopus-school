@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 292204313}
   - component: {fileID: 292204315}
   - component: {fileID: 292204316}
+  - component: {fileID: 292204317}
   - component: {fileID: 292204318}
   m_Layer: 0
   m_Name: Player
@@ -357,7 +358,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eb6130d69414bbd43b3e19ad4ad8cf3a, type: 3}
+  m_Sprite: {fileID: -5371487250077298216, guid: d5a5c59deffb5b049baff62190322af1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -377,7 +378,7 @@ Transform:
   m_GameObject: {fileID: 292204312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 14, y: 14, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -422,6 +423,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &292204317
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292204312}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce4291ede06fc9f4c91873e1005dbe0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &292204318
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -432,21 +452,21 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 0.1, y: 0.13}
     newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 0.1, y: 0.13}
   m_EdgeRadius: 0
 --- !u!1 &1110481898
 GameObject:
@@ -636,6 +656,7 @@ GameObject:
   - component: {fileID: 1744685223}
   - component: {fileID: 1744685222}
   - component: {fileID: 1744685221}
+  - component: {fileID: 1744685224}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -708,6 +729,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1744685224
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744685220}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd3fdce149f05434285b23e38809dc36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1817161263
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1817161264}
+  - component: {fileID: 1817161265}
   m_Layer: 0
   m_Name: Game Over
   m_TagString: Untagged
@@ -740,6 +781,18 @@ Transform:
   m_Father: {fileID: 1378064870}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1817161265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817161263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75116cad61dfa464e9500f6920a6741a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1835436827
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,8 +907,8 @@ MonoBehaviour:
   - {fileID: 4826679549832621486, guid: 03043b6fb02e07c428f4bcba49b065a7, type: 3}
   - {fileID: 8485865790622204887, guid: 1dff5b92af425404181873d74220fed6, type: 3}
   startTimeBtwSpawn: 2
-  decreaseTime: 0.1
-  minTime: 1.2
+  decreaseTime: 0.05
+  minTime: 0.6
 --- !u!4 &2023622747
 Transform:
   m_ObjectHideFlags: 0
@@ -989,10 +1042,10 @@ RectTransform:
   m_Father: {fileID: 1378064870}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 424, y: -27.900024}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -87.055664, y: -27.900024}
+  m_SizeDelta: {x: 151.7934, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2145494572
 MonoBehaviour:

@@ -14,9 +14,11 @@ public class PlayerRunner : MonoBehaviour
     public Text healthDisplay;
     public GameObject gameOver;
     private Animator anim;
+    private Animator cameraAnim;
 
     void Start() {
         anim = GetComponent<Animator>();
+        cameraAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
     }
 
     void Update() {
@@ -41,6 +43,7 @@ public class PlayerRunner : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("ObstacleRunner") && health > 0) {
             // Player takes damage
+            cameraAnim.SetTrigger("shake");
             anim.SetTrigger("damage");
             other.GetComponent<Animator>().SetTrigger("death");
             health -= 1;

@@ -402,7 +402,6 @@ MonoBehaviour:
   health: 3
   healthDisplay: {fileID: 1835436829}
   gameOver: {fileID: 1817161263}
-  anim_o: {fileID: 5391256800411425717, guid: a414cd166f27d1e4e9a04fe18cb91cab, type: 3}
 --- !u!50 &292204316
 Rigidbody2D:
   serializedVersion: 4
@@ -657,6 +656,7 @@ GameObject:
   - component: {fileID: 1744685223}
   - component: {fileID: 1744685222}
   - component: {fileID: 1744685221}
+  - component: {fileID: 1744685224}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -729,6 +729,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1744685224
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744685220}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd3fdce149f05434285b23e38809dc36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1817161263
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,8 +907,8 @@ MonoBehaviour:
   - {fileID: 4826679549832621486, guid: 03043b6fb02e07c428f4bcba49b065a7, type: 3}
   - {fileID: 8485865790622204887, guid: 1dff5b92af425404181873d74220fed6, type: 3}
   startTimeBtwSpawn: 2
-  decreaseTime: 0.1
-  minTime: 1.2
+  decreaseTime: 0.05
+  minTime: 0.6
 --- !u!4 &2023622747
 Transform:
   m_ObjectHideFlags: 0

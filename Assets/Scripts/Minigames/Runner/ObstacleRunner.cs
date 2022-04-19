@@ -10,12 +10,4 @@ public class ObstacleRunner : MonoBehaviour
     void Update() {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
-
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Player")) {
-            // Player takes damage
-            other.GetComponent<PlayerRunner>().health -= damage;
-            Destroy(gameObject);
-        }
-    }
 }

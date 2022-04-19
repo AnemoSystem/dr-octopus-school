@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class ScoreManagerRunner : MonoBehaviour
 {
-    public int score;
+    public float score;
     public Text scoreDisplay;
+    public GameObject gameOver;
 
     void Update() {
         scoreDisplay.text = "Pontos: " + score.ToString(); 
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("ObstacleRunner")) {
-            score++;
+        if (other.CompareTag("ObstacleRunner") && !gameOver.activeSelf) {
+            score += 0.5f;
+            Destroy(other.gameObject);
         }
     }
 }

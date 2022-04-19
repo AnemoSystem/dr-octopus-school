@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class Movimentation : MonoBehaviour
 {
     private Vector2 targetPos;
-    public float speed;
+    public float speed = 10;
     
     void Start()
-    {
+    { 
         targetPos = new Vector2(0, -4);
     }
 

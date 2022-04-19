@@ -8,6 +8,8 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+<<<<<<< HEAD
+=======
   - enabled: 1
     path: Assets/Scenes/Map/Menu.unity
     guid: 6c90c3adc30ab7e4b898144c89df427a
@@ -17,4 +19,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map/School.unity
     guid: 213e853e01d5a08448a26fdaf3903d91
+>>>>>>> 29667cae11fbfedfa2357119e70690709726a107
   m_configObjects: {}

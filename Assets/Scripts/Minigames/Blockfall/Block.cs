@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    public int health { get; private set; }
+    public SpriteRenderer spriteRenderer { get; private set; }
     public Color[] states;
+    public int health { get; private set; }
+    public bool unbreakable;
+
     private void Awake()
     {
         this.spriteRenderer = GetComponent<SpriteRenderer>();
@@ -13,12 +16,20 @@ public class Block : MonoBehaviour
 
    private void Start()
     {
-        this.health = this.states.Lengh;
-        this.spriteRenderer.color = this.sates[this.health - 1];
+        if (!this.unbreakable)
+        {
+            this.health = this.states.Length;
+            this.spriteRenderer.color = this.states[this.health - 1]; // ele volta a funcionar quando apaga o "- 1", mas fica um pouco bugado
+        }
+        
     }
 
     private void Hit()
     {
+        if (this.unbreakable) {
+            return;
+        }
+
         this.health--;
 
         if (this.health <= 0) 
@@ -26,7 +37,7 @@ public class Block : MonoBehaviour
             this.gameObject.SetActive(false);
         }
 
-        this.spriteRenderer.color = this.sates[this.health - 1];
+        this.spriteRenderer.color = this.states[this.health - 1];
     }
 
     private void OnCollisionEnter2D(Collision2D collision) 

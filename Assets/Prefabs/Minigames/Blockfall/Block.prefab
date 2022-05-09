@@ -122,3 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e2b018f3ed93054d84352af85478085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  states:
+  - {r: 0, g: 0, b: 1, a: 0}
+  - {r: 0, g: 1, b: 0, a: 0}
+  - {r: 1, g: 1, b: 0.05072987, a: 0}
+  - {r: 1, g: 0.37833494, b: 0, a: 0}
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 0.3301887, g: 0, b: 0, a: 0}
+  unbreakable: 0

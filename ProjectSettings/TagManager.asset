@@ -6,14 +6,15 @@ TagManager:
   tags:
   - P2Goal
   - P1Goal
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

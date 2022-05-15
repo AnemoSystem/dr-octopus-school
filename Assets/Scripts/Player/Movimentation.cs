@@ -8,7 +8,7 @@ public class Movimentation : MonoBehaviour
 {
     private Vector2 targetPos;
     public float speed = 10;
-    
+
     PhotonView view;
 
     void Start()
@@ -30,7 +30,7 @@ public class Movimentation : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
 
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPos);
+            //transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPos);
         }
     }
 

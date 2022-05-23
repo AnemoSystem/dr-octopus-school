@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManagerBlockfall : MonoBehaviour
 {
     public Ball ball { get; private set; }
     public Paddle paddle { get; private set; }
     public Brick[] bricks { get; private set; }
+    public Text scoreDisplay;
+    public Text livesDisplay;
+    //const int NUM_LEVELS = 2;
 
-    const int NUM_LEVELS = 2;
-
-    public int level = 1;
+    //public int level = 1;
     public int score = 0;
     public int lives = 3;
 
@@ -30,23 +32,30 @@ public class GameManager : MonoBehaviour
         score = 0;
         lives = 3;
 
-        LoadLevel(1);
+        //LoadLevel(1);
     }
 
-    private void LoadLevel(int level)
-    {
-        this.level = level;
+    
 
-        if (level > NUM_LEVELS)
-        {
+    void Update() {
+        scoreDisplay.text = score.ToString();
+        livesDisplay.text = lives.ToString(); 
+    }
+
+    //private void LoadLevel(int level)
+    //{
+        //this.level = level;
+
+        //if (level > NUM_LEVELS)
+        //{
             // Start over again at level 1 once you have beaten all the levels
             // You can also load a "Win" scene instead
-            LoadLevel(1);
-            return;
-        }
+            //LoadLevel(1);
+            //return;
+        //}
 
-        SceneManager.LoadScene("Level" + level);
-    }
+        //SceneManager.LoadScene("Level" + level);
+    //}
 
     private void OnLevelLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -88,9 +97,9 @@ public class GameManager : MonoBehaviour
     {
         score += brick.points;
 
-        if (Cleared()) {
+        /*if (Cleared()) {
             LoadLevel(level + 1);
-        }
+        }*/
     }
 
     private bool Cleared()

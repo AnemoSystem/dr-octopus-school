@@ -5,7 +5,7 @@ public class ResetZone : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        FindObjectOfType<GameManager>().Miss();
+        FindObjectOfType<GameManagerBlockfall>().Miss();
     }
 
 }

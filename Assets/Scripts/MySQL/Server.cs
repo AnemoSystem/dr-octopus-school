@@ -35,10 +35,9 @@ public class Server : MonoBehaviour
                 break;
             case UnityWebRequest.Result.Success:
                 Debug.Log("Form upload complete!");
-                www = UnityWebRequest.Get("http://localhost/school-system/unity/");
-                yield return www.SendWebRequest();
                 Debug.Log(www.downloadHandler.text);
                 break;
         }
+        www.Dispose();
     }
 }

@@ -16,8 +16,8 @@ TagManager:
   - UI
   - Player
   - 
-  - 
-  - 
+  - PlayerBounds
+  - Enemy
   - 
   - 
   - 
@@ -43,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PlayerShip
+    uniqueID: 3024919485
+    locked: 0
+  - name: Projectile
+    uniqueID: 2797258283
     locked: 0

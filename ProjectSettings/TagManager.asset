@@ -6,16 +6,15 @@ TagManager:
   tags:
   - P2Goal
   - P1Goal
-  - PlayerShip
-  - EnemyShip
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - Player
   - 
   - PlayerBounds
   - Enemy

@@ -36,6 +36,8 @@ public class Server : MonoBehaviour
             case UnityWebRequest.Result.Success:
                 Debug.Log("Form upload complete!");
                 Debug.Log(www.downloadHandler.text);
+                if(www.downloadHandler.text == "Login Success")    
+                    SceneManager.LoadScene("Lobby");
                 break;
         }
         www.Dispose();

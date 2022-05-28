@@ -11,15 +11,15 @@ public class MenuControl : MonoBehaviour
 
     void Start()
     {
-        UIMain.SetActive (true);
+        UIMain.SetActive(true);
         UIStart.SetActive(false);
         UIOptions.SetActive(false);
     }
 
     // ------------------Botao Start------------------ //
     public void ButtonStart() 
-    {  
-        UIMain.SetActive (false);
+    { 
+        UIMain.SetActive(false);
         UIStart.SetActive(true);
         UIOptions.SetActive(false);
     } 
@@ -27,7 +27,7 @@ public class MenuControl : MonoBehaviour
     // ------------------Botao Options------------------ //
     public void ButtonOptions() 
     {  
-        UIMain.SetActive (false);
+        UIMain.SetActive(false);
         UIStart.SetActive(false);
         UIOptions.SetActive(true);
     } 
@@ -41,7 +41,7 @@ public class MenuControl : MonoBehaviour
     // ------------------Botao Return------------------ //
     public void ButtonReturn() 
     {  
-        UIMain.SetActive (true);
+        UIMain.SetActive(true);
         UIStart.SetActive(false);
         UIOptions.SetActive(false);
     } 
@@ -49,7 +49,6 @@ public class MenuControl : MonoBehaviour
     // ------------------Sair do Jogo------------------ //
     public void ExitGame() 
     {  
-        Debug.Log("exitgame");  
         Application.Quit();  
     }  
 }  

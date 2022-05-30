@@ -9,6 +9,7 @@ public class GameManagerBlockfall : MonoBehaviour
     public Brick[] bricks { get; private set; }
     public Text scoreDisplay;
     public Text livesDisplay;
+    public GameObject gameOver;
     //const int NUM_LEVELS = 2;
 
     //public int level = 1;
@@ -17,7 +18,7 @@ public class GameManagerBlockfall : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnLevelLoaded;
     }
@@ -71,7 +72,9 @@ public class GameManagerBlockfall : MonoBehaviour
         if (lives > 0) {
             ResetLevel();
         } else {
-            GameOver();
+            //GameOver();
+            gameOver.SetActive(true);
+            
         }
     }
 

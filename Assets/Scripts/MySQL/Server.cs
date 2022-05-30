@@ -22,7 +22,7 @@ public class Server : MonoBehaviour
         form.AddField("username", usernameField.text);
         form.AddField("password", passwordField.text);
         
-        UnityWebRequest www = UnityWebRequest.Post("http://localhost/school-system/unity/login.php", form);
+        UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/login.php", form);
         yield return www.SendWebRequest();
         
         switch (www.result)
@@ -41,7 +41,7 @@ public class Server : MonoBehaviour
                 Debug.Log(www.downloadHandler.text);
                 username = usernameField.text;
                 if(www.downloadHandler.text == "Login Success - Disconnected")    
-                    SceneManager.LoadScene("NewLobby");
+                    SceneManager.LoadScene("Lobby");
                 break;
         }
         www.Dispose();

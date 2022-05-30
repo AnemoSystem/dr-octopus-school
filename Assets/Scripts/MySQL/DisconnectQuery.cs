@@ -13,7 +13,7 @@ public class DisconnectQuery : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("username", Server.username);
 
-        UnityWebRequest www = UnityWebRequest.Post("http://localhost/school-system/unity/disconnect_login.php", form);
+        UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/disconnect_login.php", form);
         yield return www.SendWebRequest();
 
         switch (www.result)

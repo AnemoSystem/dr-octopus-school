@@ -8,15 +8,13 @@ public class Movimentation : MonoBehaviour
 {
     private Vector2 targetPos;
     public float speed = 10;
-    private DetectGround ground;
 
     PhotonView view;
 
     void Start()
     { 
-        targetPos = new Vector2(0, -4);
+        //targetPos = new Vector2(0, -4);
         view = GetComponent<PhotonView>();
-        ground = GameObject.Find("Ground").GetComponent<DetectGround>();
     }
 
     void Update()
@@ -25,7 +23,7 @@ public class Movimentation : MonoBehaviour
 
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (Input.GetMouseButton(0) && ground.getIsDetect())
+            if (Input.GetMouseButton(0))
             {
                 targetPos = new Vector3(mousePos.x, mousePos.y);
             }

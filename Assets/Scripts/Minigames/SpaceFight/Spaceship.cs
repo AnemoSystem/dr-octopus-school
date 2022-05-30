@@ -7,6 +7,8 @@ public class Spaceship : MonoBehaviour
     int delay=0;
     GameObject G1,G2;
     public GameObject bullet,explosion;
+    public GameObject hud;
+    public GameObject gameOver;
 
     Rigidbody2D rb;
     public float speed;
@@ -28,6 +30,7 @@ public class Spaceship : MonoBehaviour
 
     void Update()
     {
+        PlayerPrefs.SetInt("HP",health);
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal")*speed,0));
         rb.AddForce(new Vector2(0,Input.GetAxis("Vertical")*speed));
         if(Input.GetKey(KeyCode.Space) && delay>100)
@@ -41,6 +44,8 @@ public class Spaceship : MonoBehaviour
         StartCoroutine(Blink());
         if(health==0)
         {
+            hud.SetActive(false);
+            gameOver.SetActive(true);
             Destroy(gameObject);
             Instantiate(explosion,transform.position,Quaternion.identity);
 

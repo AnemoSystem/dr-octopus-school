@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+
 
 public class PlayerMovimentMH : MonoBehaviour{
 
     bool wasJustClicked = true;
     bool canMove;
     Rigidbody2D rb;
+    PhotonView view;
+
 
     public Transform BoundaryHolder;
 
@@ -17,6 +21,7 @@ public class PlayerMovimentMH : MonoBehaviour{
     // Start is called before the first frame update
     void Start()
     {
+        view = GetComponent<PhotonView>();
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
 
@@ -47,6 +52,7 @@ public class PlayerMovimentMH : MonoBehaviour{
 
             }
 
+        if(view.IsMine) {
             if(canMove)
             {
                 Vector2 clampedMousePos = new Vector2(Mathf.Clamp(mousePos.x, playerBoundary.Left,
@@ -55,6 +61,7 @@ public class PlayerMovimentMH : MonoBehaviour{
                                                                         playerBoundary.Up));
                 rb.MovePosition(clampedMousePos);
             }
+        }
         }
         else
         {

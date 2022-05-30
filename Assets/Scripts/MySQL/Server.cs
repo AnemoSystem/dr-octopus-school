@@ -7,8 +7,11 @@ using UnityEngine.Networking;
 
 public class Server : MonoBehaviour
 {
-    public InputField username;
-    public InputField password;
+    public InputField usernameField;
+    public InputField passwordField;
+
+    // Global Variable
+    public static string username;
 
     public void Login() {
         StartCoroutine(Upload());
@@ -16,10 +19,10 @@ public class Server : MonoBehaviour
 
     IEnumerator Upload() {
         WWWForm form = new WWWForm();
-        form.AddField("username", username.text);
-        form.AddField("password", password.text);
+        form.AddField("username", usernameField.text);
+        form.AddField("password", passwordField.text);
         
-        UnityWebRequest www = UnityWebRequest.Post("http://localhost/school-system/unity/", form);
+        UnityWebRequest www = UnityWebRequest.Post("http://localhost/school-system/unity/login.php", form);
         yield return www.SendWebRequest();
         
         switch (www.result)
@@ -36,8 +39,9 @@ public class Server : MonoBehaviour
             case UnityWebRequest.Result.Success:
                 Debug.Log("Form upload complete!");
                 Debug.Log(www.downloadHandler.text);
-                if(www.downloadHandler.text == "Login Success")    
-                    SceneManager.LoadScene("Lobby");
+                username = usernameField.text;
+                if(www.downloadHandler.text == "Login Success - Disconnected")    
+                    SceneManager.LoadScene("NewLobby");
                 break;
         }
         www.Dispose();

@@ -27,14 +27,14 @@ RectTransform:
   m_GameObject: {fileID: 437686943932599658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 6604002972190723024}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -440.209, y: -193.484}
+  m_AnchoredPosition: {x: -440.203, y: -195.159}
   m_SizeDelta: {x: 9.7982, y: 4.4007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5131268475712634476
@@ -106,14 +106,14 @@ RectTransform:
   m_GameObject: {fileID: 2239724085430084118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 6604002972190723024}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -440.199, y: -196.141}
+  m_AnchoredPosition: {x: -440.195, y: -195.56}
   m_SizeDelta: {x: 5.2781, y: 0.9853}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4422403849458073521
@@ -270,12 +270,13 @@ GameObject:
   - component: {fileID: 7721422735598082645}
   - component: {fileID: 7721422735598082644}
   - component: {fileID: 7721422735598082646}
-  - component: {fileID: 7721422735598082647}
   - component: {fileID: 7721422735598082667}
   - component: {fileID: 7721422735598082640}
   - component: {fileID: 8124508641871814394}
   - component: {fileID: 3246088676555997071}
   - component: {fileID: 3121530277946387229}
+  - component: {fileID: 8838155298680382863}
+  - component: {fileID: 1760724912723030189}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -292,7 +293,7 @@ Transform:
   m_GameObject: {fileID: 7721422735598082666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 6604002972190723024}
   m_Father: {fileID: 0}
@@ -338,8 +339,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.13363297, g: 0.32208246, b: 0.8584906, a: 1}
+  m_Sprite: {fileID: -4410278550385479588, guid: 54ae06dce33569e4b967504169ae6eee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -369,23 +370,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &7721422735598082647
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7721422735598082666}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0128299, y: -0.00000023841858}
-  serializedVersion: 2
-  m_Radius: 0.56705296
+  m_Constraints: 4
 --- !u!114 &7721422735598082667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,3 +471,38 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!70 &8838155298680382863
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721422735598082666}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.14999999, y: 0.21999998}
+  m_Direction: 0
+--- !u!95 &1760724912723030189
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721422735598082666}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6504a520b87faa14893e8382bb3682c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

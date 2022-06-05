@@ -30,6 +30,8 @@ public class Movimentation : MonoBehaviour
         difference = mousePos - transform.position;
         difference.Normalize();    
         
+        if(!isRunning) rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
+
         if(rotationZ >= -45 && rotationZ <= 45)
             anim.SetInteger("direction", 3);
         else if(rotationZ > 45 && rotationZ <= 135)

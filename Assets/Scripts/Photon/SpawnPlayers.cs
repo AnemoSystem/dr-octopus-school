@@ -13,7 +13,10 @@ public class SpawnPlayers : MonoBehaviour
     public float maxX;
 
     void Start() {
+        GameObject p = GameObject.Find("Player");
+
         Vector2 randomPosition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
-        PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
+        if(p == null)
+            PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
     }
 }

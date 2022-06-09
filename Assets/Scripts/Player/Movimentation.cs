@@ -9,6 +9,7 @@ public class Movimentation : MonoBehaviour
     private Vector3 targetPos;
     public float speed = 10;
     private Animator anim;
+    public DetectAreaMouse detectArea;
 
     private Vector3 mousePos;
     private bool isRunning = false;
@@ -50,10 +51,11 @@ public class Movimentation : MonoBehaviour
 
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && detectArea.getIsDetected())
             {
                 targetPos = new Vector3(mousePos.x, mousePos.y);
                 rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
+                speed = 10;
             }
 
             transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
@@ -66,7 +68,7 @@ public class Movimentation : MonoBehaviour
 
     void OnCollisionEnter2D()
     {
-        speed = 0.1f;
+        speed = 0f;
         transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
     }
 

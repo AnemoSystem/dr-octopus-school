@@ -11,7 +11,7 @@ public class Server : MonoBehaviour
     public InputField passwordField;
 
     // Global Variable
-    public static string username;
+    public static string username = "username";
 
     public void Login() {
         StartCoroutine(Upload());

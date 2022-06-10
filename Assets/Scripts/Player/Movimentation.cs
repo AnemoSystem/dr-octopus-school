@@ -65,16 +65,4 @@ public class Movimentation : MonoBehaviour
             Animation();
         }
     }
-
-    void OnCollisionEnter2D()
-    {
-        speed = 0f;
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
-    }
-
-    void OnCollisionExit2D()
-    {
-        speed = 10;
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
-    }
 }

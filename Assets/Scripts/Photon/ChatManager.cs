@@ -20,9 +20,11 @@ public class ChatManager : MonoBehaviour, Photon.Pun.IPunObservable
 
     void Update() {
         if(view.IsMine) {
-            if(Input.GetKeyDown(KeyCode.LeftShift) && chatInput.isFocused) {
+            //if(Input.GetKeyDown(KeyCode.LeftShift) && chatInput.isFocused) {
+            if(Input.GetKeyDown(KeyCode.Return) && chatInput.text != "")
                 SendMessage();
-            }
+
+            if(chatInput.text == " ") chatInput.text = "";
         }
     }
 

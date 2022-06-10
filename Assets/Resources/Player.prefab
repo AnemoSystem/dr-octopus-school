@@ -79,6 +79,88 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!1 &742005549977790062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7464974576155556379}
+  - component: {fileID: 478896060841697218}
+  m_Layer: 0
+  m_Name: Torso
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7464974576155556379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742005549977790062}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0001, y: -0.035, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7721422735598082645}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &478896060841697218
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742005549977790062}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 991013792664187972, guid: d983098151810a046b9cec6645711414, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.11, y: 0.07}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2239724085430084118
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +240,88 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: username
+--- !u!1 &5341779652111866449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3170436227558921689}
+  - component: {fileID: 4776884093511382988}
+  m_Layer: 0
+  m_Name: Legs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3170436227558921689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341779652111866449}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: -0.07497, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7721422735598082645}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4776884093511382988
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341779652111866449}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: -1656703901050103398, guid: 20ce4e587c561f040946737d5ca84b7a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.09, y: 0.05}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &5783688470566547291
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +332,6 @@ GameObject:
   m_Component:
   - component: {fileID: 498418781173580110}
   - component: {fileID: 8061976106595893470}
-  - component: {fileID: 6220132299469304086}
   m_Layer: 0
   m_Name: Hair
   m_TagString: Untagged
@@ -241,30 +404,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6220132299469304086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5783688470566547291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7880a3d6e7dc49b468532b02ce8d2368, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nSkin: 0
-  skins:
-  - sprites:
-    - {fileID: 1159358143617815007, guid: dbf2bf0bd582fe04199c1e9ffa41cccc, type: 3}
-    - {fileID: 2077810383513455938, guid: dbf2bf0bd582fe04199c1e9ffa41cccc, type: 3}
-    - {fileID: 7579333532858241202, guid: dbf2bf0bd582fe04199c1e9ffa41cccc, type: 3}
-    - {fileID: -8648754963635700229, guid: dbf2bf0bd582fe04199c1e9ffa41cccc, type: 3}
-  - sprites:
-    - {fileID: -4095561872510895896, guid: 5e544d63857482f49bb173f9f5ab3df2, type: 3}
-    - {fileID: 4519274414318994321, guid: 5e544d63857482f49bb173f9f5ab3df2, type: 3}
-    - {fileID: 5011793205462532195, guid: 5e544d63857482f49bb173f9f5ab3df2, type: 3}
-    - {fileID: 3766805533615512803, guid: 5e544d63857482f49bb173f9f5ab3df2, type: 3}
 --- !u!1 &7261943428892005447
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +437,7 @@ RectTransform:
   - {fileID: 5294824444038570767}
   - {fileID: 4450897997260446769}
   m_Father: {fileID: 7721422735598082645}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -384,6 +523,7 @@ GameObject:
   - component: {fileID: 3121530277946387229}
   - component: {fileID: 8838155298680382863}
   - component: {fileID: 1760724912723030189}
+  - component: {fileID: 8683344665380213299}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -403,6 +543,8 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 498418781173580110}
+  - {fileID: 7464974576155556379}
+  - {fileID: 3170436227558921689}
   - {fileID: 6604002972190723024}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -447,12 +589,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -4410278550385479588, guid: 54ae06dce33569e4b967504169ae6eee, type: 3}
+  m_Sprite: {fileID: -1525856782010430315, guid: 54ae06dce33569e4b967504169ae6eee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.15, y: 0.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -615,3 +757,96 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8683344665380213299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721422735598082666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7880a3d6e7dc49b468532b02ce8d2368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idSkin: 0
+  idLegs: 0
+  idTorso: 0
+  idHair: 0
+  skins:
+  - name: Pele Clara
+    sprites:
+    - {fileID: -1525856782010430315, guid: 54ae06dce33569e4b967504169ae6eee, type: 3}
+    - {fileID: 4046848599988457446, guid: 54ae06dce33569e4b967504169ae6eee, type: 3}
+    - {fileID: -5767257484821496753, guid: 54ae06dce33569e4b967504169ae6eee, type: 3}
+    - {fileID: -2987609171522457588, guid: 54ae06dce33569e4b967504169ae6eee, type: 3}
+    - {fileID: -4601168113712993005, guid: 54ae06dce33569e4b967504169ae6eee, type: 3}
+    - {fileID: 7522375231416885580, guid: 54ae06dce33569e4b967504169ae6eee, type: 3}
+    - {fileID: 2812141719805595105, guid: 54ae06dce33569e4b967504169ae6eee, type: 3}
+    - {fileID: -3109359359452530905, guid: 54ae06dce33569e4b967504169ae6eee, type: 3}
+    - {fileID: -5510800753132614915, guid: 54ae06dce33569e4b967504169ae6eee, type: 3}
+  - name: Pele Escura
+    sprites:
+    - {fileID: -254173029258013143, guid: 66af949e5b1cce141866eb5c8f784773, type: 3}
+    - {fileID: -7447265276806856456, guid: 66af949e5b1cce141866eb5c8f784773, type: 3}
+    - {fileID: 3014155743981104821, guid: 66af949e5b1cce141866eb5c8f784773, type: 3}
+    - {fileID: -1955358902092204185, guid: 66af949e5b1cce141866eb5c8f784773, type: 3}
+    - {fileID: 3606364249108620103, guid: 66af949e5b1cce141866eb5c8f784773, type: 3}
+    - {fileID: 6659254238613439835, guid: 66af949e5b1cce141866eb5c8f784773, type: 3}
+    - {fileID: 8927175541225016834, guid: 66af949e5b1cce141866eb5c8f784773, type: 3}
+    - {fileID: 2663157430556360556, guid: 66af949e5b1cce141866eb5c8f784773, type: 3}
+    - {fileID: -1365553649760362729, guid: 66af949e5b1cce141866eb5c8f784773, type: 3}
+  legs:
+  - name: "Cal\xE7a Azul"
+    sprites:
+    - {fileID: -1656703901050103398, guid: 20ce4e587c561f040946737d5ca84b7a, type: 3}
+    - {fileID: 2374349121827967102, guid: 20ce4e587c561f040946737d5ca84b7a, type: 3}
+    - {fileID: -315300814747741648, guid: 20ce4e587c561f040946737d5ca84b7a, type: 3}
+    - {fileID: 1045256866869267478, guid: 20ce4e587c561f040946737d5ca84b7a, type: 3}
+    - {fileID: 6127371217871338951, guid: 20ce4e587c561f040946737d5ca84b7a, type: 3}
+    - {fileID: -7838635315003900747, guid: 20ce4e587c561f040946737d5ca84b7a, type: 3}
+    - {fileID: 3429183138416521334, guid: 20ce4e587c561f040946737d5ca84b7a, type: 3}
+    - {fileID: -3332297396022030302, guid: 20ce4e587c561f040946737d5ca84b7a, type: 3}
+    - {fileID: -6833591919286933759, guid: 20ce4e587c561f040946737d5ca84b7a, type: 3}
+  - name: "Cal\xE7a Cinza"
+    sprites:
+    - {fileID: -7133985022961950524, guid: c5347c0071cc99845badbf6cba4b6309, type: 3}
+    - {fileID: 6407094759707171466, guid: c5347c0071cc99845badbf6cba4b6309, type: 3}
+    - {fileID: 315550427262788107, guid: c5347c0071cc99845badbf6cba4b6309, type: 3}
+    - {fileID: 8236434169542804268, guid: c5347c0071cc99845badbf6cba4b6309, type: 3}
+    - {fileID: -3456937823853441226, guid: c5347c0071cc99845badbf6cba4b6309, type: 3}
+    - {fileID: -9158512308212326408, guid: c5347c0071cc99845badbf6cba4b6309, type: 3}
+    - {fileID: 7383489116790351417, guid: c5347c0071cc99845badbf6cba4b6309, type: 3}
+    - {fileID: 3741057482745972754, guid: c5347c0071cc99845badbf6cba4b6309, type: 3}
+    - {fileID: -8032313322334595175, guid: c5347c0071cc99845badbf6cba4b6309, type: 3}
+  torso:
+  - name: Blusa Vermelha
+    sprites:
+    - {fileID: 991013792664187972, guid: d983098151810a046b9cec6645711414, type: 3}
+    - {fileID: -6567948567306069754, guid: d983098151810a046b9cec6645711414, type: 3}
+    - {fileID: -2558847652141390538, guid: d983098151810a046b9cec6645711414, type: 3}
+    - {fileID: -4137520742746671846, guid: d983098151810a046b9cec6645711414, type: 3}
+  - name: Blusa Azul
+    sprites:
+    - {fileID: 8291615785170277978, guid: 0054ff2cfc864c443a9f6b7d7ada0bfd, type: 3}
+    - {fileID: 5976025642014404409, guid: 0054ff2cfc864c443a9f6b7d7ada0bfd, type: 3}
+    - {fileID: -5782448234288765724, guid: 0054ff2cfc864c443a9f6b7d7ada0bfd, type: 3}
+    - {fileID: 2737690165777413875, guid: 0054ff2cfc864c443a9f6b7d7ada0bfd, type: 3}
+  hair:
+  - name: Cabelo Preto
+    sprites:
+    - {fileID: 1159358143617815007, guid: dbf2bf0bd582fe04199c1e9ffa41cccc, type: 3}
+    - {fileID: 2077810383513455938, guid: dbf2bf0bd582fe04199c1e9ffa41cccc, type: 3}
+    - {fileID: 7579333532858241202, guid: dbf2bf0bd582fe04199c1e9ffa41cccc, type: 3}
+    - {fileID: -8648754963635700229, guid: dbf2bf0bd582fe04199c1e9ffa41cccc, type: 3}
+  - name: Cabelo Vermelho
+    sprites:
+    - {fileID: -4095561872510895896, guid: 5e544d63857482f49bb173f9f5ab3df2, type: 3}
+    - {fileID: 4519274414318994321, guid: 5e544d63857482f49bb173f9f5ab3df2, type: 3}
+    - {fileID: 5011793205462532195, guid: 5e544d63857482f49bb173f9f5ab3df2, type: 3}
+    - {fileID: 3766805533615512803, guid: 5e544d63857482f49bb173f9f5ab3df2, type: 3}
+  spriteRend:
+  - {fileID: 7721422735598082644}
+  - {fileID: 478896060841697218}
+  - {fileID: 8061976106595893470}
+  - {fileID: 4776884093511382988}

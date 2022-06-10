@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/Hockey.unity
     guid: 985696dfbb12bff4eb339da513e279bb
+  - enabled: 1
+    path: Assets/Scenes/Map/City.unity
+    guid: 0f8fcce010bb42541a614760ba24abca
   m_configObjects: {}

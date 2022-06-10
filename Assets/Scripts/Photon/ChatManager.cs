@@ -9,6 +9,7 @@ public class ChatManager : MonoBehaviour, Photon.Pun.IPunObservable
     private InputField chatInput;
     public Text playerText;
     public Text username;
+    public GameObject ballon;
     PhotonView view;
     
     void Start() {
@@ -19,17 +20,21 @@ public class ChatManager : MonoBehaviour, Photon.Pun.IPunObservable
     }
 
     void Update() {
-        if(view.IsMine) {
-            //if(Input.GetKeyDown(KeyCode.LeftShift) && chatInput.isFocused) {
-            if(Input.GetKeyDown(KeyCode.Return) && chatInput.text != "")
-                SendMessage();
+        //if(Input.GetKeyDown(KeyCode.LeftShift) && chatInput.isFocused) {
+        if(Input.GetKeyDown(KeyCode.Return) && chatInput.text != "")
+            StartMessage();
+    }
 
+    void StartMessage() {
+        if(view.IsMine) {
+            SendMessage();
             if(chatInput.text == " ") chatInput.text = "";
         }
     }
 
     void SendMessage() {
         StopCoroutine("Remove");
+        ballon.SetActive(true);
         playerText.text = chatInput.text;
         chatInput.text = "";
         StartCoroutine("Remove");
@@ -38,6 +43,7 @@ public class ChatManager : MonoBehaviour, Photon.Pun.IPunObservable
     IEnumerator Remove() {
         yield return new WaitForSeconds(4f);
         playerText.text = "";
+        ballon.SetActive(false);
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {

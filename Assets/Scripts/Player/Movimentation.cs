@@ -50,7 +50,7 @@ public class Movimentation : MonoBehaviour
     }
 
     void OnMouseDown() {
-        if(!menuController.IsMenuPlayerEnable())    
+        if(!menuController.IsMenuPlayerEnable()) 
             menuController.OpenMenuPlayer();
     }
 
@@ -67,13 +67,9 @@ public class Movimentation : MonoBehaviour
                 speed = 10;
             }
 
-            if (Input.GetKeyDown(KeyCode.P)) {
-                if(menuController.IsMenuPlayerEnable())
-                    menuController.CloseMenuPlayer();
-                else
-                    menuController.OpenMenuPlayer();
-            }
-
+            if(menuController.IsMenuPlayerEnable()) 
+                targetPos = transform.position;
+            
             transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
 
             //transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPos);

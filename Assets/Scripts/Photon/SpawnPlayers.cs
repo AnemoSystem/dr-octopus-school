@@ -16,7 +16,9 @@ public class SpawnPlayers : MonoBehaviour
         GameObject p = GameObject.Find("Player");
 
         Vector2 randomPosition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
-        if(p == null)
-            PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
+        if(p == null) {
+            p = PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
+        }
+        p.name = Server.username;
     }
 }

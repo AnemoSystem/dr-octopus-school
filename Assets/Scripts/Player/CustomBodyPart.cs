@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class CustomBodyPart : MonoBehaviour
 {
@@ -16,6 +17,13 @@ public class CustomBodyPart : MonoBehaviour
 
     public SpriteRenderer[] spriteRend;
 
+    void Start() {
+        spriteRend[0] = this.transform.parent.gameObject.GetComponent<SpriteRenderer>();
+        spriteRend[1] = this.transform.parent.gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
+        spriteRend[2] = this.transform.parent.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        spriteRend[3] = this.transform.parent.gameObject.transform.GetChild(2).GetComponent<SpriteRenderer>();
+    }
+
     void Update() {
         if(idSkin > skins.Length - 1) idSkin = 0;
         else if (idSkin < 0) idSkin = skins.Length - 1;
@@ -30,7 +38,6 @@ public class CustomBodyPart : MonoBehaviour
         else if (idHair < 0) idHair = hair.Length - 1;  
     }
 
-
     void LateUpdate()
     {
         SkinChoice(0);
@@ -38,7 +45,7 @@ public class CustomBodyPart : MonoBehaviour
         SkinChoice(2);
         SkinChoice(3);
     }
-
+    
     public void SkinChoice(int part) {
         string spriteName = "";
         
@@ -84,6 +91,44 @@ public class CustomBodyPart : MonoBehaviour
             default:
                 break;
         }    
+    }
+
+    public void NextPart(int whichPart) {
+        switch(whichPart) {
+            case 0:
+                idSkin++;
+                break;
+            case 1:
+                idTorso++;
+                break;
+            case 2:
+                idHair++;
+                break;
+            case 3:
+                idLegs++;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void PreviousPart(int whichPart) {
+        switch(whichPart) {
+            case 0:
+                idSkin--;
+                break;
+            case 1:
+                idTorso--;
+                break;
+            case 2:
+                idHair--;
+                break;
+            case 3:
+                idLegs--;
+                break;
+            default:
+                break;
+        }
     }
 }
 

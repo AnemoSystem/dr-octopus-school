@@ -606,6 +606,7 @@ GameObject:
   - component: {fileID: 3121530277946387229}
   - component: {fileID: 8838155298680382863}
   - component: {fileID: 1760724912723030189}
+  - component: {fileID: 2841118959106541604}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -734,10 +735,12 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 0
+  observableSearch: 1
   ObservedComponents:
-  - {fileID: 3246088676555997071}
   - {fileID: 8124508641871814394}
+  - {fileID: 3246088676555997071}
+  - {fileID: 3121530277946387229}
+  - {fileID: 2841118959106541604}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -840,6 +843,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2841118959106541604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721422735598082666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 2
+    Name: direction
+  - Type: 4
+    SynchronizeType: 2
+    Name: isRunning
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0
+  - SynchronizeType: 0
+    LayerIndex: 1
 --- !u!1001 &5142338983345929665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -894,26 +923,6 @@ PrefabInstance:
     - target: {fileID: 5641931568394399569, guid: c30392e2f55867d4595a0942c2cfd034, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995774148963873244, guid: c30392e2f55867d4595a0942c2cfd034, type: 3}
-      propertyPath: hair.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995774148963873244, guid: c30392e2f55867d4595a0942c2cfd034, type: 3}
-      propertyPath: spriteRend.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995774148963873244, guid: c30392e2f55867d4595a0942c2cfd034, type: 3}
-      propertyPath: spriteRend.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995774148963873244, guid: c30392e2f55867d4595a0942c2cfd034, type: 3}
-      propertyPath: spriteRend.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995774148963873244, guid: c30392e2f55867d4595a0942c2cfd034, type: 3}
-      propertyPath: spriteRend.Array.data[3]
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c30392e2f55867d4595a0942c2cfd034, type: 3}

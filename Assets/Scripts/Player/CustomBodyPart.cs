@@ -16,13 +16,15 @@ public class CustomBodyPart : MonoBehaviour
     public BodyPart[] hair;
 
     public SpriteRenderer[] spriteRend;
+    PhotonView view;
 
     void Start() {
+        view = GetComponent<PhotonView>();
         spriteRend[0] = this.transform.parent.gameObject.GetComponent<SpriteRenderer>();
         spriteRend[1] = this.transform.parent.gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
         spriteRend[2] = this.transform.parent.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
         spriteRend[3] = this.transform.parent.gameObject.transform.GetChild(2).GetComponent<SpriteRenderer>();
-    }
+    } 
 
     void Update() {
         if(idSkin > skins.Length - 1) idSkin = 0;
@@ -30,22 +32,26 @@ public class CustomBodyPart : MonoBehaviour
 
         if(idLegs > legs.Length - 1) idLegs = 0;
         else if (idLegs < 0) idLegs = legs.Length - 1;
-    
+        
         if(idTorso > torso.Length - 1) idTorso = 0;
         else if (idTorso < 0) idTorso = torso.Length - 1;
 
         if(idHair > hair.Length - 1) idHair = 0;
-        else if (idHair < 0) idHair = hair.Length - 1;  
+        else if (idHair < 0) idHair = hair.Length - 1; 
     }
 
     void LateUpdate()
     {
+        UpdateAllChoice();
+    }
+
+    void UpdateAllChoice() {
         SkinChoice(0);
         SkinChoice(1);
         SkinChoice(2);
         SkinChoice(3);
     }
-    
+
     public void SkinChoice(int part) {
         string spriteName = "";
         

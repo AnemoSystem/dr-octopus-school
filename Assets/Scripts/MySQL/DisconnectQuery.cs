@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using Photon.Pun;
 
-public class DisconnectQuery : MonoBehaviour
+public class DisconnectQuery : MonoBehaviourPunCallbacks
 {
     void OnApplicationQuit() {
+        StartCoroutine(Disconnect());
+    }
+
+    public override void OnLeftLobby() {
         StartCoroutine(Disconnect());
     }
 

@@ -50,9 +50,11 @@ public class ChatManager : MonoBehaviour, Photon.Pun.IPunObservable
         if(stream.IsWriting) {
             stream.SendNext(playerText.text);
             stream.SendNext(username.text);
+            stream.SendNext(ballon.activeSelf);
         } else if(stream.IsReading) {
             playerText.text = (string)stream.ReceiveNext();
             username.text = (string)stream.ReceiveNext();
+            ballon.SetActive((bool)stream.ReceiveNext());
         }
     }
 }

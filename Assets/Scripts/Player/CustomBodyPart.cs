@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class CustomBodyPart : MonoBehaviour
+public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
 {
     public int idSkin;
     public int idLegs;
@@ -134,6 +134,20 @@ public class CustomBodyPart : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+        if(stream.IsWriting) {
+            stream.SendNext(idSkin);
+            stream.SendNext(idTorso);
+            stream.SendNext(idHair);
+            stream.SendNext(idLegs);
+        } else if(stream.IsReading) {
+            idSkin = (int)stream.ReceiveNext();
+            idTorso = (int)stream.ReceiveNext();
+            idHair = (int)stream.ReceiveNext();
+            idLegs = (int)stream.ReceiveNext();
         }
     }
 }

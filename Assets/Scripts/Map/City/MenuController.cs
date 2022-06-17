@@ -7,11 +7,13 @@ public class MenuController : MonoBehaviour
     public GameObject Wind;
     public GameObject MenuPlayer;
 
+    /*
     void Start() {
         CloseWind();
         CloseMenuPlayer();
     }
-
+    */
+    
     public void OpenWind() {
         Wind.SetActive(true);
     }

@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 public class CustomBodyPartMenu : MonoBehaviour
 {
     public CustomBodyPart playerBodyPart;
     public CustomBodyPart menuBodyPart;
-    PhotonView view;
 
     void Start() {
-        //view = GameObject.Find("PhotonViewController").GetComponent<PhotonView>();
         menuBodyPart = transform.GetChild(3).GetComponent<CustomBodyPart>();
-        playerBodyPart = GameObject.FindGameObjectsWithTag("Player")[0].transform.GetChild(4).GetComponent<CustomBodyPart>();
     }
 
     public void UpdateMenuBodyParts() {
@@ -27,5 +23,9 @@ public class CustomBodyPartMenu : MonoBehaviour
         playerBodyPart.idTorso = menuBodyPart.idTorso;
         playerBodyPart.idLegs = menuBodyPart.idLegs;
         playerBodyPart.idHair = menuBodyPart.idHair;
+    }
+
+    public void FindPlayer() {
+        playerBodyPart = GameObject.Find(Server.username + "/BodyPartController").GetComponent<CustomBodyPart>();
     }
 }

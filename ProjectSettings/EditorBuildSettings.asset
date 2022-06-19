@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map/MainMap.unity
     guid: d514f2910b6c38844862037958a4d280
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Minigames/Hockey.unity
     guid: 985696dfbb12bff4eb339da513e279bb
   m_configObjects: {}

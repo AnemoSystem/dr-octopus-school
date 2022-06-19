@@ -17,7 +17,7 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
 
     public SpriteRenderer[] spriteRend;
     PhotonView view;
-
+    
     void Start() {
         view = GetComponent<PhotonView>();
         spriteRend[0] = this.transform.parent.gameObject.GetComponent<SpriteRenderer>();
@@ -96,7 +96,7 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
                 break;
             default:
                 break;
-        }    
+        }
     }
 
     public void NextPart(int whichPart) {

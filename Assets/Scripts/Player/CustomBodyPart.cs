@@ -27,6 +27,10 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
     } 
 
     void Update() {
+        UpdateIDsArray();
+    }
+
+    public void UpdateIDsArray() {
         if(idSkin > skins.Length - 1) idSkin = 0;
         else if (idSkin < 0) idSkin = skins.Length - 1;
 
@@ -37,22 +41,21 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
         else if (idTorso < 0) idTorso = torso.Length - 1;
 
         if(idHair > hair.Length - 1) idHair = 0;
-        else if (idHair < 0) idHair = hair.Length - 1; 
+        else if (idHair < 0) idHair = hair.Length - 1;
     }
 
-    void LateUpdate()
-    {
+    void LateUpdate() {
         UpdateAllChoice();
     }
 
     void UpdateAllChoice() {
-        SkinChoice(0);
-        SkinChoice(1);
-        SkinChoice(2);
-        SkinChoice(3);
+        PartChoice(0);
+        PartChoice(1);
+        PartChoice(2);
+        PartChoice(3);
     }
 
-    public void SkinChoice(int part) {
+    public void PartChoice(int part) {
         string spriteName = "";
         
         string bp = "";

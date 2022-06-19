@@ -29,6 +29,7 @@ public class CustomBodyPartMenu : MonoBehaviour
         playerBodyPart.idTorso = menuBodyPart.idTorso;
         playerBodyPart.idLegs = menuBodyPart.idLegs;
         playerBodyPart.idHair = menuBodyPart.idHair;
+        playerBodyPart.UpdateIDsArray();
         StartCoroutine(UpdateDatabaseParts());
     }
 

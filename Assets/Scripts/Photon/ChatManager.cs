@@ -21,14 +21,15 @@ public class ChatManager : MonoBehaviour, Photon.Pun.IPunObservable
 
     void Update() {
         //if(Input.GetKeyDown(KeyCode.LeftShift) && chatInput.isFocused) {
-        if(Input.GetKeyDown(KeyCode.Return) && chatInput.text != "")
+        if(chatInput.text == " ") chatInput.text = "";
+        
+        if(Input.GetKeyDown(KeyCode.Return))
             StartMessage();
     }
 
-    void StartMessage() {
-        if(view.IsMine) {
+    public void StartMessage() {
+        if(view.IsMine && chatInput.text != "") {
             SendMessage();
-            if(chatInput.text == " ") chatInput.text = "";
         }
     }
 

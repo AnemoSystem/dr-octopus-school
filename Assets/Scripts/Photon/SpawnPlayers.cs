@@ -49,8 +49,9 @@ public class SpawnPlayers : MonoBehaviour
                 Debug.Log("Get Data - HTTP Error");
                 break;
             case UnityWebRequest.Result.Success:
-                string result = www.downloadHandler.text;
+                string result = www.downloadHandler.text.ToString();
                 data_values = result.Split('-');
+
                 custom.idSkin = Convert.ToInt32(data_values[0]);
                 custom.idTorso = Convert.ToInt32(data_values[1]);
                 custom.idHair = Convert.ToInt32(data_values[2]);

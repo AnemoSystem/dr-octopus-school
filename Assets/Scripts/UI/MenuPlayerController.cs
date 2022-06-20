@@ -17,12 +17,12 @@ public class MenuPlayerController : MonoBehaviour
 
     public void NextPart(int whichPart) {
         playerView.NextPart(whichPart);
-        StartCoroutine(UpdatingIcons());
+        //StartCoroutine(UpdatingIcons());
     }
 
     public void PreviousPart(int whichPart) {
         playerView.PreviousPart(whichPart);
-        StartCoroutine(UpdatingIcons());
+        //StartCoroutine(UpdatingIcons());
     }
 
     IEnumerator UpdatingIcons() {
@@ -35,11 +35,11 @@ public class MenuPlayerController : MonoBehaviour
         playerMenuView.UpdatePlayerBodyParts();
         yield return null;
     }
-    /*
+    
     void Update() {
         UpdateIcons();
     }
-    */
+    
     void UpdateIcons() {
         for(int i = 0; i < icon.Length; i++)
             icon[i].sprite = playerView.spriteRend[i].sprite;

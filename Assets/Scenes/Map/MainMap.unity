@@ -15063,6 +15063,7 @@ MonoBehaviour:
   minY: -0.16
   maxY: -6
   maxX: 13
+  menuPlayer: {fileID: 709834311}
 --- !u!4 &870677133
 Transform:
   m_ObjectHideFlags: 0

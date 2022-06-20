@@ -18,15 +18,9 @@ public class Movimentation : MonoBehaviour
     private Vector3 difference;
     private Text playerUsernameLabel;
 
-    private bool canTurn = false;
-
     PhotonView view;
 
     private MenuController menuController;
-
-    void OnApplicationFocus(bool hasFocus) {
-        canTurn = hasFocus;
-    }
 
     void Start()
     { 
@@ -44,7 +38,7 @@ public class Movimentation : MonoBehaviour
         difference = mousePos - transform.position;
         difference.Normalize();    
         
-        if(!isRunning && !menuController.IsMenuPlayerEnable() && canTurn)
+        if(!isRunning && !menuController.IsMenuPlayerEnable())
             rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
 
         if(rotationZ >= -45 && rotationZ <= 45)

@@ -39,7 +39,7 @@ public class GameManagerBlockfall : MonoBehaviour
     
 
     void Update() {
-        scoreDisplay.text = score.ToString();
+        scoreDisplay.text = "banana";
         livesDisplay.text = lives.ToString(); 
     }
 

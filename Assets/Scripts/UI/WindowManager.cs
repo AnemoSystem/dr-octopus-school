@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenNews : MonoBehaviour
+public class WindowManager : MonoBehaviour
 {
     public GameObject Wind;
     public GameObject Close;

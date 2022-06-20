@@ -18,6 +18,8 @@ public class SpawnPlayers : MonoBehaviour
 
     CustomBodyPart custom;
 
+    public MenuPlayerController menuPlayer;
+
     void Start() {
         GameObject p = GameObject.Find("Player");
 

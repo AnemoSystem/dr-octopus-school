@@ -9,9 +9,10 @@ public class Server : MonoBehaviour
 {
     public InputField usernameField;
     public InputField passwordField;
+    public Text errorDisplay;
 
     // Global Variable
-    public static string username = "username";
+    public static string username;
 
     public void Login() {
         StartCoroutine(Upload());
@@ -27,19 +28,31 @@ public class Server : MonoBehaviour
         
         switch (www.result)
         {
-            case UnityWebRequest.Result.ConnectionError:
+            case UnityWebRequest.Result.ConnectionError: /*transformar os debugs dos cases em labels de cores diferentes dentro do unity*/
                 Debug.Log("Connection Error");
+                errorDisplay.text = "Erro de conexão!";
+                errorDisplay.color = Color.red;
+                yield return new WaitForSeconds(5);
+                errorDisplay.text = " ";
                 break;
             case UnityWebRequest.Result.DataProcessingError:
                 Debug.Log("Data Processing Error");
+                errorDisplay.text = "Erro de processamento de dados!";
+                errorDisplay.color = Color.yellow;
+                yield return new WaitForSeconds(5);
+                errorDisplay.text = " ";
                 break;
             case UnityWebRequest.Result.ProtocolError:
                 Debug.Log("HTTP Error");
+                errorDisplay.text = "Erro de HTTP!";
+                errorDisplay.color = Color.magenta;
+                yield return new WaitForSeconds(5);
+                errorDisplay.text = " ";
                 break;
-            case UnityWebRequest.Result.Success:
-                Debug.Log("Form upload complete!");
-                Debug.Log(www.downloadHandler.text);
-                username = usernameField.text;
+            case UnityWebRequest.Result.Success: //terminando os cases acima, avisar para o mr gui pra ele mostrar como faz o case desta linha
+               // Debug.Log("Form upload complete!");
+               // Debug.Log(www.downloadHandler.text); 
+                username = usernameField.text; 
                 if(www.downloadHandler.text == "Login Success - Disconnected")    
                     SceneManager.LoadScene("Lobby");
                 break;

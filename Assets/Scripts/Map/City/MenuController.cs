@@ -5,7 +5,11 @@ using UnityEngine.Networking;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject Wind;
+    public GameObject MenuNews;
+    public GameObject MenuConfig;
+    public GameObject MenuNotif;
+    public GameObject MenuMap;
+
     public GameObject MenuPlayer;
 
     /*
@@ -15,14 +19,41 @@ public class MenuController : MonoBehaviour
     }
     */
     
-    public void OpenWind() {
-        Wind.SetActive(true);
+// News
+    public void OpenMenuNews() {
+        MenuNews.SetActive(true);
     }
 
-    public void CloseWind () {
-        Wind.SetActive(false);
+    public void CloseMenuNews () {
+        MenuNews.SetActive(false);
     }
 
+// Configurations
+    public void OpenMenuConfig() {
+        MenuConfig.SetActive(true);
+    }
+
+    public void CloseMenuConfig () {
+        MenuConfig.SetActive(false);
+    }
+
+// Notifications
+    public void OpenMenuNotif() {
+        MenuNotif.SetActive(true);
+    }
+
+    public void CloseMenuNotif () {
+        MenuNotif.SetActive(false);
+    }
+
+// Map
+    public void OpenMenuMap() {
+        MenuMap.SetActive(true);
+    }
+
+    public void CloseMenuMap () {
+        MenuMap.SetActive(false);
+}
     public void SendMessage() {
         ChatManager c = GameObject.Find(Server.username).GetComponent<ChatManager>();
         c.StartMessage();

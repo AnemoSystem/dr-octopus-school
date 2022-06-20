@@ -286,7 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d2a8a15d583d745aa4462fbb03d645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: b85f85b7ddf453c4ab8eb9a59000afa2, type: 2}
+  resolutionDropdown: {fileID: 532195306}
 --- !u!114 &10849275
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -610,6 +610,7 @@ GameObject:
   - component: {fileID: 182671037}
   - component: {fileID: 182671036}
   - component: {fileID: 182671035}
+  - component: {fileID: 182671038}
   m_Layer: 5
   m_Name: CloseGame
   m_TagString: Untagged
@@ -631,10 +632,10 @@ RectTransform:
   m_Father: {fileID: 430643025}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 370.2, y: 204.29}
-  m_SizeDelta: {x: 30.63, y: 30.625}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -30, y: -25}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &182671035
 MonoBehaviour:
@@ -680,8 +681,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 483528961}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+      - m_Target: {fileID: 182671038}
+        m_TargetAssemblyTypeName: DisconnectServer, Assembly-CSharp
         m_MethodName: CloseGame
         m_Mode: 1
         m_Arguments:
@@ -730,6 +731,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182671033}
   m_CullTransparentMesh: 1
+--- !u!114 &182671038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182671033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9710d601f3fcda24c8fdee7848e32dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &215104449
 GameObject:
   m_ObjectHideFlags: 0

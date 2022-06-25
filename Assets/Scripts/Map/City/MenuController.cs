@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
 public class MenuController : MonoBehaviour
 {
@@ -19,7 +18,7 @@ public class MenuController : MonoBehaviour
     }
     */
     
-// News
+    // News
     public void OpenMenuNews() {
         MenuNews.SetActive(true);
     }
@@ -28,7 +27,7 @@ public class MenuController : MonoBehaviour
         MenuNews.SetActive(false);
     }
 
-// Configurations
+    // Configurations
     public void OpenMenuConfig() {
         MenuConfig.SetActive(true);
     }
@@ -37,7 +36,7 @@ public class MenuController : MonoBehaviour
         MenuConfig.SetActive(false);
     }
 
-// Notifications
+    // Notifications
     public void OpenMenuNotif() {
         MenuNotif.SetActive(true);
     }
@@ -46,14 +45,15 @@ public class MenuController : MonoBehaviour
         MenuNotif.SetActive(false);
     }
 
-// Map
+    // Map
     public void OpenMenuMap() {
         MenuMap.SetActive(true);
     }
 
     public void CloseMenuMap () {
         MenuMap.SetActive(false);
-}
+    }
+
     public void SendMessage() {
         ChatManager c = GameObject.Find(Server.username).GetComponent<ChatManager>();
         c.StartMessage();
@@ -73,37 +73,7 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    public void CloseGame() {
-        StartCoroutine(Disconnect());
-    }
-
     public bool IsMenuPlayerEnable() {
         return MenuPlayer.activeSelf;
-    }
-
-    IEnumerator Disconnect() {
-        WWWForm form = new WWWForm();
-        form.AddField("username", Server.username);
-
-        UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/disconnect_login.php", form);
-        yield return www.SendWebRequest();
-
-        switch (www.result)
-        {
-            case UnityWebRequest.Result.ConnectionError:
-                Debug.Log("Connection Error");
-                break;
-            case UnityWebRequest.Result.DataProcessingError:
-                Debug.Log("Data Processing Error");
-                break;
-            case UnityWebRequest.Result.ProtocolError:
-                Debug.Log("HTTP Error");
-                break;
-            case UnityWebRequest.Result.Success:
-                Debug.Log("Disconnect with success");
-                Application.Quit();
-                break;
-        }
-        www.Dispose();        
     }
 }

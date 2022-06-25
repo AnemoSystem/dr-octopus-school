@@ -11,6 +11,7 @@ public class Server : MonoBehaviour
     public InputField passwordField;
     public Text errorDisplay;
     public GameObject errorWindow;
+    public LoadWithTransition transition;
 
     // Global Variable
     public static string username = "username";
@@ -52,7 +53,12 @@ public class Server : MonoBehaviour
                 //Debug.Log(www.downloadHandler.text); 
                 username = usernameField.text; 
                 if(www.downloadHandler.text == "Login Success - Disconnected") {   
-                    SceneManager.LoadScene("Lobby");
+                    //SceneManager.LoadScene("Lobby");
+                    transition.FadeIn("Lobby");
+                }
+                else if(www.downloadHandler.text == "Login Success - Connected") {
+                    errorWindow.SetActive(true);
+                    errorDisplay.text = "Usuário conectado em outro dispositivo. Disconecte-se nele para entrar.";                    
                 }
                 else {
                     errorWindow.SetActive(true);

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class LoadWithTransition : MonoBehaviour
 {
@@ -20,5 +21,15 @@ public class LoadWithTransition : MonoBehaviour
         transitionAnim.Play("Crossfade_Start");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(sc);
+    }
+
+    public void FadeInRoom(string nextScene) {
+        StartCoroutine(StartTransitionPhoton(nextScene));
+    }
+
+    IEnumerator StartTransitionPhoton(string sc) {
+        transitionAnim.Play("Crossfade_Start");
+        yield return new WaitForSeconds(1f);
+        PhotonNetwork.LoadLevel(sc);
     }
 }

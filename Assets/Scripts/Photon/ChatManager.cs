@@ -12,6 +12,10 @@ public class ChatManager : MonoBehaviour, Photon.Pun.IPunObservable
     public GameObject ballon;
     PhotonView view;
     
+    public GameObject ballonEmoji;
+    public SpriteRenderer baseEmoji;
+    public Sprite[] emojis;
+
     void Start() {
         chatInput = GameObject.Find("ChatInputField").GetComponent<InputField>();
         view = GetComponent<PhotonView>();
@@ -36,8 +40,17 @@ public class ChatManager : MonoBehaviour, Photon.Pun.IPunObservable
     void SendMessage() {
         StopCoroutine("Remove");
         ballon.SetActive(true);
+        ballonEmoji.SetActive(false);
         playerText.text = chatInput.text;
         chatInput.text = "";
+        StartCoroutine("Remove");
+    }
+
+    public void SendEmoji(int id) {
+        StopCoroutine("Remove");
+        ballon.SetActive(false);
+        ballonEmoji.SetActive(true);
+        baseEmoji.sprite = emojis[id];
         StartCoroutine("Remove");
     }
 
@@ -45,6 +58,7 @@ public class ChatManager : MonoBehaviour, Photon.Pun.IPunObservable
         yield return new WaitForSeconds(4f);
         playerText.text = "";
         ballon.SetActive(false);
+        ballonEmoji.SetActive(false);
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {

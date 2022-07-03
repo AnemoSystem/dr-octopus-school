@@ -38,7 +38,7 @@ public class Movimentation : MonoBehaviour
         difference = mousePos - transform.position;
         difference.Normalize();    
         
-        if(!isRunning && !menuController.IsMenuPlayerEnable())
+        if(!isRunning && !menuController.IsAllMenusEnabled())
             rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
 
         if(rotationZ >= -45 && rotationZ <= 45)
@@ -54,7 +54,7 @@ public class Movimentation : MonoBehaviour
     }
 
     void OnMouseDown() {
-        if(!menuController.IsMenuPlayerEnable() && playerUsernameLabel.text == Server.username) 
+        if(!menuController.IsAllMenusEnabled() && playerUsernameLabel.text == Server.username) 
             menuController.OpenMenuPlayer();
     }
 
@@ -64,14 +64,14 @@ public class Movimentation : MonoBehaviour
 
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (Input.GetMouseButtonDown(0) && detectArea.getIsDetected() && !menuController.IsMenuPlayerEnable())
+            if (Input.GetMouseButtonDown(0) && detectArea.getIsDetected() && !menuController.IsAllMenusEnabled())
             {
                 targetPos = new Vector3(mousePos.x, mousePos.y);
                 rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
                 speed = 10;
             }
 
-            if(menuController.IsMenuPlayerEnable()) 
+            if(menuController.IsAllMenusEnabled()) 
                 targetPos = transform.position;
             
             transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);

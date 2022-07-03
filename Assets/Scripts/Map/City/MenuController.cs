@@ -10,7 +10,7 @@ public class MenuController : MonoBehaviour
     public GameObject MenuMap;
 
     public GameObject MenuPlayer;
-
+    public GameObject menuEmoji;
     /*
     void Start() {
         CloseWind();
@@ -73,7 +73,27 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    public bool IsMenuPlayerEnable() {
+    public void OpenOrCloseMenuEmoji() {
+        if(menuEmoji.activeSelf) menuEmoji.SetActive(false);
+        else menuEmoji.SetActive(true);
+    }
+
+    public void StartSendEmoji(int id) {
+        ChatManager c = GameObject.Find(Server.username).GetComponent<ChatManager>();
+        c.SendEmoji(id);
+        menuEmoji.SetActive(false);
+    }
+
+    public bool IsMenuPlayerEnabled() {
         return MenuPlayer.activeSelf;
     }
+
+    public bool IsMenuEmojiEnabled() {
+        return menuEmoji.activeSelf;
+    }
+
+    public bool IsAllMenusEnabled() {
+        if(menuEmoji.activeSelf || MenuPlayer.activeSelf) return true;
+        else return false;
+    }    
 }

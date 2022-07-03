@@ -36,7 +36,8 @@ public class SpawnPlayers : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("username", Server.username);
         
-        UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/get_data.php", form);
+        //UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/get_data.php", form);
+        UnityWebRequest www = UnityWebRequest.Post("http://localhost/school-management-system/unity/get_data.php", form);
         yield return www.SendWebRequest();
         
         switch (www.result)

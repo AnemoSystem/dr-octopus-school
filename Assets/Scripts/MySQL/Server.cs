@@ -25,7 +25,8 @@ public class Server : MonoBehaviour
         form.AddField("username", usernameField.text);
         form.AddField("password", passwordField.text);
         
-        UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/login.php", form);
+        //UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/login.php", form);
+        UnityWebRequest www = UnityWebRequest.Post("http://localhost/school-management-system/unity/login.php", form);
         yield return www.SendWebRequest();
         
         switch (www.result)

@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.Networking;
 using System;
+using UnityEngine.SceneManagement;
 
 public class SpawnPlayers : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class SpawnPlayers : MonoBehaviour
             StartCoroutine(GetDataFromUser());
         }
     }
-
+    
     IEnumerator GetDataFromUser() {
         WWWForm form = new WWWForm();
         form.AddField("username", Server.username);

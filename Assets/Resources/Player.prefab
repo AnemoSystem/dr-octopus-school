@@ -884,6 +884,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  detectArea: {fileID: 0}
+  menuController: {fileID: 0}
 --- !u!114 &7721422735598082640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,6 +925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13138bc782c6aaa459156ae25958e3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chatInput: {fileID: 0}
   playerText: {fileID: 7534709838575324587}
   username: {fileID: 6861989330009924722}
   ballon: {fileID: 3379341455868552289}

@@ -10,6 +10,8 @@ public class Movimentation : MonoBehaviour
     private Vector3 targetPos;
     public float speed = 10;
     private Animator anim;
+
+    [SerializeField]
     private DetectAreaMouse detectArea;
 
     private Vector3 mousePos;
@@ -20,6 +22,7 @@ public class Movimentation : MonoBehaviour
 
     PhotonView view;
 
+    [SerializeField]
     private MenuController menuController;
 
     void Start()
@@ -38,7 +41,7 @@ public class Movimentation : MonoBehaviour
         difference = mousePos - transform.position;
         difference.Normalize();    
         
-        if(!isRunning && !menuController.IsAllMenusEnabled())
+        if(!isRunning && !menuController.IsMenuPlayerEnabled())
             rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
 
         if(rotationZ >= -45 && rotationZ <= 45)
@@ -54,7 +57,7 @@ public class Movimentation : MonoBehaviour
     }
 
     void OnMouseDown() {
-        if(!menuController.IsAllMenusEnabled() && playerUsernameLabel.text == Server.username) 
+        if(!menuController.IsMenuPlayerEnabled() && playerUsernameLabel.text == Server.username) 
             menuController.OpenMenuPlayer();
     }
 
@@ -64,14 +67,14 @@ public class Movimentation : MonoBehaviour
 
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (Input.GetMouseButtonDown(0) && detectArea.getIsDetected() && !menuController.IsAllMenusEnabled())
+            if (Input.GetMouseButtonDown(0) && detectArea.getIsDetected() && !menuController.IsMenuPlayerEnabled())
             {
                 targetPos = new Vector3(mousePos.x, mousePos.y);
                 rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
                 speed = 10;
             }
 
-            if(menuController.IsAllMenusEnabled()) 
+            if(menuController.IsMenuPlayerEnabled()) 
                 targetPos = transform.position;
             
             transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);

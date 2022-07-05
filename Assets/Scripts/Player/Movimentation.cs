@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class Movimentation : MonoBehaviour
 {
     private Vector3 targetPos;
-    public float speed = 10;
+    public float maxSpeed = 10;
+    private float speed;
     private Animator anim;
 
     private Vector3 mousePos;
@@ -34,6 +35,7 @@ public class Movimentation : MonoBehaviour
         //targetPos = new Vector2(0, -4);
         playerUsernameLabel = transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
         anim = GetComponent<Animator>();
+        speed = maxSpeed;
     }
 
     void Animation() {
@@ -60,15 +62,15 @@ public class Movimentation : MonoBehaviour
     void Update()
     {
         if(view.IsMine) {
-
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             if (Input.GetMouseButtonDown(0))
             {
                 targetPos = new Vector3(mousePos.x, mousePos.y);
                 rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
-                speed = 10;
-            }
+                speed = maxSpeed;
+            } else speed = 0;
+            
             transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
 
             //transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPos);

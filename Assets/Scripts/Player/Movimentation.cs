@@ -11,9 +11,6 @@ public class Movimentation : MonoBehaviour
     public float speed = 10;
     private Animator anim;
 
-    [SerializeField]
-    private DetectAreaMouse detectArea;
-
     private Vector3 mousePos;
     private bool isRunning = false;
     private float rotationZ;
@@ -22,16 +19,20 @@ public class Movimentation : MonoBehaviour
 
     PhotonView view;
 
-    [SerializeField]
-    private MenuController menuController;
+    public static GameObject LocalPlayerInstance;
+
+    void Awake() {
+        view = GetComponent<PhotonView>();
+        if(view.IsMine) {
+            Movimentation.LocalPlayerInstance = this.gameObject;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     void Start()
     { 
         //targetPos = new Vector2(0, -4);
-        detectArea = GameObject.Find("AreaMouse").GetComponent<DetectAreaMouse>();
-        menuController = GameObject.Find("MenuController").GetComponent<MenuController>();
         playerUsernameLabel = transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
-        view = GetComponent<PhotonView>();
         anim = GetComponent<Animator>();
     }
 
@@ -41,7 +42,7 @@ public class Movimentation : MonoBehaviour
         difference = mousePos - transform.position;
         difference.Normalize();    
         
-        if(!isRunning && !menuController.IsMenuPlayerEnabled())
+        if(!isRunning)
             rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
 
         if(rotationZ >= -45 && rotationZ <= 45)
@@ -56,27 +57,18 @@ public class Movimentation : MonoBehaviour
         anim.SetBool("isRunning", isRunning);
     }
 
-    void OnMouseDown() {
-        if(!menuController.IsMenuPlayerEnabled() && playerUsernameLabel.text == Server.username) 
-            menuController.OpenMenuPlayer();
-    }
-
     void Update()
     {
         if(view.IsMine) {
 
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (Input.GetMouseButtonDown(0) && detectArea.getIsDetected() && !menuController.IsMenuPlayerEnabled())
+            if (Input.GetMouseButtonDown(0))
             {
                 targetPos = new Vector3(mousePos.x, mousePos.y);
                 rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
                 speed = 10;
             }
-
-            if(menuController.IsMenuPlayerEnabled()) 
-                targetPos = transform.position;
-            
             transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
 
             //transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPos);

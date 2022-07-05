@@ -20,20 +20,28 @@ public class ChatManager : MonoBehaviour, Photon.Pun.IPunObservable
     private int selectedEmoji;
 
     void Start() {
-        chatInput = GameObject.Find("ChatInputField").GetComponent<InputField>();
         view = GetComponent<PhotonView>();
-
         if(view.IsMine) username.text = Server.username;
+        StartCoroutine(WaitChatInput());
+    }
+
+    IEnumerator WaitChatInput() {
+        yield return new WaitForSeconds(2f);
+        chatInput = GameObject.Find("ChatInputField").GetComponent<InputField>();
+        chatInput.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
     }
 
     void Update() {
         //if(Input.GetKeyDown(KeyCode.LeftShift) && chatInput.isFocused) {
-        if(chatInput.text == " ") chatInput.text = "";
-        
         if(Input.GetKeyDown(KeyCode.Return))
             StartMessage();
         
         baseEmoji.sprite = emojis[selectedEmoji];
+    }
+
+    public void ValueChangeCheck()
+    {
+        if(chatInput.text == " ") chatInput.text = "";
     }
 
     public void StartMessage() {

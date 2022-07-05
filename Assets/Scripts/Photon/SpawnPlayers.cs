@@ -25,7 +25,7 @@ public class SpawnPlayers : MonoBehaviour
         GameObject p = GameObject.Find("Player");
 
         Vector2 randomPosition = new Vector2(UnityEngine.Random.Range(minX, maxX), UnityEngine.Random.Range(minY, maxY));
-        if(p == null) {
+        if(p == null && Movimentation.LocalPlayerInstance == null) {
             p = PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
             p.name = Server.username;
             custom = p.transform.GetChild(4).gameObject.GetComponent<CustomBodyPart>();

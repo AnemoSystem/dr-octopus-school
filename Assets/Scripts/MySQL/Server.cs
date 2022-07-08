@@ -15,6 +15,8 @@ public class Server : MonoBehaviour
 
     // Global Variable
     public static string username = "username";
+    public static int playersRoomA = 0;
+    public static int playersRoomB = 0;
 
     public void Login() {
         StartCoroutine(Upload());

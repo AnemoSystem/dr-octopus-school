@@ -68,8 +68,7 @@ public class Movimentation : MonoBehaviour
             {
                 targetPos = new Vector3(mousePos.x, mousePos.y);
                 rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
-                speed = maxSpeed;
-            } else speed = 0;
+            }
             
             transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
 

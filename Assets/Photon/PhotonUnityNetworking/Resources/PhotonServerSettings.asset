@@ -38,6 +38,7 @@ MonoBehaviour:
   - DestroyRpc
   - SendMessage
   - SkinChoice
+  - UpdatePlayerCount
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

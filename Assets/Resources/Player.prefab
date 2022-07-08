@@ -883,9 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c25bfec9d80ad4a9130eeceea1edbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  detectArea: {fileID: 0}
-  menuController: {fileID: 0}
+  maxSpeed: 10
 --- !u!114 &7721422735598082640
 MonoBehaviour:
   m_ObjectHideFlags: 0

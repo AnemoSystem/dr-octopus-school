@@ -11,6 +11,8 @@ public class MenuController : MonoBehaviour
 
     public GameObject MenuPlayer;
     public GameObject menuEmoji;
+    public GameObject menuStudent;
+
     /*
     void Start() {
         CloseWind();
@@ -71,6 +73,15 @@ public class MenuController : MonoBehaviour
         foreach(Transform child in MenuPlayer.transform) {
             child.gameObject.SetActive(false);
         }
+    }
+
+    // Student
+    public void OpenMenuStudent() {
+        menuStudent.SetActive(true);
+    }
+
+    public void CloseMenuStudent() {
+        menuStudent.SetActive(false);
     }
 
     public void OpenOrCloseMenuEmoji() {

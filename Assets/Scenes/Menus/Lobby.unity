@@ -301,6 +301,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 2061007336}
+  buttons:
+  - {fileID: 1850077946}
+  - {fileID: 254003473}
 --- !u!114 &403129149
 MonoBehaviour:
   m_ObjectHideFlags: 0

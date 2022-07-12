@@ -1767,6 +1767,9 @@ MonoBehaviour:
   errorDisplay: {fileID: 705987499}
   errorWindow: {fileID: 2018858271}
   transition: {fileID: 2009220781}
+  buttons:
+  - {fileID: 1306485558}
+  - {fileID: 1092318760}
 --- !u!4 &594513052
 Transform:
   m_ObjectHideFlags: 0

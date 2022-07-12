@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class CreateOrJoinRooms : MonoBehaviourPunCallbacks
 {
     public LoadWithTransition transition;
+    public Button[] buttons;
 
     public void StartRoom(string roomName) {
         PhotonNetwork.JoinOrCreateRoom(roomName, new RoomOptions() { MaxPlayers = 10 }, null);
@@ -15,6 +16,10 @@ public class CreateOrJoinRooms : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom() {
         //PhotonNetwork.LoadLevel("MainMap");
+        foreach(Button b in buttons) {
+            b.interactable = false;
+        }
         transition.FadeInRoom("MainMap");
+        Server.canMove = false;
     }
 }

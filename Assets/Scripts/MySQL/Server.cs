@@ -12,11 +12,13 @@ public class Server : MonoBehaviour
     public Text errorDisplay;
     public GameObject errorWindow;
     public LoadWithTransition transition;
+    public Button[] buttons;
 
     // Global Variable
     public static string username = "username";
     public static int playersRoomA = 0;
     public static int playersRoomB = 0;
+    public static bool canMove = true;
 
     public void Login() {
         StartCoroutine(Upload());
@@ -58,6 +60,9 @@ public class Server : MonoBehaviour
                 if(www.downloadHandler.text == "Login Success - Disconnected") {   
                     //SceneManager.LoadScene("Lobby");
                     transition.FadeIn("Lobby");
+                    foreach(Button b in buttons) {
+                        b.interactable = false;
+                    }
                 }
                 else if(www.downloadHandler.text == "Login Success - Connected") {
                     errorWindow.SetActive(true);

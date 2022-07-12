@@ -11,7 +11,7 @@ public class UpdateNumberPlayers : MonoBehaviour
 
     void Update()
     {
-        buttonTextA.text = "Sala A - " + PhotonNetwork.CountOfPlayersInRooms + "/10";
-        buttonTextB.text = "Sala B - " + PhotonNetwork.CountOfPlayersInRooms + "/10";
+        buttonTextA.text = "Sala A - " + Server.playersRoomA + "/10";
+        buttonTextB.text = "Sala B - " + Server.playersRoomB + "/10";
     }
 }

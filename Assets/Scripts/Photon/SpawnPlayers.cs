@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.Networking;
 using System;
+using UnityEngine.SceneManagement;
 
 public class SpawnPlayers : MonoBehaviour
 {
@@ -24,19 +25,20 @@ public class SpawnPlayers : MonoBehaviour
         GameObject p = GameObject.Find("Player");
 
         Vector2 randomPosition = new Vector2(UnityEngine.Random.Range(minX, maxX), UnityEngine.Random.Range(minY, maxY));
-        if(p == null) {
+        if(p == null && Movimentation.LocalPlayerInstance == null) {
             p = PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
             p.name = Server.username;
             custom = p.transform.GetChild(4).gameObject.GetComponent<CustomBodyPart>();
             StartCoroutine(GetDataFromUser());
         }
     }
-
+    
     IEnumerator GetDataFromUser() {
         WWWForm form = new WWWForm();
         form.AddField("username", Server.username);
         
-        UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/get_data.php", form);
+        //UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/get_data.php", form);
+        UnityWebRequest www = UnityWebRequest.Post("http://localhost/school-management-system/unity/get_data.php", form);
         yield return www.SendWebRequest();
         
         switch (www.result)

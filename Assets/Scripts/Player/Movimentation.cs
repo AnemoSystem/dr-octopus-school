@@ -8,28 +8,44 @@ using UnityEngine.UI;
 public class Movimentation : MonoBehaviour
 {
     private Vector3 targetPos;
-    public float speed = 10;
+    public float maxSpeed = 10;
+    private float speed;
     private Animator anim;
-    private DetectAreaMouse detectArea;
 
     private Vector3 mousePos;
     private bool isRunning = false;
     private float rotationZ;
     private Vector3 difference;
     private Text playerUsernameLabel;
+    private DetectAreaMouse detectAreaMouse;
 
     PhotonView view;
 
-    private MenuController menuController;
+    public static GameObject LocalPlayerInstance;
+
+    void Awake() {
+        view = GetComponent<PhotonView>();
+        if(view.IsMine) {
+            Movimentation.LocalPlayerInstance = this.gameObject;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     void Start()
     { 
         //targetPos = new Vector2(0, -4);
-        detectArea = GameObject.Find("AreaMouse").GetComponent<DetectAreaMouse>();
-        menuController = GameObject.Find("MenuController").GetComponent<MenuController>();
+        StartCoroutine(FindDetectAreaMouse());
         playerUsernameLabel = transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
-        view = GetComponent<PhotonView>();
         anim = GetComponent<Animator>();
+        speed = maxSpeed;
+    }
+
+    IEnumerator FindDetectAreaMouse() {
+        yield return new WaitForSeconds(1.1f);
+        detectAreaMouse = GameObject.Find("AreaMouse").GetComponent<DetectAreaMouse>();
+        //yield return new WaitForSeconds(0.9f);
+        Server.canMove = true;
+        Debug.Log("unlocked");
     }
 
     void Animation() {
@@ -38,7 +54,7 @@ public class Movimentation : MonoBehaviour
         difference = mousePos - transform.position;
         difference.Normalize();    
         
-        if(!isRunning && !menuController.IsMenuPlayerEnable())
+        if(!isRunning && Server.canMove)
             rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
 
         if(rotationZ >= -45 && rotationZ <= 45)
@@ -53,31 +69,20 @@ public class Movimentation : MonoBehaviour
         anim.SetBool("isRunning", isRunning);
     }
 
-    void OnMouseDown() {
-        if(!menuController.IsMenuPlayerEnable() && playerUsernameLabel.text == Server.username) 
-            menuController.OpenMenuPlayer();
-    }
-
     void Update()
     {
         if(view.IsMine) {
-
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (Input.GetMouseButtonDown(0) && detectArea.getIsDetected() && !menuController.IsMenuPlayerEnable())
+            if (Server.canMove && detectAreaMouse != null)
             {
-                targetPos = new Vector3(mousePos.x, mousePos.y);
-                rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
-                speed = 10;
-            }
-
-            if(menuController.IsMenuPlayerEnable()) 
-                targetPos = transform.position;
-            
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
-
+                if(Input.GetMouseButtonDown(0) && detectAreaMouse.getIsDetected()) {
+                    targetPos = new Vector3(mousePos.x, mousePos.y);
+                    rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
+                }
+                transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
+            } else targetPos = transform.position;
             //transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPos);
-
             Animation();
         }
     }

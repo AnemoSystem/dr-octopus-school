@@ -10,9 +10,15 @@ public class Server : MonoBehaviour
     public InputField usernameField;
     public InputField passwordField;
     public Text errorDisplay;
+    public GameObject errorWindow;
+    public LoadWithTransition transition;
+    public Button[] buttons;
 
     // Global Variable
-    public static string username;
+    public static string username = "username";
+    public static int playersRoomA = 0;
+    public static int playersRoomB = 0;
+    public static bool canMove = true;
 
     public void Login() {
         StartCoroutine(Upload());
@@ -23,40 +29,59 @@ public class Server : MonoBehaviour
         form.AddField("username", usernameField.text);
         form.AddField("password", passwordField.text);
         
-        UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/login.php", form);
+        //UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/login.php", form);
+        UnityWebRequest www = UnityWebRequest.Post("http://localhost/school-management-system/unity/login.php", form);
         yield return www.SendWebRequest();
         
         switch (www.result)
         {
             case UnityWebRequest.Result.ConnectionError: /*transformar os debugs dos cases em labels de cores diferentes dentro do unity*/
-                Debug.Log("Connection Error");
+                //Debug.Log("Connection Error");
+                errorWindow.SetActive(true);
                 errorDisplay.text = "Erro de conexão!";
                 errorDisplay.color = Color.red;
-                yield return new WaitForSeconds(5);
-                errorDisplay.text = " ";
                 break;
             case UnityWebRequest.Result.DataProcessingError:
-                Debug.Log("Data Processing Error");
+                //Debug.Log("Data Processing Error");
+                errorWindow.SetActive(true);
                 errorDisplay.text = "Erro de processamento de dados!";
                 errorDisplay.color = Color.yellow;
-                yield return new WaitForSeconds(5);
-                errorDisplay.text = " ";
                 break;
             case UnityWebRequest.Result.ProtocolError:
-                Debug.Log("HTTP Error");
+                //Debug.Log("HTTP Error");
+                errorWindow.SetActive(true);
                 errorDisplay.text = "Erro de HTTP!";
                 errorDisplay.color = Color.magenta;
-                yield return new WaitForSeconds(5);
-                errorDisplay.text = " ";
                 break;
             case UnityWebRequest.Result.Success: //terminando os cases acima, avisar para o mr gui pra ele mostrar como faz o case desta linha
-               // Debug.Log("Form upload complete!");
-               // Debug.Log(www.downloadHandler.text); 
+                //Debug.Log("Form upload complete!");
+                //Debug.Log(www.downloadHandler.text); 
                 username = usernameField.text; 
-                if(www.downloadHandler.text == "Login Success - Disconnected")    
-                    SceneManager.LoadScene("Lobby");
+                if(www.downloadHandler.text == "Login Success - Disconnected") {   
+                    //SceneManager.LoadScene("Lobby");
+                    transition.FadeIn("Lobby");
+                    foreach(Button b in buttons) {
+                        b.interactable = false;
+                    }
+                }
+                else if(www.downloadHandler.text == "Login Success - Connected") {
+                    errorWindow.SetActive(true);
+                    errorDisplay.text = "Usuário conectado em outro dispositivo. Disconecte-se nele para entrar.";                    
+                }
+                else {
+                    errorWindow.SetActive(true);
+                    errorDisplay.text = "Usuário ou senha inexistentes!";
+                }
+                break;
+            default:
+                errorDisplay.text = "Não foi possível logar devido ao tempo de resposta.";
+                errorDisplay.color = Color.red;
                 break;
         }
         www.Dispose();
+    }
+
+    public void CloseWindowError() {
+        errorWindow.SetActive(false);
     }
 }

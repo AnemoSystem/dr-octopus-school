@@ -16523,10 +16523,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 7721422735598082666, guid: 04c8f94d233c3df44b8fead71ac9ca64, type: 3}
-  minX: -13
-  minY: -0.16
+  minX: -3
+  minY: -1
   maxY: -6
-  maxX: 13
+  maxX: 6
   menuPlayer: {fileID: 709834311}
 --- !u!4 &870677133
 Transform:

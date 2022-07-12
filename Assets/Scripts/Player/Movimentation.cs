@@ -74,7 +74,7 @@ public class Movimentation : MonoBehaviour
         if(view.IsMine) {
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (Server.canMove)
+            if (Server.canMove && detectAreaMouse != null)
             {
                 if(Input.GetMouseButtonDown(0) && detectAreaMouse.getIsDetected()) {
                     targetPos = new Vector3(mousePos.x, mousePos.y);

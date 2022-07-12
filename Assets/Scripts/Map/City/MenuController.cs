@@ -13,13 +13,15 @@ public class MenuController : MonoBehaviour
     public GameObject menuEmoji;
     public GameObject menuStudent;
 
+    public GameObject black;
+
     /*
     void Start() {
         CloseWind();
         CloseMenuPlayer();
     }
     */
-    
+
     // News
     public void OpenMenuNews() {
         MenuNews.SetActive(true);
@@ -63,6 +65,8 @@ public class MenuController : MonoBehaviour
 
     public void OpenMenuPlayer () {
         MenuPlayer.SetActive(true);
+        black.SetActive(true);
+        PlayerMoving(false);
         foreach(Transform child in MenuPlayer.transform) {
             child.gameObject.SetActive(true);
         }
@@ -70,6 +74,8 @@ public class MenuController : MonoBehaviour
 
     public void CloseMenuPlayer () {
         MenuPlayer.SetActive(false);
+        black.SetActive(false);
+        PlayerMoving(true);
         foreach(Transform child in MenuPlayer.transform) {
             child.gameObject.SetActive(false);
         }
@@ -78,21 +84,35 @@ public class MenuController : MonoBehaviour
     // Student
     public void OpenMenuStudent() {
         menuStudent.SetActive(true);
+        black.SetActive(true);
+    }
+
+    public void PlayerMoving(bool value) {
+        Server.canMove = value;
     }
 
     public void CloseMenuStudent() {
         menuStudent.SetActive(false);
+        black.SetActive(false);
+        PlayerMoving(true);
     }
 
     public void OpenOrCloseMenuEmoji() {
         if(menuEmoji.activeSelf) menuEmoji.SetActive(false);
         else menuEmoji.SetActive(true);
+        Server.canMove = !menuEmoji.activeSelf;
     }
 
     public void StartSendEmoji(int id) {
+        StartCoroutine(ReturnPlayer(id));
+    }
+
+    IEnumerator ReturnPlayer(int id) {
         ChatManager c = GameObject.Find(Server.username).GetComponent<ChatManager>();
         c.SendEmoji(id);
         menuEmoji.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        Server.canMove = true;
     }
 
     public bool IsMenuPlayerEnabled() {
@@ -106,5 +126,5 @@ public class MenuController : MonoBehaviour
     public bool IsAllMenusEnabled() {
         if(menuEmoji.activeSelf || MenuPlayer.activeSelf) return true;
         else return false;
-    }    
+    }
 }

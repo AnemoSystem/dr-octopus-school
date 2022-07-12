@@ -12,7 +12,6 @@ public class StudentData : MonoBehaviour
     public Text[] gradesLabels;
     public Text numAbsentLabel;
     public Text numClassLabel;
-    public Text frequencyLabel;
 
     private int id = 0; 
     public string[] subjects;
@@ -52,7 +51,6 @@ public class StudentData : MonoBehaviour
                 //Debug.Log("Length Row: " + row.Length);
                 string[] data_values;
                 int month;
-                float freq;
                 for(int i = 1; i <= 4; i++) {
                     if(i <= row.Length) {
                         data_values = row[i - 1].Split('%');
@@ -65,11 +63,6 @@ public class StudentData : MonoBehaviour
                             gradesLabels[month - 1].text = data_values[3] + "º Bimestre: " + data_values[2];
                         numClassLabel.text = "Aulas: " + data_values[4];
                         numAbsentLabel.text = "Faltas: " + data_values[5];
-                        /*
-                        freq = Int16.Parse(data_values[5])/Int16.Parse(data_values[4]);
-                        Debug.Log(freq);
-                        frequencyLabel.text = "Frequência: " + Math.Round(freq, 2, MidpointRounding.ToEven).ToString();
-                        */
                     }
                     else {
                         gradesLabels[i - 1].text = i.ToString() + "º Bimestre: Nota não definida.";

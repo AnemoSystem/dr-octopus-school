@@ -10,10 +10,14 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Animator anim;
     private bool activate;
+    [SerializeField]
+    private bool isWriting;
+    private string lastSentence;
 
     void Start() {
         sentences = new Queue<string>();
         activate = false;
+        isWriting = false;
     }
 
     public void StartDialogue(Dialogue dialogue) {
@@ -28,25 +32,40 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void DisplayNextSentence() {
-        if(sentences.Count == 0) {
+        if(sentences.Count == 0 && !isWriting) {
             EndDialogue();
             return;
         }
-        string sentence = sentences.Dequeue();
+        string sentence = "";
+        if(!isWriting) {
+            sentence = sentences.Dequeue();
+            lastSentence = sentence;
+        }
+        else sentence = lastSentence;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence, 0.05f));
     }
 
     IEnumerator TypeSentence(string sentence, float wait) {
-        dialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray()) {
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(wait);
+        if(!isWriting) {
+            dialogueText.text = "";
+            isWriting = true;
+            foreach(char letter in sentence.ToCharArray()) {
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(wait);
+            }
+            isWriting = false;
+        }
+        else {
+            dialogueText.text = sentence;
+            isWriting = false;
+            yield return null;
         }
     }
 
     void EndDialogue() {
         activate = false;
+        isWriting = false;
     }
 
     public bool getActivate() {

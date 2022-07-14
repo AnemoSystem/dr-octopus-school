@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ffb65e6932dab54bb532049bdcb61e8, type: 3}
-  m_Name: BlueLeg
+  m_Name: YellowLegs
   m_EditorClassIdentifier: 
-  productID: 0
-  name: 
-  price: 0
-  artwork: {fileID: 0}
+  productID: 2
+  name: "Cal\xE7a Amarela"
+  price: 50
+  artwork: {fileID: 21300000, guid: 0b147cd1d04868343ae387491af868fb, type: 3}

@@ -12,6 +12,7 @@ public class MenuController : MonoBehaviour
     public GameObject MenuPlayer;
     public GameObject menuEmoji;
     public GameObject menuStudent;
+    public GameObject menuShop;
 
     public GameObject black;
 
@@ -79,6 +80,16 @@ public class MenuController : MonoBehaviour
         foreach(Transform child in MenuPlayer.transform) {
             child.gameObject.SetActive(false);
         }
+    }
+
+    public void OpenShop() {
+        menuShop.SetActive(true);
+        black.SetActive(true);
+    }
+
+    public void CloseShop() {
+        menuShop.SetActive(false);
+         black.SetActive(false);
     }
 
     // Student

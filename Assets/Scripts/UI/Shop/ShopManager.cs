@@ -20,7 +20,7 @@ public class ShopManager : MonoBehaviour
         buyID = "999";
         buyType = "X";
         playerCoins = 0;
-        Server.username = "jooj";
+        //Server.username = "jooj";
         StartCoroutine(UpdateCoinsAndInventory(0));
     }
 

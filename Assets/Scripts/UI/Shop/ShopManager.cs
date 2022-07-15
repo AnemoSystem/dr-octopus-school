@@ -10,9 +10,11 @@ public class ShopManager : MonoBehaviour
     private int playerCoins;
     public Text playerCoinsText;
     private int focusPrice;
-
+    public GameObject window;
+    public Text windowMessage;
     private string buyID;
     private string buyType;
+    public Button[] buttons;
 
     void Start() {
         buyID = "999";
@@ -20,6 +22,23 @@ public class ShopManager : MonoBehaviour
         playerCoins = 0;
         Server.username = "jooj";
         StartCoroutine(UpdateCoinsAndInventory(0));
+    }
+
+    void ActivateButtons(bool state) {
+        foreach(Button b in buttons) {
+            b.interactable = state;
+        }
+    }
+
+    void OpenWindow(string message) {
+        window.SetActive(true);
+        windowMessage.text = message;
+        ActivateButtons(false);
+    }
+
+    public void CloseWindow() {
+        window.SetActive(false);
+        ActivateButtons(true);
     }
 
     public void BuyProduct(string id_type) {
@@ -61,6 +80,8 @@ public class ShopManager : MonoBehaviour
                 string result = www.downloadHandler.text.ToString();
                 if(result == "N")
                     StartBuy(focusPrice);
+                else
+                    OpenWindow("Você já possui este item.");
                 break;
         }
         www.Dispose();        
@@ -70,7 +91,7 @@ public class ShopManager : MonoBehaviour
         if(playerCoins >= price) {
             playerCoins -= price;
             StartCoroutine(UpdateCoinsAndInventory(1));
-        }
+        } else OpenWindow("Moedas insuficientes para comprar o item.");
     }
 
     void RecountPlayerCoins() {

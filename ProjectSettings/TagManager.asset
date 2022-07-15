@@ -8,6 +8,7 @@ TagManager:
   - P1Goal
   - Ground
   - Event
+  - Shop
   layers:
   - Default
   - TransparentFX

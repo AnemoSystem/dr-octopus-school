@@ -28,14 +28,11 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
         spriteRend[1] = this.transform.parent.gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
         spriteRend[2] = this.transform.parent.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
         spriteRend[3] = this.transform.parent.gameObject.transform.GetChild(2).GetComponent<SpriteRenderer>();
-        StartCoroutine(SearchItem("T"));
     } 
 
-    /*
-    void Update() {
-        UpdateIDsArray();
+    void OnEnable() {
+        StartCoroutine(SearchItem("T"));
     }
-    */
 
     public void UpdateIDsArray() {
         /*
@@ -54,7 +51,7 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
             if(idTorso > torso.Length - 1) idTorso = 0;
             else if (idTorso < 0) idTorso = listPartSelected[listPartSelected.Length - 1];
         }
-
+        
         //if(idHair > hair.Length - 1) idHair = 0;
         //else if (idHair < 0) idHair = hair.Length - 1;
     }
@@ -95,7 +92,7 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
             default:
                 break;
         }
-        
+
         spriteName = spriteName.Replace(bp, "");
         int idSprite = int.Parse(spriteName);
 
@@ -125,7 +122,6 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
                 break;
             case 1:
                 idTorso++;
-                UpdateIDsArray();
                 break;
             case 2:
                 idHair++;
@@ -136,6 +132,7 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
             default:
                 break;
         }
+        UpdateIDsArray();
     }
 
     public void PreviousPart(int whichPart) {
@@ -146,7 +143,6 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
                 break;
             case 1:
                 idTorso--;
-                UpdateIDsArray();
                 break;
             case 2:
                 idHair--;
@@ -157,6 +153,7 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
             default:
                 break;
         }
+        UpdateIDsArray();
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {

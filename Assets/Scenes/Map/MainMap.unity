@@ -3259,7 +3259,7 @@ MonoBehaviour:
   MenuPlayer: {fileID: 709834309}
   menuEmoji: {fileID: 616536184}
   menuStudent: {fileID: 1956488402}
-  menuShop: {fileID: 0}
+  menuShop: {fileID: 2068114463}
   black: {fileID: 1823626553}
 --- !u!4 &483528962
 Transform:

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.Networking;
+using System;
 
 public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
 {
@@ -17,31 +19,44 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
 
     public SpriteRenderer[] spriteRend;
     PhotonView view;
-    
+    private int[] listPartSelected;
+    private bool next;
+
     void Start() {
         view = GetComponent<PhotonView>();
         spriteRend[0] = this.transform.parent.gameObject.GetComponent<SpriteRenderer>();
         spriteRend[1] = this.transform.parent.gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
         spriteRend[2] = this.transform.parent.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
         spriteRend[3] = this.transform.parent.gameObject.transform.GetChild(2).GetComponent<SpriteRenderer>();
+        StartCoroutine(SearchItem("T"));
     } 
 
+    /*
     void Update() {
         UpdateIDsArray();
     }
+    */
 
     public void UpdateIDsArray() {
+        /*
         if(idSkin > skins.Length - 1) idSkin = 0;
         else if (idSkin < 0) idSkin = skins.Length - 1;
 
         if(idLegs > legs.Length - 1) idLegs = 0;
         else if (idLegs < 0) idLegs = legs.Length - 1;
-        
-        if(idTorso > torso.Length - 1) idTorso = 0;
-        else if (idTorso < 0) idTorso = torso.Length - 1;
+        */
+        //if(idTorso > torso.Length - 1) idTorso = 0;
+        //else if (idTorso < 0) idTorso = torso.Length - 1;
+        while(!Array.Exists(listPartSelected, element => element == idTorso)) {
+            if(next) idTorso++;
+            else idTorso--;
 
-        if(idHair > hair.Length - 1) idHair = 0;
-        else if (idHair < 0) idHair = hair.Length - 1;
+            if(idTorso > torso.Length - 1) idTorso = 0;
+            else if (idTorso < 0) idTorso = listPartSelected[listPartSelected.Length - 1];
+        }
+
+        //if(idHair > hair.Length - 1) idHair = 0;
+        //else if (idHair < 0) idHair = hair.Length - 1;
     }
 
     void LateUpdate() {
@@ -103,12 +118,14 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
     }
 
     public void NextPart(int whichPart) {
+        next = true;
         switch(whichPart) {
             case 0:
                 idSkin++;
                 break;
             case 1:
                 idTorso++;
+                UpdateIDsArray();
                 break;
             case 2:
                 idHair++;
@@ -122,12 +139,14 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
     }
 
     public void PreviousPart(int whichPart) {
+        next = false;
         switch(whichPart) {
             case 0:
                 idSkin--;
                 break;
             case 1:
                 idTorso--;
+                UpdateIDsArray();
                 break;
             case 2:
                 idHair--;
@@ -152,6 +171,36 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
             idHair = (int)stream.ReceiveNext();
             idLegs = (int)stream.ReceiveNext();
         }
+    }
+
+    IEnumerator SearchItem(string type) {
+        WWWForm form = new WWWForm();
+        form.AddField("username", Server.username);
+        form.AddField("type", type);
+
+        UnityWebRequest www = UnityWebRequest.Post("http://localhost/school-management-system/unity/search_menu_itens.php", form);
+        yield return www.SendWebRequest();
+        
+        switch (www.result)
+        {
+            case UnityWebRequest.Result.ConnectionError:
+                Debug.Log("Connection Error");
+                break;
+            case UnityWebRequest.Result.DataProcessingError:
+                Debug.Log("Data Processing Error");
+                break;
+            case UnityWebRequest.Result.ProtocolError:
+                Debug.Log("HTTP Error");
+                break;
+            case UnityWebRequest.Result.Success:
+                string result = www.downloadHandler.text.ToString();
+                string[] data = result.Split('-');
+                listPartSelected = new int[data.Length];
+                for(int i = 0; i < data.Length; i++)
+                    listPartSelected[i] = int.Parse(data[i]);
+                break;
+        }
+        www.Dispose();         
     }
 }
 

@@ -85,11 +85,12 @@ public class MenuController : MonoBehaviour
     public void OpenShop() {
         menuShop.SetActive(true);
         black.SetActive(true);
+        menuEmoji.SetActive(false);
     }
 
     public void CloseShop() {
         menuShop.SetActive(false);
-         black.SetActive(false);
+        black.SetActive(false);
     }
 
     // Student

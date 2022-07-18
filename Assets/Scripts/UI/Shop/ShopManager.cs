@@ -11,10 +11,17 @@ public class ShopManager : MonoBehaviour
     public Text playerCoinsText;
     private int focusPrice;
     public GameObject window;
+    public GameObject windowConfirm;
     public Text windowMessage;
     private string buyID;
     private string buyType;
     public Button[] buttons;
+    private string idSelected;
+
+    void OnEnable() {
+        CloseWindow();
+        CloseWindowConfirm();
+    }
 
     void Start() {
         buyID = "999";
@@ -41,18 +48,36 @@ public class ShopManager : MonoBehaviour
         ActivateButtons(true);
     }
 
-    public void BuyProduct(string id_type) {
-        string[] result = id_type.Split('#');
+
+    public void OpenWindowConfirm(string idType) {
+        StartCoroutine(StartOpenWindowConfirm(idType));
+    }
+
+    IEnumerator StartOpenWindowConfirm(string idType) {
+        yield return StartCoroutine(GetFocusPrice());
+        idSelected = idType;
+        windowConfirm.SetActive(true);
+        ActivateButtons(false);
+    }
+
+    public void CloseWindowConfirm() {
+        windowConfirm.SetActive(false);
+        ActivateButtons(true);        
+    }
+
+    public void BuyProduct() {
+        string[] result = idSelected.Split('#');
         buyID = result[0];
         buyType = result[1];
         StartCoroutine(FindProductDatabase(buyID, buyType));
     }
 
-    public void GetFocusPrice() {
+    IEnumerator GetFocusPrice() {
         //focusPrice = price;
         GameObject button = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
         ProductDisplay pd = button.transform.parent.gameObject.GetComponent<ProductDisplay>();
         focusPrice = pd.product.price;
+        yield return null;
     }
 
     IEnumerator FindProductDatabase(string id, string type) {
@@ -91,6 +116,7 @@ public class ShopManager : MonoBehaviour
         if(playerCoins >= price) {
             playerCoins -= price;
             StartCoroutine(UpdateCoinsAndInventory(1));
+            OpenWindow("Compra realizada com sucesso!");
         } else OpenWindow("Moedas insuficientes para comprar o item.");
     }
 

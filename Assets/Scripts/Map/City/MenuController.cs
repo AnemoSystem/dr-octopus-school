@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
@@ -138,5 +139,11 @@ public class MenuController : MonoBehaviour
     public bool IsAllMenusEnabled() {
         if(menuEmoji.activeSelf || MenuPlayer.activeSelf) return true;
         else return false;
+    }
+
+    public void Test() {
+        SceneManager.LoadScene("Runner");
+        GameObject o = GameObject.Find(Server.username);
+        o.transform.position = new Vector2(-20, -20);
     }
 }

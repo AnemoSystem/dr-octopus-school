@@ -15,6 +15,10 @@ public class CustomBodyPartMenu : MonoBehaviour
         FindPlayer();
         UpdateMenuBodyParts();
     }
+    
+    void OnDisable() {
+        UpdatePlayerBodyParts();
+    }
 
     public void UpdateMenuBodyParts() {
         menuBodyPart.idSkin = playerBodyPart.idSkin;
@@ -28,7 +32,7 @@ public class CustomBodyPartMenu : MonoBehaviour
         playerBodyPart.idTorso = menuBodyPart.idTorso;
         playerBodyPart.idLegs = menuBodyPart.idLegs;
         playerBodyPart.idHair = menuBodyPart.idHair;
-        playerBodyPart.UpdateIDsArray();
+        //playerBodyPart.UpdateIDsArray();
     }
 
     public void FindPlayer() {

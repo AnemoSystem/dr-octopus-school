@@ -7,6 +7,10 @@ TagManager:
   - P2Goal
   - P1Goal
   - Ground
+  - Event
+  - Shop
+  - ObstacleRunner
+  - ObstaclePatternRunner
   layers:
   - Default
   - TransparentFX

@@ -106,6 +106,18 @@ MonoBehaviour:
     - {fileID: 5976025642014404409, guid: 0054ff2cfc864c443a9f6b7d7ada0bfd, type: 3}
     - {fileID: -5782448234288765724, guid: 0054ff2cfc864c443a9f6b7d7ada0bfd, type: 3}
     - {fileID: 2737690165777413875, guid: 0054ff2cfc864c443a9f6b7d7ada0bfd, type: 3}
+  - name: Blusa Rosa
+    sprites:
+    - {fileID: -3780588209913768622, guid: 06c027cf351097d44b8510e8c73ef18a, type: 3}
+    - {fileID: 7668539552959532921, guid: 06c027cf351097d44b8510e8c73ef18a, type: 3}
+    - {fileID: -9146118721621743485, guid: 06c027cf351097d44b8510e8c73ef18a, type: 3}
+    - {fileID: -1139929609213013307, guid: 06c027cf351097d44b8510e8c73ef18a, type: 3}
+  - name: Blusa Emoji
+    sprites:
+    - {fileID: 5341081213632532517, guid: e35c4045014b36444add926202cf41bc, type: 3}
+    - {fileID: -3846802012997031799, guid: e35c4045014b36444add926202cf41bc, type: 3}
+    - {fileID: -2448466583299309960, guid: e35c4045014b36444add926202cf41bc, type: 3}
+    - {fileID: 3108173451361299650, guid: e35c4045014b36444add926202cf41bc, type: 3}
   hair:
   - name: Cabelo Preto
     sprites:

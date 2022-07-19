@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 8099495300082630521}
   m_Layer: 0
   m_Name: ObstaclePattern01
-  m_TagString: Untagged
+  m_TagString: ObstaclePatternRunner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

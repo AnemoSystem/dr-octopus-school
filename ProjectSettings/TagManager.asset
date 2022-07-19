@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - Event
   - Shop
+  - ObstacleRunner
+  - ObstaclePatternRunner
   layers:
   - Default
   - TransparentFX

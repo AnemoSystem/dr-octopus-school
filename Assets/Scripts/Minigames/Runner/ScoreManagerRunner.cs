@@ -14,8 +14,10 @@ public class ScoreManagerRunner : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("ObstacleRunner") && !gameOver.activeSelf)
+        if (other.CompareTag("ObstacleRunner") && !gameOver.activeSelf) {
             score += 0.5f;
+            if(score % 5 == 0) Server.bonusCoins++;
+        }
         Destroy(other.gameObject);
     }
 }

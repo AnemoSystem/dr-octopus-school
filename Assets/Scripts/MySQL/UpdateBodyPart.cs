@@ -7,6 +7,10 @@ public class UpdateBodyPart : MonoBehaviour
 {
     public CustomBodyPartMenu cs;
 
+    void Start() {
+        Server.bonusCoins = 0;
+    }
+
     public void StartUpdateDatabase() {
         StartCoroutine(UpdateDatabaseParts());
     }

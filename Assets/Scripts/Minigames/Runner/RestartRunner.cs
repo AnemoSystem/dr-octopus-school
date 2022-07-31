@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class RestartRunner : MonoBehaviour
 {
+    public LoadWithTransition transition;
+
     void Update() {
         if(Input.GetKeyDown(KeyCode.R)) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            transition.FadeIn("Runner");
         }
     }
 }

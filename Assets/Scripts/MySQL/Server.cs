@@ -19,6 +19,8 @@ public class Server : MonoBehaviour
     public static int playersRoomA = 0;
     public static int playersRoomB = 0;
     public static bool canMove = true;
+    public static int bonusCoins = 0;
+    public static string actualMinigame = "";
 
     public void Login() {
         StartCoroutine(Upload());

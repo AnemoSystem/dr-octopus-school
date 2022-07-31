@@ -4,31 +4,47 @@ using UnityEngine.UI;
 
 public class GameManagerBlockfall : MonoBehaviour
 {
-    public Ball ball { get; private set; }
-    public Paddle paddle { get; private set; }
+    public Ball ball;
+    public Paddle paddle;
     public Brick[] bricks { get; private set; }
     public Text scoreDisplay;
     public Text livesDisplay;
     public GameObject gameOver;
+
+    public GameObject ballObject;
+    public GameObject paddleObject;
+    public GameObject bricksReference;
+    public GameObject menuStart;
+    public GameObject menuScore;
+
     //const int NUM_LEVELS = 2;
 
     //public int level = 1;
     public int score = 0;
     public int lives = 3;
 
+    public void NewGame() {
+        ballObject.SetActive(true);
+        paddleObject.SetActive(true);
+        bricksReference.SetActive(true);
+        menuStart.SetActive(false);
+        menuScore.SetActive(true);
+    }
+
+/*
     private void Awake()
     {
         //DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnLevelLoaded;
     }
-
+*/
     private void Start()
     {
-        NewGame();
+        ResetData();
     }
 
-    private void NewGame()
+    private void ResetData()
     {
         score = 0;
         lives = 3;
@@ -36,10 +52,8 @@ public class GameManagerBlockfall : MonoBehaviour
         //LoadLevel(1);
     }
 
-    
-
     void Update() {
-        scoreDisplay.text = "banana";
+        scoreDisplay.text = score.ToString();
         livesDisplay.text = lives.ToString(); 
     }
 
@@ -58,13 +72,14 @@ public class GameManagerBlockfall : MonoBehaviour
         //SceneManager.LoadScene("Level" + level);
     //}
 
+/*
     private void OnLevelLoaded(Scene scene, LoadSceneMode mode)
     {
         ball = FindObjectOfType<Ball>();
         paddle = FindObjectOfType<Paddle>();
         bricks = FindObjectsOfType<Brick>();
     }
-
+*/
     public void Miss()
     {
         lives--;
@@ -100,6 +115,8 @@ public class GameManagerBlockfall : MonoBehaviour
     {
         score += brick.points;
 
+        if(score % 500 == 0)
+            Server.bonusCoins += 1;
         /*if (Cleared()) {
             LoadLevel(level + 1);
         }*/

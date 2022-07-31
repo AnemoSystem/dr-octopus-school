@@ -16,6 +16,7 @@ public class MenuController : MonoBehaviour
     public GameObject menuShop;
 
     public GameObject black;
+    public GameObject windowConfirm;
 
     /*
     void Start() {
@@ -83,6 +84,7 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    // Shop
     public void OpenShop() {
         menuShop.SetActive(true);
         black.SetActive(true);
@@ -145,5 +147,15 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("Runner");
         GameObject o = GameObject.Find(Server.username);
         o.transform.position = new Vector2(-20, -20);
+    }
+
+    public void OpenWindowConfirm() {
+        windowConfirm.SetActive(true);
+        black.SetActive(true);
+    }
+
+    public void CloseWindowConfirm() {
+        windowConfirm.SetActive(false);
+        black.SetActive(false);
     }
 }

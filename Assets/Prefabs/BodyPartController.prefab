@@ -93,6 +93,28 @@ MonoBehaviour:
     - {fileID: 7383489116790351417, guid: c5347c0071cc99845badbf6cba4b6309, type: 3}
     - {fileID: 3741057482745972754, guid: c5347c0071cc99845badbf6cba4b6309, type: 3}
     - {fileID: -8032313322334595175, guid: c5347c0071cc99845badbf6cba4b6309, type: 3}
+  - name: "Cal\xE7a Amarela"
+    sprites:
+    - {fileID: -8370433473602499892, guid: 79aa2a7681498bd4bb68e378d5e543d5, type: 3}
+    - {fileID: -5485773720361416042, guid: 79aa2a7681498bd4bb68e378d5e543d5, type: 3}
+    - {fileID: 6371590383855214799, guid: 79aa2a7681498bd4bb68e378d5e543d5, type: 3}
+    - {fileID: -4655572307275437574, guid: 79aa2a7681498bd4bb68e378d5e543d5, type: 3}
+    - {fileID: -4233378839528053673, guid: 79aa2a7681498bd4bb68e378d5e543d5, type: 3}
+    - {fileID: 7204802318057666761, guid: 79aa2a7681498bd4bb68e378d5e543d5, type: 3}
+    - {fileID: 6607775698216993010, guid: 79aa2a7681498bd4bb68e378d5e543d5, type: 3}
+    - {fileID: 4081334505171840949, guid: 79aa2a7681498bd4bb68e378d5e543d5, type: 3}
+    - {fileID: 3930099989903492646, guid: 79aa2a7681498bd4bb68e378d5e543d5, type: 3}
+  - name: "Cal\xE7a Ciana"
+    sprites:
+    - {fileID: -606198939060742548, guid: 19e930b09cbd8f548be7175b2b4ad873, type: 3}
+    - {fileID: 4957614142490395874, guid: 19e930b09cbd8f548be7175b2b4ad873, type: 3}
+    - {fileID: 3328877112322077572, guid: 19e930b09cbd8f548be7175b2b4ad873, type: 3}
+    - {fileID: -8446370484471552501, guid: 19e930b09cbd8f548be7175b2b4ad873, type: 3}
+    - {fileID: -4570013771825609474, guid: 19e930b09cbd8f548be7175b2b4ad873, type: 3}
+    - {fileID: -406918353122177028, guid: 19e930b09cbd8f548be7175b2b4ad873, type: 3}
+    - {fileID: -3407069849270608201, guid: 19e930b09cbd8f548be7175b2b4ad873, type: 3}
+    - {fileID: 8579433461261039281, guid: 19e930b09cbd8f548be7175b2b4ad873, type: 3}
+    - {fileID: 9019027619951225738, guid: 19e930b09cbd8f548be7175b2b4ad873, type: 3}
   torso:
   - name: Blusa Vermelha
     sprites:
@@ -131,6 +153,18 @@ MonoBehaviour:
     - {fileID: 4519274414318994321, guid: 5e544d63857482f49bb173f9f5ab3df2, type: 3}
     - {fileID: 5011793205462532195, guid: 5e544d63857482f49bb173f9f5ab3df2, type: 3}
     - {fileID: 3766805533615512803, guid: 5e544d63857482f49bb173f9f5ab3df2, type: 3}
+  - name: Cabelo Verde
+    sprites:
+    - {fileID: -8533227474158128257, guid: d64329314b1fcfe479820495699ad969, type: 3}
+    - {fileID: -2110452287495015081, guid: d64329314b1fcfe479820495699ad969, type: 3}
+    - {fileID: -2241425561024831403, guid: d64329314b1fcfe479820495699ad969, type: 3}
+    - {fileID: -156504018495567670, guid: d64329314b1fcfe479820495699ad969, type: 3}
+  - name: Cabelo Rosa
+    sprites:
+    - {fileID: -6136956604517118529, guid: 206a4accbdcaeb54fa9b0245bfa7fc30, type: 3}
+    - {fileID: -7679892084005751415, guid: 206a4accbdcaeb54fa9b0245bfa7fc30, type: 3}
+    - {fileID: 7063969655197617818, guid: 206a4accbdcaeb54fa9b0245bfa7fc30, type: 3}
+    - {fileID: 8405054757644612630, guid: 206a4accbdcaeb54fa9b0245bfa7fc30, type: 3}
   spriteRend:
   - {fileID: 0}
   - {fileID: 0}

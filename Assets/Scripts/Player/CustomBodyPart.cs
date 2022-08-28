@@ -32,28 +32,46 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
 
     void OnEnable() {
         StartCoroutine(SearchItem("T"));
+        StartCoroutine(SearchItem("H"));
+        StartCoroutine(SearchItem("L"));
     }
 
-    public void UpdateIDsArray() {
-        /*
-        if(idSkin > skins.Length - 1) idSkin = 0;
-        else if (idSkin < 0) idSkin = skins.Length - 1;
+    public void UpdateIDsArray(string type) {
+        switch(type) {
+            case "S":
+                if(idSkin > skins.Length - 1) idSkin = 0;
+                else if (idSkin < 0) idSkin = skins.Length - 1;
+                break;
+            case "T":
+                while(!Array.Exists(listPartSelected, element => element == idTorso)) {
+                    if(next) idTorso++;
+                    else idTorso--;
 
-        if(idLegs > legs.Length - 1) idLegs = 0;
-        else if (idLegs < 0) idLegs = legs.Length - 1;
-        */
-        //if(idTorso > torso.Length - 1) idTorso = 0;
-        //else if (idTorso < 0) idTorso = torso.Length - 1;
-        while(!Array.Exists(listPartSelected, element => element == idTorso)) {
-            if(next) idTorso++;
-            else idTorso--;
+                    if(idTorso > torso.Length - 1) idTorso = 0;
+                    else if (idTorso < 0) idTorso = listPartSelected[listPartSelected.Length - 1];
+                }
+                break;
+            case "H":
+                while(!Array.Exists(listPartSelected, element => element == idHair)) {
+                    if(next) idHair++;
+                    else idHair--;
 
-            if(idTorso > torso.Length - 1) idTorso = 0;
-            else if (idTorso < 0) idTorso = listPartSelected[listPartSelected.Length - 1];
-        }
-        
-        //if(idHair > hair.Length - 1) idHair = 0;
-        //else if (idHair < 0) idHair = hair.Length - 1;
+                    if(idHair > hair.Length - 1) idHair = 0;
+                    else if (idHair < 0) idHair = listPartSelected[listPartSelected.Length - 1];
+                }
+                break;
+            case "L":            
+                while(!Array.Exists(listPartSelected, element => element == idLegs)) {
+                    if(next) idLegs++;
+                    else idLegs--;
+
+                    if(idLegs > legs.Length - 1) idLegs = 0;
+                    else if (idLegs < 0) idLegs = listPartSelected[listPartSelected.Length - 1];
+                }
+                break;
+            default:
+                break;
+        }       
     }
 
     void LateUpdate() {
@@ -119,20 +137,23 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
         switch(whichPart) {
             case 0:
                 idSkin++;
+                UpdateIDsArray("S");
                 break;
             case 1:
                 idTorso++;
+                UpdateIDsArray("T");
                 break;
             case 2:
                 idHair++;
+                UpdateIDsArray("H");
                 break;
             case 3:
                 idLegs++;
+                UpdateIDsArray("L");
                 break;
             default:
                 break;
         }
-        UpdateIDsArray();
     }
 
     public void PreviousPart(int whichPart) {
@@ -140,20 +161,23 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
         switch(whichPart) {
             case 0:
                 idSkin--;
+                UpdateIDsArray("S");
                 break;
             case 1:
                 idTorso--;
+                UpdateIDsArray("T");
                 break;
             case 2:
                 idHair--;
+                UpdateIDsArray("H");
                 break;
             case 3:
                 idLegs--;
+                UpdateIDsArray("L");
                 break;
             default:
                 break;
         }
-        UpdateIDsArray();
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {

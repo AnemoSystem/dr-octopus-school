@@ -199,7 +199,7 @@ public class CustomBodyPart : MonoBehaviour, Photon.Pun.IPunObservable
         form.AddField("username", Server.username);
         form.AddField("type", type);
 
-        UnityWebRequest www = UnityWebRequest.Post("http://localhost/school-management-system/unity/search_menu_itens.php", form);
+        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/school-management-system/unity/search_menu_itens.php", form);
         yield return www.SendWebRequest();
         
         switch (www.result)

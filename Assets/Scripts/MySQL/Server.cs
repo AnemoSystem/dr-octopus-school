@@ -14,13 +14,14 @@ public class Server : MonoBehaviour
     public LoadWithTransition transition;
     public Button[] buttons;
 
-    // Global Variable
+    // Global Variables
     public static string username = "username";
     public static int playersRoomA = 0;
     public static int playersRoomB = 0;
     public static bool canMove = true;
     public static int bonusCoins = 0;
     public static string actualMinigame = "";
+    public static string mainServer = "http://localhost";
 
     public void Login() {
         StartCoroutine(Upload());
@@ -32,7 +33,7 @@ public class Server : MonoBehaviour
         form.AddField("password", passwordField.text);
         
         //UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/login.php", form);
-        UnityWebRequest www = UnityWebRequest.Post("http://localhost/school-management-system/unity/login.php", form);
+        UnityWebRequest www = UnityWebRequest.Post(mainServer + "/school-management-system/unity/login.php", form);
         yield return www.SendWebRequest();
         
         switch (www.result)

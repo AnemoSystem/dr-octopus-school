@@ -25,7 +25,7 @@ public class StudentData : MonoBehaviour
         form.AddField("username", Server.username);
         form.AddField("subject", subject);
 
-        UnityWebRequest www = UnityWebRequest.Post("http://localhost/school-management-system/unity/grades.php", form);
+        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/school-management-system/unity/grades.php", form);
         yield return www.SendWebRequest();
         
         switch (www.result)

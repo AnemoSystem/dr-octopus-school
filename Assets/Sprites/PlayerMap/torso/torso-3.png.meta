@@ -13,7 +13,7 @@ TextureImporter:
     second: torso-3_2
   - first:
       213: 3108173451361299650
-    second: torso-3_3
+    second: torso-3_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -145,7 +145,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: torso-3_2
+      name: torso-3_3
       rect:
         serializedVersion: 2
         x: 35
@@ -166,7 +166,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: torso-3_3
+      name: torso-3_2
       rect:
         serializedVersion: 2
         x: 55

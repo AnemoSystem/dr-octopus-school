@@ -22,12 +22,14 @@ public class Server : MonoBehaviour
     public static int bonusCoins = 0;
     public static string actualMinigame = "";
     public static string mainServer = "http://localhost";
+    public static bool firstOpenning = false;
 
     public void Login() {
         StartCoroutine(Upload());
     }
 
     IEnumerator Upload() {
+        bool updateEntries = false;
         WWWForm form = new WWWForm();
         form.AddField("username", usernameField.text);
         form.AddField("password", passwordField.text);
@@ -38,7 +40,7 @@ public class Server : MonoBehaviour
         
         switch (www.result)
         {
-            case UnityWebRequest.Result.ConnectionError: /*transformar os debugs dos cases em labels de cores diferentes dentro do unity*/
+            case UnityWebRequest.Result.ConnectionError:
                 //Debug.Log("Connection Error");
                 errorWindow.SetActive(true);
                 errorDisplay.text = "Erro de conexão!";
@@ -56,16 +58,16 @@ public class Server : MonoBehaviour
                 errorDisplay.text = "Erro de HTTP!";
                 errorDisplay.color = Color.magenta;
                 break;
-            case UnityWebRequest.Result.Success: //terminando os cases acima, avisar para o mr gui pra ele mostrar como faz o case desta linha
+            case UnityWebRequest.Result.Success:
                 //Debug.Log("Form upload complete!");
                 //Debug.Log(www.downloadHandler.text); 
                 username = usernameField.text; 
                 if(www.downloadHandler.text == "Login Success - Disconnected") {   
                     //SceneManager.LoadScene("Lobby");
-                    transition.FadeIn("Lobby");
                     foreach(Button b in buttons) {
                         b.interactable = false;
                     }
+                    updateEntries = true;
                 }
                 else if(www.downloadHandler.text == "Login Success - Connected") {
                     errorWindow.SetActive(true);
@@ -80,6 +82,30 @@ public class Server : MonoBehaviour
                 errorDisplay.text = "Não foi possível logar devido ao tempo de resposta.";
                 errorDisplay.color = Color.red;
                 break;
+        }
+
+        if(updateEntries) {
+            www = UnityWebRequest.Post(mainServer + "/school-management-system/unity/update_entries.php", form);
+            yield return www.SendWebRequest();
+            switch(www.result)
+            {
+                case UnityWebRequest.Result.ConnectionError:
+                    Debug.Log("Connection Error");
+                    break;
+                case UnityWebRequest.Result.DataProcessingError:
+                    Debug.Log("Data Processing Error");
+                    break;
+                case UnityWebRequest.Result.ProtocolError:
+                    Debug.Log("HTTP Error");
+                    break;
+                case UnityWebRequest.Result.Success:
+                    string result = www.downloadHandler.text;
+                    if(result == "1") firstOpenning = true;
+                    transition.FadeIn("Lobby");
+                    break;
+                default:
+                    break;
+            }
         }
         www.Dispose();
     }

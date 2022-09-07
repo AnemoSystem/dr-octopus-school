@@ -3819,7 +3819,8 @@ MonoBehaviour:
   dialogue:
     name: Dr. Octopus
     sentences:
-    - eae
+    - "eae como q vc t\xE1"
+    - "isso \xE9 mais um teste"
 --- !u!1 &525481471
 GameObject:
   m_ObjectHideFlags: 0

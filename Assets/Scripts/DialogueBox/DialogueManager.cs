@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Animator anim;
     private bool activate;
+    public GameObject blackBK;
     [SerializeField]
     private bool isWriting;
     private string lastSentence;
@@ -18,11 +19,13 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         activate = false;
         isWriting = false;
+        blackBK.SetActive(false);
     }
 
     public void StartDialogue(Dialogue dialogue) {
         Debug.Log("Start Conversation with " + dialogue.name);
         anim.SetBool("isOpen", true);
+        blackBK.SetActive(true);
         activate = true;
         nameText.text = dialogue.name;
         sentences.Clear();
@@ -68,6 +71,7 @@ public class DialogueManager : MonoBehaviour
         activate = false;
         isWriting = false;
         anim.SetBool("isOpen", false);
+        blackBK.SetActive(false);
     }
 
     public bool getActivate() {

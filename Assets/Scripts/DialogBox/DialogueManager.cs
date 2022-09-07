@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue) {
         Debug.Log("Start Conversation with " + dialogue.name);
+        anim.SetBool("isOpen", true);
         activate = true;
         nameText.text = dialogue.name;
         sentences.Clear();
@@ -66,6 +67,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue() {
         activate = false;
         isWriting = false;
+        anim.SetBool("isOpen", false);
     }
 
     public bool getActivate() {

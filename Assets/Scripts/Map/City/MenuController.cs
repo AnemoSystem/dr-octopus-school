@@ -27,7 +27,8 @@ public class MenuController : MonoBehaviour
 
     // News
     public void OpenMenuNews() {
-        MenuNews.SetActive(true);
+        //MenuNews.SetActive(true);
+        Application.OpenURL("https://gggcd-tcc.github.io/download-site/blog.html");
     }
 
     public void CloseMenuNews () {

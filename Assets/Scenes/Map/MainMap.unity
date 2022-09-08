@@ -25817,6 +25817,7 @@ MonoBehaviour:
   nameText: {fileID: 1964633722}
   dialogueText: {fileID: 1329419537}
   anim: {fileID: 1056272328}
+  blackBK: {fileID: 1823626553}
   isWriting: 0
 --- !u!1 &1823626553
 GameObject:

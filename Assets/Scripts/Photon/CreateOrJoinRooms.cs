@@ -19,7 +19,7 @@ public class CreateOrJoinRooms : MonoBehaviourPunCallbacks
         foreach(Button b in buttons) {
             b.interactable = false;
         }
-        transition.FadeInRoom("MainMap");
+        transition.FadeInLevel("MainMap");
         Server.canMove = false;
     }
 }

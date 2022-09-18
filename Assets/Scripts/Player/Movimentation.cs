@@ -17,6 +17,8 @@ public class Movimentation : MonoBehaviour
     private float rotationZ;
     private Vector3 difference;
     private Text playerUsernameLabel;
+
+    [SerializeField]
     private DetectAreaMouse detectAreaMouse;
 
     PhotonView view;

@@ -884,6 +884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
+  detectAreaMouse: {fileID: 0}
 --- !u!114 &7721422735598082640
 MonoBehaviour:
   m_ObjectHideFlags: 0

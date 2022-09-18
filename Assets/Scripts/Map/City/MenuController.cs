@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
@@ -11,6 +11,12 @@ public class MenuController : MonoBehaviour
     public GameObject MenuMap;
 
     public GameObject MenuPlayer;
+    public GameObject menuEmoji;
+    public GameObject menuStudent;
+    public GameObject menuShop;
+
+    public GameObject black;
+    public GameObject windowConfirm;
 
     /*
     void Start() {
@@ -18,17 +24,18 @@ public class MenuController : MonoBehaviour
         CloseMenuPlayer();
     }
     */
-    
-// News
+
+    // News
     public void OpenMenuNews() {
-        MenuNews.SetActive(true);
+        //MenuNews.SetActive(true);
+        Application.OpenURL("https://gggcd-tcc.github.io/download-site/blog.html");
     }
 
     public void CloseMenuNews () {
         MenuNews.SetActive(false);
     }
 
-// Configurations
+    // Configurations
     public void OpenMenuConfig() {
         MenuConfig.SetActive(true);
     }
@@ -37,7 +44,7 @@ public class MenuController : MonoBehaviour
         MenuConfig.SetActive(false);
     }
 
-// Notifications
+    // Notifications
     public void OpenMenuNotif() {
         MenuNotif.SetActive(true);
     }
@@ -46,14 +53,15 @@ public class MenuController : MonoBehaviour
         MenuNotif.SetActive(false);
     }
 
-// Map
+    // Map
     public void OpenMenuMap() {
         MenuMap.SetActive(true);
     }
 
     public void CloseMenuMap () {
         MenuMap.SetActive(false);
-}
+    }
+
     public void SendMessage() {
         ChatManager c = GameObject.Find(Server.username).GetComponent<ChatManager>();
         c.StartMessage();
@@ -61,6 +69,8 @@ public class MenuController : MonoBehaviour
 
     public void OpenMenuPlayer () {
         MenuPlayer.SetActive(true);
+        black.SetActive(true);
+        PlayerMoving(false);
         foreach(Transform child in MenuPlayer.transform) {
             child.gameObject.SetActive(true);
         }
@@ -68,42 +78,85 @@ public class MenuController : MonoBehaviour
 
     public void CloseMenuPlayer () {
         MenuPlayer.SetActive(false);
+        black.SetActive(false);
+        PlayerMoving(true);
         foreach(Transform child in MenuPlayer.transform) {
             child.gameObject.SetActive(false);
         }
     }
 
-    public void CloseGame() {
-        StartCoroutine(Disconnect());
+    // Shop
+    public void OpenShop() {
+        menuShop.SetActive(true);
+        black.SetActive(true);
+        menuEmoji.SetActive(false);
     }
 
-    public bool IsMenuPlayerEnable() {
+    public void CloseShop() {
+        menuShop.SetActive(false);
+        black.SetActive(false);
+    }
+
+    // Student
+    public void OpenMenuStudent() {
+        menuStudent.SetActive(true);
+        black.SetActive(true);
+    }
+
+    public void PlayerMoving(bool value) {
+        Server.canMove = value;
+    }
+
+    public void CloseMenuStudent() {
+        menuStudent.SetActive(false);
+        black.SetActive(false);
+        PlayerMoving(true);
+    }
+
+    public void OpenOrCloseMenuEmoji() {
+        if(menuEmoji.activeSelf) menuEmoji.SetActive(false);
+        else menuEmoji.SetActive(true);
+        Server.canMove = !menuEmoji.activeSelf;
+    }
+
+    public void StartSendEmoji(int id) {
+        StartCoroutine(ReturnPlayer(id));
+    }
+
+    IEnumerator ReturnPlayer(int id) {
+        ChatManager c = GameObject.Find(Server.username).GetComponent<ChatManager>();
+        c.SendEmoji(id);
+        menuEmoji.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        Server.canMove = true;
+    }
+
+    public bool IsMenuPlayerEnabled() {
         return MenuPlayer.activeSelf;
     }
 
-    IEnumerator Disconnect() {
-        WWWForm form = new WWWForm();
-        form.AddField("username", Server.username);
+    public bool IsMenuEmojiEnabled() {
+        return menuEmoji.activeSelf;
+    }
 
-        UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/disconnect_login.php", form);
-        yield return www.SendWebRequest();
+    public bool IsAllMenusEnabled() {
+        if(menuEmoji.activeSelf || MenuPlayer.activeSelf) return true;
+        else return false;
+    }
 
-        switch (www.result)
-        {
-            case UnityWebRequest.Result.ConnectionError:
-                Debug.Log("Connection Error");
-                break;
-            case UnityWebRequest.Result.DataProcessingError:
-                Debug.Log("Data Processing Error");
-                break;
-            case UnityWebRequest.Result.ProtocolError:
-                Debug.Log("HTTP Error");
-                break;
-            case UnityWebRequest.Result.Success:
-                Debug.Log("Disconnect with success");
-                Application.Quit();
-                break;
-        }
-        www.Dispose();        
+    public void Test() {
+        SceneManager.LoadScene("Runner");
+        GameObject o = GameObject.Find(Server.username);
+        o.transform.position = new Vector2(-20, -20);
+    }
+
+    public void OpenWindowConfirm() {
+        windowConfirm.SetActive(true);
+        black.SetActive(true);
+    }
+
+    public void CloseWindowConfirm() {
+        windowConfirm.SetActive(false);
+        black.SetActive(false);
     }
 }

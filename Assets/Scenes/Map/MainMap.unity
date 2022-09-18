@@ -3592,6 +3592,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 1074096524}
   whichScene: test
+  roomName: A_test
+  isIndividualScene: 0
 --- !u!61 &471256545
 BoxCollider2D:
   m_ObjectHideFlags: 0

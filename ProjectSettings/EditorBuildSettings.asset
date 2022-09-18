@@ -19,7 +19,7 @@ EditorBuildSettings:
     guid: ab1f972eda6fae14697e350f1cff4d21
   - enabled: 1
     path: Assets/Scenes/Map/test.unity
-    guid: e8e37bfa68677a642b0e79f2fc171d09
+    guid: 0e9ddb25918eb854681468f7b79e5154
   - enabled: 0
     path: Assets/Scenes/Map/MainMap(NEW).unity
     guid: d514f2910b6c38844862037958a4d280

@@ -23,7 +23,7 @@ public class LoadWithTransition : MonoBehaviour
         SceneManager.LoadScene(sc);
     }
 
-    public void FadeInRoom(string nextScene) {
+    public void FadeInLevel(string nextScene) {
         StartCoroutine(StartTransitionPhoton(nextScene));
     }
 

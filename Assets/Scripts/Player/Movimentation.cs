@@ -43,7 +43,7 @@ public class Movimentation : MonoBehaviour
     }
 
     IEnumerator FindDetectAreaMouse() {
-        yield return new WaitForSeconds(1.1f);
+        yield return new WaitForSeconds(0.4f);
         detectAreaMouse = GameObject.Find("AreaMouse").GetComponent<DetectAreaMouse>();
         //yield return new WaitForSeconds(0.9f);
         Server.canMove = true;

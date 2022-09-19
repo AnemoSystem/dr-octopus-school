@@ -9,6 +9,10 @@ public class LoadWithTransition : MonoBehaviour
     private Animator transitionAnim;
     private GameObject transition;
 
+    public Animator getTransitionAnim() {
+        return transitionAnim;
+    }
+
     void Start()
     {
         transition = transform.GetChild(0).gameObject;

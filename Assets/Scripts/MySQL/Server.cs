@@ -24,6 +24,7 @@ public class Server : MonoBehaviour
     public static string actualMinigame = "";
     public static string mainServer = "http://localhost";
     public static bool firstOpenning = false;
+    public static string idServer = "";
 
     public void Login() {
         StartCoroutine(Upload());

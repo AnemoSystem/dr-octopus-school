@@ -10,10 +10,12 @@ public class ChangeRoom : MonoBehaviourPunCallbacks
     public string whichScene;
     public string roomName;
     public bool isIndividualScene = false;
+    public LoadWithTransition loadingTransition;
 
     void OnTriggerEnter2D(Collider2D other) {
         //transition.FadeIn(whichScene);
         //PhotonNetwork.DestroyPlayerObjects(Server.username);
+        loadingTransition.getTransitionAnim().Play("CrossfadeLoading");
         PhotonNetwork.LeaveRoom();
         Debug.Log("encontrou");
     }

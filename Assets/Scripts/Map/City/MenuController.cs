@@ -144,11 +144,13 @@ public class MenuController : MonoBehaviour
         else return false;
     }
 
+    /*
     public void Test() {
         SceneManager.LoadScene("Runner");
         GameObject o = GameObject.Find(Server.username);
         o.transform.position = new Vector2(-20, -20);
     }
+    */
 
     public void OpenWindowConfirm() {
         windowConfirm.SetActive(true);

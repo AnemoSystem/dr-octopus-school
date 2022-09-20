@@ -3857,10 +3857,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 430643025}
     m_Modifications:
-    - target: {fileID: 2442284503910876700, guid: b4799274c616f064aa73c753d760b3aa, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2442284503977027859, guid: b4799274c616f064aa73c753d760b3aa, type: 3}
       propertyPath: m_Name
       value: CrossfadeLoading
@@ -3949,21 +3945,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3702569950983977829, guid: b4799274c616f064aa73c753d760b3aa, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4799274c616f064aa73c753d760b3aa, type: 3}
 --- !u!114 &505804842 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2442284503977027864, guid: b4799274c616f064aa73c753d760b3aa, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2440394288687942618, guid: b4799274c616f064aa73c753d760b3aa, type: 3}
   m_PrefabInstance: {fileID: 505804841}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc6a058561e00514fa3b014e25103f7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 36c285f4cf9a75d4b94c623adb7fe96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &505804843 stripped

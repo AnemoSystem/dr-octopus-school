@@ -8,9 +8,14 @@ public class ChangeRoom : MonoBehaviourPunCallbacks
 {
     public LoadWithTransition transition;
     public string whichScene;
-    public string roomName;
     public bool isIndividualScene = false;
     public TransitionLoading loadingTransition;
+
+    private string roomName;
+
+    void Start() {
+        roomName = whichScene;
+    }
 
     void OnTriggerEnter2D(Collider2D other) {
         //transition.FadeIn(whichScene);
@@ -22,7 +27,7 @@ public class ChangeRoom : MonoBehaviourPunCallbacks
         loadingTransition.FadeIn();
         yield return new WaitForSeconds(0.4f);
         PhotonNetwork.LeaveRoom();
-        Debug.Log("encontrou");
+        //Debug.Log("encontrou");
     }
 
     public override void OnLeftRoom() {
@@ -32,7 +37,9 @@ public class ChangeRoom : MonoBehaviourPunCallbacks
     }
 
     public override void OnJoinedLobby() {
-        PhotonNetwork.JoinOrCreateRoom(roomName, new RoomOptions() { MaxPlayers = 10 }, null);
+        PhotonNetwork.JoinOrCreateRoom(
+            Server.idServer + roomName, new RoomOptions() { MaxPlayers = 10 }, null
+        );
     }
 
     public override void OnConnectedToMaster() {

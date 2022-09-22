@@ -1006,6 +1006,7 @@ GameObject:
   - component: {fileID: 99224831}
   - component: {fileID: 99224830}
   - component: {fileID: 99224829}
+  - component: {fileID: 99224832}
   m_Layer: 5
   m_Name: Yes
   m_TagString: Shop
@@ -1077,9 +1078,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 483528961}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: Test
+      - m_Target: {fileID: 99224832}
+        m_TargetAssemblyTypeName: ChangeRoom, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1127,6 +1128,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99224827}
   m_CullTransparentMesh: 1
+--- !u!114 &99224832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99224827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3922aeb89f0fdba49afe37b4687852d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: {fileID: 776202383}
+  whichScene: Runner
+  isIndividualScene: 1
+  loadingTransition: {fileID: 505804842}
 --- !u!1 &123754608
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,6 +3961,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7409141007204383751, guid: b4799274c616f064aa73c753d760b3aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874066360194444854, guid: b4799274c616f064aa73c753d760b3aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4799274c616f064aa73c753d760b3aa, type: 3}
 --- !u!114 &505804842 stripped
@@ -3991,7 +4016,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 533982249}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &508708742
 MonoBehaviour:
@@ -4010,9 +4035,6 @@ MonoBehaviour:
     sentences:
     - "eae como q vc t\xE1"
     - "isso \xE9 mais um teste"
-  itens:
-  - {fileID: 1056272324}
-  - {fileID: 1823626553}
 --- !u!1 &525481471
 GameObject:
   m_ObjectHideFlags: 0
@@ -4172,6 +4194,7 @@ Transform:
   m_LocalPosition: {x: -0.16234958, y: -0.08438313, z: -450.5224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1732687703}
   - {fileID: 508708741}
   - {fileID: 1817529461}
   m_Father: {fileID: 0}
@@ -23446,7 +23469,6 @@ GameObject:
   - component: {fileID: 1473468359}
   - component: {fileID: 1473468358}
   - component: {fileID: 1473468357}
-  - component: {fileID: 1473468360}
   m_Layer: 5
   m_Name: Test
   m_TagString: Untagged
@@ -23517,9 +23539,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1473468360}
-        m_TargetAssemblyTypeName: ChangeRoom, Assembly-CSharp
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 483528961}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: OpenWindowConfirm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23567,22 +23589,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473468355}
   m_CullTransparentMesh: 1
---- !u!114 &1473468360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1473468355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3922aeb89f0fdba49afe37b4687852d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition: {fileID: 776202383}
-  whichScene: Runner
-  isIndividualScene: 1
-  loadingTransition: {fileID: 505804842}
 --- !u!1 &1478139120
 GameObject:
   m_ObjectHideFlags: 0
@@ -25517,6 +25523,58 @@ Transform:
   m_Father: {fileID: 430643025}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1732687702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1732687703}
+  - component: {fileID: 1732687704}
+  m_Layer: 0
+  m_Name: FirstAccess
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1732687703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732687702}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.2099805, y: -4.5970917, z: 142.50378}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 533982249}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1732687704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732687702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee32fea39c0f1409132ba14840421b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 508708742}
+  dialogue:
+    name: Dr. Octopus
+    sentences:
+    - "Ol\xE1! Seja bem-vindo(a) a Escola do Dr. Octopus!"
+    - "Aqui voc\xEA poder\xE1 acessar a sua conta escolar, al\xE9m de desfrutar um
+      pouco de divers\xE3o!"
+    - Aproveite!
+  dialogueBoxObject: {fileID: 1056272324}
 --- !u!1 &1736209485
 GameObject:
   m_ObjectHideFlags: 0
@@ -26020,7 +26078,7 @@ RectTransform:
   m_LocalScale: {x: 0.04993282, y: 0.04993282, z: 0.04993282}
   m_Children: []
   m_Father: {fileID: 533982249}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

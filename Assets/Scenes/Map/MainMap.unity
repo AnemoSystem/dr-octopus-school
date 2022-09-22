@@ -3594,7 +3594,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 776202383}
   whichScene: test
-  roomName: A_test
   isIndividualScene: 0
   loadingTransition: {fileID: 505804842}
 --- !u!61 &471256545
@@ -4011,6 +4010,9 @@ MonoBehaviour:
     sentences:
     - "eae como q vc t\xE1"
     - "isso \xE9 mais um teste"
+  itens:
+  - {fileID: 1056272324}
+  - {fileID: 1823626553}
 --- !u!1 &525481471
 GameObject:
   m_ObjectHideFlags: 0
@@ -23444,6 +23446,7 @@ GameObject:
   - component: {fileID: 1473468359}
   - component: {fileID: 1473468358}
   - component: {fileID: 1473468357}
+  - component: {fileID: 1473468360}
   m_Layer: 5
   m_Name: Test
   m_TagString: Untagged
@@ -23514,9 +23517,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 483528960}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1473468360}
+        m_TargetAssemblyTypeName: ChangeRoom, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23564,6 +23567,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473468355}
   m_CullTransparentMesh: 1
+--- !u!114 &1473468360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473468355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3922aeb89f0fdba49afe37b4687852d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: {fileID: 776202383}
+  whichScene: Runner
+  isIndividualScene: 1
+  loadingTransition: {fileID: 505804842}
 --- !u!1 &1478139120
 GameObject:
   m_ObjectHideFlags: 0

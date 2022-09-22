@@ -17,10 +17,14 @@ public class ChangeRoom : MonoBehaviourPunCallbacks
         roomName = whichScene;
     }
 
+    public void ChangeScene() {
+        StartCoroutine(StartChanging());
+    }
+
     void OnTriggerEnter2D(Collider2D other) {
         //transition.FadeIn(whichScene);
-        //PhotonNetwork.DestroyPlayerObjects(Server.username);
-        StartCoroutine(StartChanging());
+        //PhotonNetwork.DestroyPlayerObjects(1);
+        ChangeScene();
     }
 
     IEnumerator StartChanging() {

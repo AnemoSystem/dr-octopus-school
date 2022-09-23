@@ -23,6 +23,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue(Dialogue dialogue) {
+        Server.canMove = false;
         Debug.Log("Start Conversation with " + dialogue.name);
         anim.SetBool("isOpen", true);
         blackBK.SetActive(true);
@@ -68,6 +69,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     void EndDialogue() {
+        Server.canMove = true;
         activate = false;
         isWriting = false;
         anim.SetBool("isOpen", false);

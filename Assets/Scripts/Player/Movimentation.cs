@@ -17,7 +17,7 @@ public class Movimentation : MonoBehaviour
     private float rotationZ;
     private Vector3 difference;
     private Text playerUsernameLabel;
-    private RaycastHit2D hit;
+    //private Rigidbody2D rb;
 
     [SerializeField]
     private DetectAreaMouse detectAreaMouse;
@@ -40,6 +40,7 @@ public class Movimentation : MonoBehaviour
         StartCoroutine(FindDetectAreaMouse());
         playerUsernameLabel = transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
         anim = GetComponent<Animator>();
+        //rb = GetComponent<Rigidbody2D>();
         speed = maxSpeed;
     }
 
@@ -87,6 +88,7 @@ public class Movimentation : MonoBehaviour
                     rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
                     speed = maxSpeed;
                 }
+                
                 transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
             } else targetPos = transform.position;
             //transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPos);
@@ -94,10 +96,19 @@ public class Movimentation : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other) {
-        targetPos = new Vector3(other.transform.position.x + 10, other.transform.position.y + 10);
-        speed = 0;
+    void OnCollisionStay2D(Collision2D other) {
+        if(other.gameObject.layer == 7) {
+            targetPos = transform.position;
+        }
     }
+
+    /*
+    void OnCollisionExit2D(Collision2D other) {
+        if(other.gameObject.layer == 7)
+            touchObject = false;        
+    }
+    */
+
     /*
     void FixedUpdate() {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left);

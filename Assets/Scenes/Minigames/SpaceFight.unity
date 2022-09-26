@@ -150,8 +150,8 @@ Transform:
   m_LocalPosition: {x: 2.7810454, y: -1.6512326, z: -853.7599}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 111647053}
   - {fileID: 1009522692}
+  - {fileID: 111647053}
   - {fileID: 100798386}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -930,7 +930,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 17794325}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1009522693
 BoxCollider2D:
@@ -1912,11 +1912,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 33586366, guid: 776d5641bf69b654fa92e3b7f76479bf, type: 3}
       propertyPath: rate
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 33586366, guid: 776d5641bf69b654fa92e3b7f76479bf, type: 3}
       propertyPath: waves
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4663736017904507084, guid: 776d5641bf69b654fa92e3b7f76479bf, type: 3}
       propertyPath: m_Name
@@ -1928,7 +1928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663736017904507185, guid: 776d5641bf69b654fa92e3b7f76479bf, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4663736017904507185, guid: 776d5641bf69b654fa92e3b7f76479bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2002,7 +2002,7 @@ PrefabInstance:
       objectReference: {fileID: 514087779}
     - target: {fileID: 6282604998658599773, guid: 61f802d1c76c7954dbc985d045b7e20c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6282604998658599773, guid: 61f802d1c76c7954dbc985d045b7e20c, type: 3}
       propertyPath: m_LocalPosition.x

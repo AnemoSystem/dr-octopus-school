@@ -50,6 +50,9 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
+        
+        if(col.gameObject.name == "Collider") {
+            Destroy(gameObject);
+        }
     }
 }

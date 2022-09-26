@@ -39,6 +39,10 @@ public class Enemy : MonoBehaviour
             col.gameObject.GetComponent<Spaceship>().Damage();
             Die();
         }
+
+        if(col.gameObject.name == "Collider") {
+            Destroy(gameObject);
+        }
     }
 
     void Die()

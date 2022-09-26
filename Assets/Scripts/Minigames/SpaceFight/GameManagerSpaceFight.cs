@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class GameManagerSpaceFight : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject gameElements;
+    public GameObject hud;
+    public GameObject menu;
+
     void Start()
     {
-        
+        menu.SetActive(true);
+        hud.SetActive(false);
+        gameElements.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void StartGame() {
+        menu.SetActive(false);
+        hud.SetActive(true);
+        gameElements.SetActive(true);     
     }
 }

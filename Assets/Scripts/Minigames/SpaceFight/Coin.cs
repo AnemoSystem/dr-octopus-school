@@ -9,6 +9,7 @@ public class Coin : MonoBehaviour
         if(col.gameObject.tag=="PlayerShip")
         {
             col.gameObject.GetComponent<Spaceship>().AddCoin();
+            Server.bonusCoins++;
             Destroy(gameObject);
         }
     }

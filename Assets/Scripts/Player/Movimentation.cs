@@ -17,6 +17,9 @@ public class Movimentation : MonoBehaviour
     private float rotationZ;
     private Vector3 difference;
     private Text playerUsernameLabel;
+    //private Rigidbody2D rb;
+
+    [SerializeField]
     private DetectAreaMouse detectAreaMouse;
 
     PhotonView view;
@@ -37,11 +40,12 @@ public class Movimentation : MonoBehaviour
         StartCoroutine(FindDetectAreaMouse());
         playerUsernameLabel = transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
         anim = GetComponent<Animator>();
+        //rb = GetComponent<Rigidbody2D>();
         speed = maxSpeed;
     }
 
     IEnumerator FindDetectAreaMouse() {
-        yield return new WaitForSeconds(1.1f);
+        yield return new WaitForSeconds(0.4f);
         detectAreaMouse = GameObject.Find("AreaMouse").GetComponent<DetectAreaMouse>();
         //yield return new WaitForSeconds(0.9f);
         Server.canMove = true;
@@ -49,8 +53,11 @@ public class Movimentation : MonoBehaviour
     }
 
     void Animation() {
-        isRunning = transform.position != targetPos;
-        
+        if(speed > 0)
+            isRunning = transform.position != targetPos;
+        else
+            isRunning = false;
+
         difference = mousePos - transform.position;
         difference.Normalize();    
         
@@ -79,13 +86,35 @@ public class Movimentation : MonoBehaviour
                 if(Input.GetMouseButtonDown(0) && detectAreaMouse.getIsDetected()) {
                     targetPos = new Vector3(mousePos.x, mousePos.y);
                     rotationZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
+                    speed = maxSpeed;
                 }
+                
                 transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
             } else targetPos = transform.position;
             //transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPos);
             Animation();
         }
     }
+
+    void OnCollisionStay2D(Collision2D other) {
+        if(other.gameObject.layer == 7) {
+            targetPos = transform.position;
+        }
+    }
+
+    /*
+    void OnCollisionExit2D(Collision2D other) {
+        if(other.gameObject.layer == 7)
+            touchObject = false;        
+    }
+    */
+
+    /*
+    void FixedUpdate() {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left);
+        Debug.DrawRay(transform.position, Vector2.left, Color.red);
+    }
+    */
     /*
     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
         if(stream.IsWriting) {

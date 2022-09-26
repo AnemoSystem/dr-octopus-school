@@ -6,7 +6,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     private DialogueManager manager;
-
+    
     void Start() {
         manager = FindObjectOfType<DialogueManager>();
     }
@@ -18,5 +18,9 @@ public class DialogueTrigger : MonoBehaviour
             else
                 manager.StartDialogue(dialogue);
         }
+    }
+
+    public DialogueManager getManager() {
+        return manager;
     }
 }

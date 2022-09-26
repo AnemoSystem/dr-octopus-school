@@ -13,6 +13,7 @@ public class Server : MonoBehaviour
     public GameObject errorWindow;
     public LoadWithTransition transition;
     public Button[] buttons;
+    public GameObject loadingIndicator;
 
     // Global Variables
     public static string username = "username";
@@ -23,9 +24,18 @@ public class Server : MonoBehaviour
     public static string actualMinigame = "";
     public static string mainServer = "http://localhost";
     public static bool firstOpenning = false;
+    public static string idServer = "";
 
     public void Login() {
         StartCoroutine(Upload());
+        EnableAllButtons(false);
+        loadingIndicator.SetActive(true);
+    }
+
+    void EnableAllButtons(bool state) {
+        foreach(Button b in buttons) {
+            b.interactable = state;
+        }
     }
 
     IEnumerator Upload() {
@@ -45,18 +55,21 @@ public class Server : MonoBehaviour
                 errorWindow.SetActive(true);
                 errorDisplay.text = "Erro de conexão!";
                 errorDisplay.color = Color.red;
+                EnableAllButtons(true);
                 break;
             case UnityWebRequest.Result.DataProcessingError:
                 //Debug.Log("Data Processing Error");
                 errorWindow.SetActive(true);
                 errorDisplay.text = "Erro de processamento de dados!";
                 errorDisplay.color = Color.yellow;
+                EnableAllButtons(true);
                 break;
             case UnityWebRequest.Result.ProtocolError:
                 //Debug.Log("HTTP Error");
                 errorWindow.SetActive(true);
                 errorDisplay.text = "Erro de HTTP!";
                 errorDisplay.color = Color.magenta;
+                EnableAllButtons(true);
                 break;
             case UnityWebRequest.Result.Success:
                 //Debug.Log("Form upload complete!");
@@ -64,18 +77,17 @@ public class Server : MonoBehaviour
                 username = usernameField.text; 
                 if(www.downloadHandler.text == "Login Success - Disconnected") {   
                     //SceneManager.LoadScene("Lobby");
-                    foreach(Button b in buttons) {
-                        b.interactable = false;
-                    }
                     updateEntries = true;
                 }
                 else if(www.downloadHandler.text == "Login Success - Connected") {
                     errorWindow.SetActive(true);
                     errorDisplay.text = "Usuário conectado em outro dispositivo. Disconecte-se nele para entrar.";                    
+                    EnableAllButtons(true);
                 }
                 else {
                     errorWindow.SetActive(true);
                     errorDisplay.text = "Usuário ou senha inexistentes!";
+                    EnableAllButtons(true);
                 }
                 break;
             default:
@@ -83,6 +95,7 @@ public class Server : MonoBehaviour
                 errorDisplay.color = Color.red;
                 break;
         }
+        loadingIndicator.SetActive(false);
 
         if(updateEntries) {
             www = UnityWebRequest.Post(mainServer + "/school-management-system/unity/update_entries.php", form);

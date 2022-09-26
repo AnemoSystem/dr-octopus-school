@@ -9,17 +9,23 @@ public class CreateOrJoinRooms : MonoBehaviourPunCallbacks
 {
     public LoadWithTransition transition;
     public Button[] buttons;
+    public GameObject loadingIndicator;
 
     public void StartRoom(string roomName) {
-        PhotonNetwork.JoinOrCreateRoom(roomName, new RoomOptions() { MaxPlayers = 10 }, null);
+        loadingIndicator.SetActive(true);
+        foreach(Button b in buttons) {
+            b.interactable = false;
+        }
+        PhotonNetwork.JoinOrCreateRoom(roomName + "_MainMap", new RoomOptions() { MaxPlayers = 10 }, null);
+        if(roomName == "A")
+            Server.idServer = "A";
+        else
+            Server.idServer = "B";
     }
 
     public override void OnJoinedRoom() {
         //PhotonNetwork.LoadLevel("MainMap");
-        foreach(Button b in buttons) {
-            b.interactable = false;
-        }
-        transition.FadeInRoom("MainMap");
+        transition.FadeInLevel("MainMap");
         Server.canMove = false;
     }
 }

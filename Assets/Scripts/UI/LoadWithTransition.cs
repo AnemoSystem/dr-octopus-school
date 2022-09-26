@@ -7,10 +7,18 @@ using Photon.Pun;
 public class LoadWithTransition : MonoBehaviour
 {
     private Animator transitionAnim;
+    private GameObject transition;
+
+    public Animator getTransitionAnim() {
+        return transitionAnim;
+    }
 
     void Start()
     {
-        transitionAnim = GetComponent<Animator>();
+        transition = transform.GetChild(0).gameObject;
+        transitionAnim = transition.GetComponent<Animator>();
+        transition.SetActive(true);
+        transitionAnim.Play("Crossfade_FadeOut");
     }
 
     public void FadeIn(string nextScene) {
@@ -18,18 +26,18 @@ public class LoadWithTransition : MonoBehaviour
     }
 
     IEnumerator StartTransition(string sc) {
-        transitionAnim.Play("Crossfade_Start");
-        yield return new WaitForSeconds(1f);
+        transitionAnim.Play("Crossfade_FadeIn");
+        yield return new WaitForSeconds(0.3f);
         SceneManager.LoadScene(sc);
     }
 
-    public void FadeInRoom(string nextScene) {
+    public void FadeInLevel(string nextScene) {
         StartCoroutine(StartTransitionPhoton(nextScene));
     }
 
     IEnumerator StartTransitionPhoton(string sc) {
-        transitionAnim.Play("Crossfade_Start");
-        yield return new WaitForSeconds(1f);
+        transitionAnim.Play("Crossfade_FadeIn");
+        yield return new WaitForSeconds(0.3f);
         PhotonNetwork.LoadLevel(sc);
     }
 }

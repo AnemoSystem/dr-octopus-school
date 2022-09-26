@@ -9,6 +9,10 @@ public class RunnerController : MonoBehaviour
     public GameObject menu;
     public GameObject inGame;
 
+    void Start() {
+        Destroy(GameObject.Find(Server.username));
+    }
+
     public void StartGame() {
         player.SetActive(true);
         spawner.SetActive(true);

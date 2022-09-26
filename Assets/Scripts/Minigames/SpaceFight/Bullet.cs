@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     Rigidbody2D rb;
     int dir=1;
+    public float speed = 5;
 
     void Awake()
     {
@@ -29,7 +30,7 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        rb.velocity=new Vector2(0,11*dir);
+        transform.Translate(Vector2.up * speed * Time.deltaTime * dir);
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -50,6 +51,9 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
+        
+        if(col.gameObject.name == "Collider") {
+            Destroy(gameObject);
+        }
     }
 }

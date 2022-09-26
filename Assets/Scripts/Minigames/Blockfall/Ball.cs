@@ -38,4 +38,12 @@ public class Ball : MonoBehaviour
         rigidbody.velocity = rigidbody.velocity.normalized * speed;
     }
 
+    public void SetSpeed(float value) {
+        speed = value;
+    }
+
+    public float GetSpeed() {
+        return speed;
+    }
+
 }

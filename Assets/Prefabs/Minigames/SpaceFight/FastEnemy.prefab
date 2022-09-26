@@ -158,8 +158,8 @@ MonoBehaviour:
   coin: {fileID: 8423024161213082241, guid: bbd816775ee210142a352c3dcc121b39, type: 3}
   bulletcolor: {r: 0, g: 0, b: 0, a: 0}
   xSpeed: 0
-  ySpeed: 5
+  ySpeed: 7
   score: 100
   canShoot: 0
   fireRate: 0
-  health: 2
+  health: 1

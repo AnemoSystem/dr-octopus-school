@@ -6,10 +6,13 @@ public class GameManagerBlockfall : MonoBehaviour
 {
     public Ball ball;
     public Paddle paddle;
-    public Brick[] bricks { get; private set; }
+    //public Brick[] bricks { get; private set; }
+    private Brick[] bricks;
     public Text scoreDisplay;
     public Text livesDisplay;
+    public Text levelDisplay;
     public GameObject gameOver;
+    public LoadWithTransition transition;
 
     public GameObject ballObject;
     public GameObject paddleObject;
@@ -19,7 +22,7 @@ public class GameManagerBlockfall : MonoBehaviour
 
     //const int NUM_LEVELS = 2;
 
-    //public int level = 1;
+    private int level = 1;
     public int score = 0;
     public int lives = 3;
 
@@ -41,7 +44,11 @@ public class GameManagerBlockfall : MonoBehaviour
 */
     private void Start()
     {
+        levelDisplay.text = level.ToString();
         ResetData();
+        //ball = FindObjectOfType<Ball>();
+        //paddle = FindObjectOfType<Paddle>();
+        bricks = FindObjectsOfType<Brick>(true);
     }
 
     private void ResetData()
@@ -71,7 +78,6 @@ public class GameManagerBlockfall : MonoBehaviour
 
         //SceneManager.LoadScene("Level" + level);
     //}
-
 /*
     private void OnLevelLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -104,6 +110,16 @@ public class GameManagerBlockfall : MonoBehaviour
         // }
     }
 
+    private void ResetAllLevel()
+    {
+        paddle.ResetPaddle();
+        ball.ResetBall();
+
+        for (int i = 0; i < bricks.Length; i++) {
+            bricks[i].ResetBrick();
+        }
+    }    
+
     private void GameOver()
     {
         // Start a new game immediately
@@ -117,16 +133,29 @@ public class GameManagerBlockfall : MonoBehaviour
 
         if(score % 500 == 0)
             Server.bonusCoins += 1;
-        /*if (Cleared()) {
-            LoadLevel(level + 1);
-        }*/
+        
+        if(Cleared()) {
+            //transition.FadeIn("BlockFall");
+            ResetAllLevel();
+            level++;
+            ball.SetSpeed(ball.GetSpeed() * 1.2f);
+            levelDisplay.text = level.ToString();    
+        }
+        
+        /*
+        if (Cleared()) {
+            SceneManager.LoadScene("Blockfall");
+            NewGame();
+            ball.SetSpeed(ball.GetSpeed() * 1.2f);
+        }
+        */
     }
 
     private bool Cleared()
     {
         for (int i = 0; i < bricks.Length; i++)
         {
-            if (bricks[i].gameObject.activeInHierarchy && !bricks[i].unbreakable) {
+            if (bricks[i].gameObject.activeSelf && !bricks[i].unbreakable) {
                 return false;
             }
         }

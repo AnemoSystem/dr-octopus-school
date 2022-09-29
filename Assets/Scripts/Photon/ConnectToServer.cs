@@ -9,6 +9,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
 
     void Start() {
         PhotonNetwork.ConnectUsingSettings();
+        Screen.fullScreen = false;
     }
 
     public override void OnConnectedToMaster() {

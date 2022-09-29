@@ -2558,6 +2558,11 @@ MonoBehaviour:
   MenuNotif: {fileID: 0}
   MenuMap: {fileID: 0}
   MenuPlayer: {fileID: 0}
+  menuEmoji: {fileID: 0}
+  menuStudent: {fileID: 0}
+  menuShop: {fileID: 0}
+  black: {fileID: 0}
+  windowConfirm: {fileID: 0}
 --- !u!4 &353116018
 Transform:
   m_ObjectHideFlags: 0

@@ -27,15 +27,15 @@ RectTransform:
   m_GameObject: {fileID: 437686943932599658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 2.611648}
+  m_LocalScale: {x: 0.114870004, y: 0.114870004, z: 1}
   m_Children: []
-  m_Father: {fileID: 1707303621734546771}
+  m_Father: {fileID: 5732386323839788385}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.025, y: 0.55}
-  m_SizeDelta: {x: 30.753, y: 10.211}
+  m_AnchoredPosition: {x: 0.0028, y: 0.2421}
+  m_SizeDelta: {x: 34.8118, y: 13.3472}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5131268475712634476
 CanvasRenderer:
@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: saffsdfdsf
+  m_Text: 
 --- !u!1 &742005549977790062
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -459.47888, y: -260.00696}
+  m_AnchoredPosition: {x: -459.509, y: -260.072}
   m_SizeDelta: {x: 5.2781, y: 0.9853}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4422403849458073521
@@ -323,7 +323,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: username
---- !u!1 &3379341455868552289
+--- !u!1 &2388030241706227173
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -331,81 +331,74 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1707303621734546771}
-  - component: {fileID: 3023342205697327108}
-  m_Layer: 0
+  - component: {fileID: 5732386323839788385}
+  - component: {fileID: 5601566371008062368}
+  - component: {fileID: 192637758404731420}
+  m_Layer: 6
   m_Name: Ballon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &1707303621734546771
-Transform:
+--- !u!224 &5732386323839788385
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3379341455868552289}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -457.379, y: -256.594, z: 0}
-  m_LocalScale: {x: 0.3829, y: 0.3829, z: 0.3829}
+  m_GameObject: {fileID: 2388030241706227173}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5294824444038570767}
   m_Father: {fileID: 6604002972190723024}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3023342205697327108
-SpriteRenderer:
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -457.15823, y: -256.44537}
+  m_SizeDelta: {x: 4.4718, y: 2.2787}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5601566371008062368
+CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3379341455868552289}
+  m_GameObject: {fileID: 2388030241706227173}
+  m_CullTransparentMesh: 1
+--- !u!114 &192637758404731420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2388030241706227173}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 2717164d45da6d049816e0f9c1c3c1eb, type: 3}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 10.17, y: 4.86}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2717164d45da6d049816e0f9c1c3c1eb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5265214160885903493
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +676,7 @@ RectTransform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4450897997260446769}
-  - {fileID: 1707303621734546771}
+  - {fileID: 5732386323839788385}
   - {fileID: 8501220777909019077}
   m_Father: {fileID: 7721422735598082645}
   m_RootOrder: 3
@@ -909,6 +902,7 @@ MonoBehaviour:
   - {fileID: 3246088676555997071}
   - {fileID: 3121530277946387229}
   - {fileID: 2841118959106541604}
+  - {fileID: 3664785680241862988}
   - {fileID: 4290288745784544285}
   sceneViewId: 0
   InstantiationId: 0
@@ -928,7 +922,7 @@ MonoBehaviour:
   chatInput: {fileID: 0}
   playerText: {fileID: 7534709838575324587}
   username: {fileID: 6861989330009924722}
-  ballon: {fileID: 3379341455868552289}
+  ballon: {fileID: 0}
   ballonEmoji: {fileID: 1983709496668579430}
   baseEmoji: {fileID: 424553669576878257}
   emojis:

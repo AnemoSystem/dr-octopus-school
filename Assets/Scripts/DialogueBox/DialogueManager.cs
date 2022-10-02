@@ -37,12 +37,13 @@ public class DialogueManager : MonoBehaviour
         foreach(string sentence in dialogue.sentences) {
             sentences.Enqueue(sentence);
         }
+        dialogueText.text = "";
         StartCoroutine(DelayForAnimation());
         //DisplayNextSentence();
     }
 
     IEnumerator DelayForAnimation() {
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(0.4f);
         DisplayNextSentence();
     }
 

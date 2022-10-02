@@ -12,9 +12,18 @@ public class MenuSettings : MonoBehaviour
     //public Dropdown resolutionDropdown;
 
     //Resolution[] resolutions;
+
+    public void UpdateFullScreenCheckbox() {
+        fullScreenToggle.isOn = Screen.fullScreen;
+    }
+
+    void OnEnable() {
+        UpdateFullScreenCheckbox();
+    }
+
     void Start ()
     {
-        fullScreenToggle.isOn = false;
+        UpdateFullScreenCheckbox();
         /*
         if(resolutionDropdown != null)
             setupResolutions();

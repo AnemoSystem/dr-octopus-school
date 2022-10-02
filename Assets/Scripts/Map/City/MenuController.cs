@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     public GameObject MenuNews;
-    public GameObject MenuConfig;
+    public GameObject MenuSettings;
     public GameObject MenuNotif;
     public GameObject MenuMap;
 
@@ -35,13 +35,15 @@ public class MenuController : MonoBehaviour
         MenuNews.SetActive(false);
     }
 
-    // Configurations
-    public void OpenMenuConfig() {
-        MenuConfig.SetActive(true);
+    // Settings
+    public void OpenMenuSettings() {
+        MenuSettings.SetActive(true);
+        black.SetActive(true);
     }
 
-    public void CloseMenuConfig () {
-        MenuConfig.SetActive(false);
+    public void CloseMenuSettings() {
+        MenuSettings.SetActive(false);
+        black.SetActive(false);
     }
 
     // Notifications
@@ -56,10 +58,12 @@ public class MenuController : MonoBehaviour
     // Map
     public void OpenMenuMap() {
         MenuMap.SetActive(true);
+        black.SetActive(true);
     }
 
     public void CloseMenuMap () {
         MenuMap.SetActive(false);
+        black.SetActive(false);
     }
 
     public void SendMessage() {

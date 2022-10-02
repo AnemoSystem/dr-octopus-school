@@ -922,7 +922,7 @@ MonoBehaviour:
   chatInput: {fileID: 0}
   playerText: {fileID: 7534709838575324587}
   username: {fileID: 6861989330009924722}
-  ballon: {fileID: 0}
+  ballon: {fileID: 2388030241706227173}
   ballonEmoji: {fileID: 1983709496668579430}
   baseEmoji: {fileID: 424553669576878257}
   emojis:

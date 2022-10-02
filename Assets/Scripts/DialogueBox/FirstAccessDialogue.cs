@@ -11,6 +11,7 @@ public class FirstAccessDialogue : MonoBehaviour
 
     void Start()
     {
+        Server.canStartDialogue = true;
         if(Server.firstOpenning)
             StartCoroutine(PresentationGame());
         else
@@ -25,7 +26,7 @@ public class FirstAccessDialogue : MonoBehaviour
 
     public void StopDialogueBox() {
         //StartCoroutine(Stopping());
-        
+        Server.canStartDialogue = false;
         Destroy(trigger.gameObject);
         Destroy(blackBK);
         Destroy(trigger.getManager().gameObject);    

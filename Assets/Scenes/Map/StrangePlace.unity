@@ -5922,7 +5922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cloud1: {fileID: 8404647726813506399, guid: 89bcef4615c6762498bb0ee474ef85ed, type: 3}
   Cloud2: {fileID: 5201303324877584188, guid: a2f4400d5df33844baf70b1736317e4b, type: 3}
-  delay: 10
+  delay: 5
 --- !u!212 &1190076648
 SpriteRenderer:
   m_ObjectHideFlags: 0

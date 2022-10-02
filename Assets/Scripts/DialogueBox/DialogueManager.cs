@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     private string lastSentence;
 
     public UnityEvent OnEndDialogue;
+    private float waitInit = 1.2f;
 
     void Start() {
         sentences = new Queue<string>();
@@ -43,7 +44,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     IEnumerator DelayForAnimation() {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(waitInit);
         DisplayNextSentence();
     }
 
@@ -80,6 +81,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     void EndDialogue() {
+        waitInit = 0.4f;
         Server.canMove = true;
         activate = false;
         isWriting = false;

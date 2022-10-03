@@ -757,11 +757,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7721422735598082645}
   - component: {fileID: 7721422735598082644}
+  - component: {fileID: 1254547728299069805}
   - component: {fileID: 7721422735598082646}
   - component: {fileID: 7721422735598082667}
   - component: {fileID: 7721422735598082640}
   - component: {fileID: 8124508641871814394}
-  - component: {fileID: 3246088676555997071}
   - component: {fileID: 3121530277946387229}
   - component: {fileID: 8838155298680382863}
   - component: {fileID: 1760724912723030189}
@@ -844,6 +844,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1254547728299069805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721422735598082666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4606efc1c463b3945b9136bce8ab3384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &7721422735598082646
 Rigidbody2D:
   serializedVersion: 4
@@ -899,7 +911,6 @@ MonoBehaviour:
   observableSearch: 1
   ObservedComponents:
   - {fileID: 8124508641871814394}
-  - {fileID: 3246088676555997071}
   - {fileID: 3121530277946387229}
   - {fileID: 2841118959106541604}
   - {fileID: 3664785680241862988}
@@ -932,39 +943,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d35bd9d262207814f91b72300e56cb1b, type: 3}
   - {fileID: 21300000, guid: 0a9be9f2dd84e664f9b762e83a3245ab, type: 3}
   - {fileID: 21300000, guid: 1a0ff7d09bc0d0649b51046984547989, type: 3}
---- !u!114 &3246088676555997071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7721422735598082666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 1
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 1
-    ExtrapolateOption: 0
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 1
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
-  m_ScaleModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0
 --- !u!114 &3121530277946387229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,7 +1033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
+  m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!1001 &5142338983345929665

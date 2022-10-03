@@ -14,6 +14,7 @@ public class MenuController : MonoBehaviour
     public GameObject menuEmoji;
     public GameObject menuStudent;
     public GameObject menuShop;
+    public GameObject menuFriend;
 
     public GameObject black;
     public GameObject windowConfirm;
@@ -24,6 +25,17 @@ public class MenuController : MonoBehaviour
         CloseMenuPlayer();
     }
     */
+
+    // Menu Friend
+    public void OpenMenuFriend() {
+        menuFriend.SetActive(true);
+        black.SetActive(true);
+    }
+
+    public void CloseMenuFriend() {
+        menuFriend.SetActive(false);
+        black.SetActive(false);        
+    }
 
     // News
     public void OpenMenuNews() {

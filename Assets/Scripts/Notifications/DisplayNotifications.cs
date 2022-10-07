@@ -90,23 +90,62 @@ public class DisplayNotifications : MonoBehaviour
                 string result = www.downloadHandler.text.ToString();
                 allNotifications = result.Split('%');
                 
+                List<string> id = new List<string>();
                 List<string> titles = new List<string>();
                 List<string> dates = new List<string>();
                 List<string> issuer = new List<string>();
+                List<string> status = new List<string>();
+                List<string> type = new List<string>();
 
                 for(int i = 0; i < allNotifications.Length; i++) {
                     string[] t = allNotifications[i].Split('@');
                     for(int j = 0; j < t.Length; j++) {   
-                        if(j == 1)
-                            titles.Add(t[j]);
-                        else if(j == 3)
-                            issuer.Add(t[j]);
-                        else if(j == 4)
-                            dates.Add(Message.FormatDate(t[j]));
+                        switch(j) {
+                            case 0:
+                                id.Add(t[j]);
+                                break;
+                            case 1:
+                                titles.Add(t[j]);
+                                break;
+                            case 2:
+                                type.Add(t[j]);
+                                break;
+                            case 3:
+                                issuer.Add(t[j]);
+                                break;
+                            case 4:
+                                dates.Add(Message.FormatDate(t[j]));
+                                break;
+                            case 5:
+                                status.Add(t[j]);
+                                break;
+                            default:
+                                break;
+                        }   
                     }
                 }
 
                 for(int i = 0; i < icons.Length; i++) {
+                    // Change icon type message
+                    switch(type[i]) {
+                        case "M":
+                            icons[i].icon.sprite = spritesIcon[0];
+                            break;
+                        case "P":
+                            icons[i].icon.sprite = spritesIcon[1];
+                            break;
+                        case "F":
+                            icons[i].icon.sprite = spritesIcon[2];
+                            break;
+                        default:
+                            break;
+                    }
+
+                    // Change icon (status message)
+                    if(status[i] == "R") icons[i].statusIcon.sprite = spritesStatus[1];
+                    else icons[i].statusIcon.sprite = spritesStatus[0];
+
+                    // Rest of information
                     icons[i].messageTitle.text = titles[i];
                     icons[i].messageDate.text = dates[i];
                     icons[i].issuerUsername.text = issuer[i];

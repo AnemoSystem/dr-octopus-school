@@ -16,18 +16,28 @@ public class DisplayNotifications : MonoBehaviour
     private int numberMessages;
 
     string[] allNotifications;
+    List<string> id = new List<string>();
 
     void Start() {
         Server.username = "jooj";
         foreach(NotificationIcon icon in icons)
             icon.gameObject.SetActive(false);
-        StartCoroutine(OpenDisplay());
+        StartCoroutine(OpenDisplay(0));
     }
 
-    IEnumerator OpenDisplay() {
-        yield return StartCoroutine(GetNumberNotifications());
-        for(int i = 0; i < numberMessages; i++)
-            icons[i].gameObject.SetActive(true);
+    IEnumerator OpenDisplay(int from_id) {
+        yield return StartCoroutine(GetNumberNotifications(from_id));
+        Debug.Log(numberMessages);
+        if(numberMessages <= 4) {
+            foreach(NotificationIcon icon in icons)
+                icon.gameObject.SetActive(false);
+            
+            for(int i = 0; i < numberMessages; i++)
+                icons[i].gameObject.SetActive(true);
+        } else {
+            foreach(NotificationIcon icon in icons)
+                icon.gameObject.SetActive(true);
+        }
         if(numberMessages < icons.Length) {
             previousButton.interactable = false;
             nextButton.interactable = false;
@@ -35,12 +45,13 @@ public class DisplayNotifications : MonoBehaviour
             previousButton.interactable = false;
             nextButton.interactable = true;            
         }
-        yield return StartCoroutine(GetNotifications());
+        yield return StartCoroutine(GetNotifications(from_id));
     }
 
-    IEnumerator GetNumberNotifications() {
+    IEnumerator GetNumberNotifications(int from_id) {
         WWWForm form = new WWWForm();
         form.AddField("username", Server.username);
+        form.AddField("from_id", from_id);
 
         UnityWebRequest www = UnityWebRequest.Post(
             Server.mainServer + "/school-management-system/unity/notifications/get_number_notifications.php", 
@@ -67,9 +78,10 @@ public class DisplayNotifications : MonoBehaviour
         }
     }
 
-    IEnumerator GetNotifications() {
+    IEnumerator GetNotifications(int from_id) {
         WWWForm form = new WWWForm();
         form.AddField("username", Server.username); 
+        form.AddField("from_id", from_id);
 
         UnityWebRequest www = UnityWebRequest.Post(
             Server.mainServer + "/school-management-system/unity/notifications/get_notifications.php", 
@@ -90,7 +102,6 @@ public class DisplayNotifications : MonoBehaviour
                 string result = www.downloadHandler.text.ToString();
                 allNotifications = result.Split('%');
                 
-                List<string> id = new List<string>();
                 List<string> titles = new List<string>();
                 List<string> dates = new List<string>();
                 List<string> issuer = new List<string>();
@@ -150,9 +161,16 @@ public class DisplayNotifications : MonoBehaviour
                     icons[i].messageDate.text = dates[i];
                     icons[i].issuerUsername.text = issuer[i];
                 }
+
+                if(numberMessages < 4) nextButton.interactable = false;
                 break;
             default:
                 break;
         }        
+    }
+
+    public void NextNotifications() {
+        var temp = Convert.ToInt32(id[id.Count - 2]);
+        StartCoroutine(OpenDisplay(temp));
     }
 }

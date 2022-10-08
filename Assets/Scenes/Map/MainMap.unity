@@ -2975,6 +2975,13 @@ MonoBehaviour:
   - {fileID: 525313492}
   previousButton: {fileID: 1676271671}
   nextButton: {fileID: 1381770603}
+  spritesIcon:
+  - {fileID: 21300000, guid: a906fe6d80794324fba0a3e3e0262ac4, type: 3}
+  - {fileID: 21300000, guid: 57d3005a2662aef4abc3ea1d73068f4b, type: 3}
+  - {fileID: 21300000, guid: 8e816403e76713344b22e9c74829740b, type: 3}
+  spritesStatus:
+  - {fileID: 21300000, guid: c33930afc6b773f4ebffaf583bd071f3, type: 3}
+  - {fileID: 21300000, guid: a7a321daf6c19614b83ccdf93e64d7d6, type: 3}
 --- !u!1 &289877976
 GameObject:
   m_ObjectHideFlags: 0

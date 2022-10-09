@@ -14,6 +14,7 @@ public class DisplayNotifications : MonoBehaviour
     public Sprite[] spritesStatus;
 
     private int numberMessages;
+    private int total;
 
     string[] allNotifications;
     List<string> id = new List<string>();
@@ -22,12 +23,16 @@ public class DisplayNotifications : MonoBehaviour
         Server.username = "jooj";
         foreach(NotificationIcon icon in icons)
             icon.gameObject.SetActive(false);
-        StartCoroutine(OpenDisplay(0));
+        StartCoroutine(OpenDisplay(0, "I"));
     }
 
-    IEnumerator OpenDisplay(int from_id) {
-        yield return StartCoroutine(GetNumberNotifications(from_id));
-        Debug.Log(numberMessages);
+    void ActivateButtons(bool next, bool prev) {
+        previousButton.interactable = prev;
+        nextButton.interactable = next; 
+    }
+
+    IEnumerator OpenDisplay(int from_id, string from_type) {
+        yield return StartCoroutine(GetNumberNotifications(from_id, from_type));
         if(numberMessages <= 4) {
             foreach(NotificationIcon icon in icons)
                 icon.gameObject.SetActive(false);
@@ -38,20 +43,21 @@ public class DisplayNotifications : MonoBehaviour
             foreach(NotificationIcon icon in icons)
                 icon.gameObject.SetActive(true);
         }
-        if(numberMessages < icons.Length) {
-            previousButton.interactable = false;
-            nextButton.interactable = false;
+        if(from_type == "I") {
+            if(numberMessages < icons.Length) ActivateButtons(false, false);
+            else ActivateButtons(true, false);
         } else {
-            previousButton.interactable = false;
-            nextButton.interactable = true;            
+            if(numberMessages < 4) ActivateButtons(false, true);
+            else ActivateButtons(true, true);
         }
-        yield return StartCoroutine(GetNotifications(from_id));
+        yield return StartCoroutine(GetNotifications(from_id, from_type));
     }
 
-    IEnumerator GetNumberNotifications(int from_id) {
+    IEnumerator GetNumberNotifications(int from_id, string from_type) {
         WWWForm form = new WWWForm();
         form.AddField("username", Server.username);
         form.AddField("from_id", from_id);
+        form.AddField("from_type", from_type);
 
         UnityWebRequest www = UnityWebRequest.Post(
             Server.mainServer + "/school-management-system/unity/notifications/get_number_notifications.php", 
@@ -72,16 +78,18 @@ public class DisplayNotifications : MonoBehaviour
             case UnityWebRequest.Result.Success:
                 string result = www.downloadHandler.text.ToString();
                 numberMessages = Convert.ToInt32(result);
+                if(from_type == "I") total = numberMessages;
                 break;
             default:
                 break;
         }
     }
 
-    IEnumerator GetNotifications(int from_id) {
+    IEnumerator GetNotifications(int from_id, string from_type) {
         WWWForm form = new WWWForm();
         form.AddField("username", Server.username); 
         form.AddField("from_id", from_id);
+        form.AddField("from_type", from_type);
 
         UnityWebRequest www = UnityWebRequest.Post(
             Server.mainServer + "/school-management-system/unity/notifications/get_notifications.php", 
@@ -107,6 +115,7 @@ public class DisplayNotifications : MonoBehaviour
                 List<string> issuer = new List<string>();
                 List<string> status = new List<string>();
                 List<string> type = new List<string>();
+                id.Clear();
 
                 for(int i = 0; i < allNotifications.Length; i++) {
                     string[] t = allNotifications[i].Split('@');
@@ -136,6 +145,15 @@ public class DisplayNotifications : MonoBehaviour
                     }
                 }
 
+                if(from_type == "C") {
+                    id.Reverse();
+                    titles.Reverse();
+                    type.Reverse();
+                    issuer.Reverse();
+                    dates.Reverse();
+                    status.Reverse();
+                }
+
                 for(int i = 0; i < icons.Length; i++) {
                     // Change icon type message
                     switch(type[i]) {
@@ -161,8 +179,9 @@ public class DisplayNotifications : MonoBehaviour
                     icons[i].messageDate.text = dates[i];
                     icons[i].issuerUsername.text = issuer[i];
                 }
-
-                if(numberMessages < 4) nextButton.interactable = false;
+                id.RemoveAt(id.Count - 1);
+                //id.ForEach(e => Debug.Log(e));
+                //if(total == numberMessages) ActivateButtons(true, false);
                 break;
             default:
                 break;
@@ -170,7 +189,13 @@ public class DisplayNotifications : MonoBehaviour
     }
 
     public void NextNotifications() {
-        var temp = Convert.ToInt32(id[id.Count - 2]);
-        StartCoroutine(OpenDisplay(temp));
+        var temp = Convert.ToInt32(id[id.Count - 1]);
+        //id.ForEach(e => Debug.Log(e));
+        StartCoroutine(OpenDisplay(temp, "D"));
+    }
+
+    public void PreviousNotifications() {
+        var temp = Convert.ToInt32(id[0]);
+        StartCoroutine(OpenDisplay(temp, "C"));
     }
 }

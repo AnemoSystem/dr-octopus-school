@@ -7,9 +7,11 @@ using UnityEngine.UI;
 
 public class DisplayNotificationsScrollable : MonoBehaviour
 {
+    public GameObject recieveList;
+    public GameObject simpleMessage;
+
     public GameObject template;
     public Transform parent;
-    public Scrollbar bar;
     private int numberMessages;
     public Sprite[] spritesIcon;
     public Sprite[] spritesStatus;
@@ -144,11 +146,17 @@ public class DisplayNotificationsScrollable : MonoBehaviour
                     n.messageTitle.text = titles[i];
                     n.messageDate.text = dates[i];
                     n.issuerUsername.text = issuer[i];
+
+                    n.SetID(id[i]);
                 }
                 id.RemoveAt(id.Count - 1);
                 break;
             default:
                 break;
         }        
+    }
+
+    public void OpenMessage() {
+        
     }
 }

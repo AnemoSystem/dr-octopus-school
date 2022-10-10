@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class NotificationIcon : MonoBehaviour
 {
+    private string id;
     public Image icon;
     public Image statusIcon;
     public Text messageTitle;
@@ -12,4 +13,15 @@ public class NotificationIcon : MonoBehaviour
     public Text issuerUsername;
     public Button remove;
     public Button read;
+
+    DisplayNotificationsScrollable dn;
+
+    public void SetID(string i) {
+        id = i;
+    }
+
+    public void OpenMessage() {
+        dn = GameObject.Find("NotificationsController").GetComponent<DisplayNotificationsScrollable>();
+        dn.OpenMessage();
+    }
 }

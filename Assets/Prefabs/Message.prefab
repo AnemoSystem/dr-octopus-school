@@ -273,7 +273,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2260128629974674339}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2260128630136700827}
+        m_TargetAssemblyTypeName: NotificationIcon, Assembly-CSharp
+        m_MethodName: OpenMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2260128630136700831
 GameObject:
   m_ObjectHideFlags: 0

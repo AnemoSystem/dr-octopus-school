@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NotificationIcon : MonoBehaviour
 {
-    private string id;
+    public string id;
     public Image icon;
     public Image statusIcon;
     public Text messageTitle;
@@ -22,6 +22,11 @@ public class NotificationIcon : MonoBehaviour
 
     public void OpenMessage() {
         dn = GameObject.Find("NotificationsController").GetComponent<DisplayNotificationsScrollable>();
-        dn.OpenMessage();
+        dn.OpenMessage(id);
+    }
+
+    public void DeleteMessage() {
+        dn = GameObject.Find("NotificationsController").GetComponent<DisplayNotificationsScrollable>();
+        dn.DeleteMessage(id);
     }
 }

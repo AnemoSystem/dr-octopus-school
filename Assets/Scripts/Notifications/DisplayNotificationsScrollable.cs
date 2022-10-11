@@ -4,19 +4,20 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class DisplayNotificationsScrollable : MonoBehaviour
 {
     public GameObject recieveList;
-    public GameObject simpleMessage;
+    public DisplayMessage simpleMessage;
 
     public GameObject template;
     public Transform parent;
     private int numberMessages;
     public Sprite[] spritesIcon;
     public Sprite[] spritesStatus;
+    public GameObject loading;
 
-    string[] allNotifications;
     List<string> id = new List<string>();
     List<string> titles = new List<string>();
     List<string> dates = new List<string>();
@@ -24,8 +25,35 @@ public class DisplayNotificationsScrollable : MonoBehaviour
     List<string> status = new List<string>();
     List<string> type = new List<string>();
     
+    public GameObject windowConfirm;
+    public Text windowText;
+    public Button yesButton;
+    public Button noButton;
+
+    public void OpenWindow(string t) {
+        windowConfirm.SetActive(true);
+        windowText.text = t;
+    }
+
+    public void CloseWindow() {
+        windowConfirm.SetActive(false);
+    }
+
     void Start() {
         Server.username = "jooj";
+
+        CloseWindow();
+        loading.SetActive(true);
+        simpleMessage.gameObject.SetActive(false);
+        recieveList.SetActive(true);
+        
+        ResetList();
+    }
+
+    void ResetList() {
+        foreach(Transform child in parent) {
+            Destroy(child.gameObject);
+        }
         StartCoroutine(StartDisplay());
     }
 
@@ -61,7 +89,6 @@ public class DisplayNotificationsScrollable : MonoBehaviour
                 break;
             case UnityWebRequest.Result.Success:
                 string result = www.downloadHandler.text.ToString();
-                //Debug.Log(result);
                 numberMessages = Convert.ToInt32(result);
                 break;
             default:
@@ -90,9 +117,21 @@ public class DisplayNotificationsScrollable : MonoBehaviour
                 break;
             case UnityWebRequest.Result.Success:
                 string result = www.downloadHandler.text.ToString();
-                allNotifications = result.Split('%');
+                string[] sp = result.Split('%');
 
-                for(int i = 0; i < allNotifications.Length; i++) {
+                List<string> allNotifications = new List<string>();
+
+                id.Clear();
+                titles.Clear();
+                type.Clear();
+                issuer.Clear();
+                dates.Clear();
+                status.Clear();
+                //allNotifications.Clear();
+
+                allNotifications.AddRange(sp);
+                Debug.Log(string.Join(" ", allNotifications));
+                for(int i = 0; i < allNotifications.Count; i++) {
                     string[] t = allNotifications[i].Split('@');
                     for(int j = 0; j < t.Length; j++) {   
                         switch(j) {
@@ -119,7 +158,7 @@ public class DisplayNotificationsScrollable : MonoBehaviour
                         }   
                     }
                 }
-
+                
                 for(int i = 0; i < numberMessages; i++) {
                     GameObject g = Instantiate(template, parent);
                     NotificationIcon n = g.GetComponent<NotificationIcon>();
@@ -149,14 +188,111 @@ public class DisplayNotificationsScrollable : MonoBehaviour
 
                     n.SetID(id[i]);
                 }
+                loading.SetActive(false);
                 id.RemoveAt(id.Count - 1);
                 break;
             default:
                 break;
-        }        
+        }
+        // fix bug
+        if(parent.childCount != numberMessages) {
+            int t = parent.childCount - numberMessages;
+            for(int i = t; i < parent.childCount; i++) {
+                Destroy(parent.GetChild(i).gameObject);
+            }
+        }      
     }
 
-    public void OpenMessage() {
+    IEnumerator SearchSimpleMessage(string myID) {
+        WWWForm form = new WWWForm();
+        form.AddField("id", myID); 
         
+        loading.SetActive(true);
+
+        UnityWebRequest www = UnityWebRequest.Post(
+            Server.mainServer + "/school-management-system/unity/notifications/simple_message.php", 
+            form);
+        yield return www.SendWebRequest();
+
+        switch(www.result) {
+            case UnityWebRequest.Result.ConnectionError:
+                Debug.Log("Get Data - Connection Error");
+                break;
+            case UnityWebRequest.Result.DataProcessingError:
+                Debug.Log("Get Data - Data Processing Error");
+                break;
+            case UnityWebRequest.Result.ProtocolError:
+                Debug.Log("Get Data - HTTP Error");
+                break;
+            case UnityWebRequest.Result.Success:
+                string result = www.downloadHandler.text.ToString();
+                string[] details = result.Split('=');
+                simpleMessage.SetMessage(
+                    details[0],
+                    details[1],
+                    details[2],
+                    details[3]
+                );
+                loading.SetActive(false);
+                simpleMessage.gameObject.SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    IEnumerator DeleteNotification(string myID) {
+        WWWForm form = new WWWForm();
+        form.AddField("id", myID); 
+        
+        loading.SetActive(true);
+        recieveList.SetActive(false);
+
+        UnityWebRequest www = UnityWebRequest.Post(
+            Server.mainServer + "/school-management-system/unity/notifications/delete_notifications.php", 
+            form);
+        yield return www.SendWebRequest();
+        
+        switch(www.result) {
+            case UnityWebRequest.Result.ConnectionError:
+                Debug.Log("Get Data - Connection Error");
+                break;
+            case UnityWebRequest.Result.DataProcessingError:
+                Debug.Log("Get Data - Data Processing Error");
+                break;
+            case UnityWebRequest.Result.ProtocolError:
+                Debug.Log("Get Data - HTTP Error");
+                break;
+            case UnityWebRequest.Result.Success:
+                loading.SetActive(false);
+                recieveList.SetActive(true);
+                Debug.Log("Removed with success!");
+                break;
+            default:
+                break;
+        }
+        ResetList();
+    }
+
+    public void OpenMessage(string myID) {
+        recieveList.SetActive(false);
+        StartCoroutine(SearchSimpleMessage(myID));
+    }
+
+    public void CloseMessage() {
+        simpleMessage.gameObject.SetActive(false);
+        recieveList.SetActive(true);
+        ResetList();
+    }
+
+    public void DeleteMessage(string myID) {
+        OpenWindow("Você realmente quer deletar a mensagem?");
+        yesButton.onClick.AddListener(delegate{StartDeleteMsg(myID);});
+        noButton.onClick.AddListener(CloseWindow);
+    }
+
+    void StartDeleteMsg(string myID) {
+        StartCoroutine(DeleteNotification(myID));
+        CloseWindow();
     }
 }

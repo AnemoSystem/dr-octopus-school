@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5b95e86a26b254ea65c559838b8c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   icon: {fileID: 2260128630597537976}
   statusIcon: {fileID: 2260128629570521491}
   messageTitle: {fileID: 2260128631125186297}
@@ -740,4 +741,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2260128631348350413}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2260128630136700827}
+        m_TargetAssemblyTypeName: NotificationIcon, Assembly-CSharp
+        m_MethodName: DeleteMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

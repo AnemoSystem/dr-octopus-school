@@ -40,7 +40,7 @@ public class DisplayNotificationsScrollable : MonoBehaviour
     }
 
     void Start() {
-        Server.username = "jooj";
+        //Server.username = "jooj";
 
         CloseWindow();
         loading.SetActive(true);

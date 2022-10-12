@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
@@ -27,9 +28,12 @@ public class MenuController : MonoBehaviour
     */
 
     // Menu Friend
-    public void OpenMenuFriend() {
-        menuFriend.SetActive(true);
+    public void OpenMenuFriend(CustomBodyPart cs, string playerName) {
         black.SetActive(true);
+        menuFriend.SetActive(true);
+        ShowMenuFriend sf = menuFriend.GetComponent<ShowMenuFriend>();
+        sf.SetFriend(cs);
+        sf.SetFriendName(playerName);
     }
 
     public void CloseMenuFriend() {

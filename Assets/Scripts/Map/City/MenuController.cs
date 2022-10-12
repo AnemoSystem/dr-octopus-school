@@ -29,6 +29,7 @@ public class MenuController : MonoBehaviour
 
     // Menu Friend
     public void OpenMenuFriend(CustomBodyPart cs, string playerName) {
+        PlayerMoving(false);
         black.SetActive(true);
         menuFriend.SetActive(true);
         ShowMenuFriend sf = menuFriend.GetComponent<ShowMenuFriend>();
@@ -37,6 +38,7 @@ public class MenuController : MonoBehaviour
     }
 
     public void CloseMenuFriend() {
+        PlayerMoving(true);
         menuFriend.SetActive(false);
         black.SetActive(false);        
     }

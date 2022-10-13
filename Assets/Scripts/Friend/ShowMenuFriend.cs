@@ -31,7 +31,7 @@ public class ShowMenuFriend : MonoBehaviour
 
     public void OpenMenuMessage() {
         inputMessage.text = "";
-        title.text = "Título: Pedido de amizade para " + friendName.text;
+        title.text = "Pedido de amizade para " + friendName.text;
         from.text = "De:\n" + Server.username;
         to.text = "Para:\n" + friendName.text;
         CloseWindow();

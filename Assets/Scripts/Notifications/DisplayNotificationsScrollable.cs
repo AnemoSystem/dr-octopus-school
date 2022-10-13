@@ -18,6 +18,8 @@ public class DisplayNotificationsScrollable : MonoBehaviour
     public Sprite[] spritesIcon;
     public Sprite[] spritesStatus;
     public GameObject loading;
+    private string whichFriend;
+    private string notificationIDSelected;
 
     List<string> id = new List<string>();
     List<string> titles = new List<string>();
@@ -229,6 +231,7 @@ public class DisplayNotificationsScrollable : MonoBehaviour
                 string result = www.downloadHandler.text.ToString();
                 string[] details = result.Split('=');
                 if(details[4] == "F") {
+                    whichFriend = details[2];
                     addFriendMessage.SetMessage(
                         details[0],
                         details[1],
@@ -287,6 +290,7 @@ public class DisplayNotificationsScrollable : MonoBehaviour
 
     public void OpenMessage(string myID) {
         recieveList.SetActive(false);
+        notificationIDSelected = myID;
         StartCoroutine(SearchSimpleMessage(myID));
     }
 
@@ -306,5 +310,47 @@ public class DisplayNotificationsScrollable : MonoBehaviour
     void StartDeleteMsg(string myID) {
         StartCoroutine(DeleteNotification(myID));
         CloseWindow();
+    }
+
+    public void AddSingleFriend() {
+        StartCoroutine(CoroutineAddFriend());
+    }
+
+    public void RejectFriend() {
+        StartCoroutine(DeleteNotification(notificationIDSelected));
+        addFriendMessage.gameObject.SetActive(false);
+        CloseWindow();
+    }
+
+    IEnumerator CoroutineAddFriend() {
+        yield return StartCoroutine(StartAddFriend());
+        yield return StartCoroutine(DeleteNotification(notificationIDSelected));
+        CloseWindow();
+        addFriendMessage.gameObject.SetActive(false);
+    }
+
+    IEnumerator StartAddFriend() {
+        WWWForm form = new WWWForm();
+        form.AddField("user_1", whichFriend);
+        form.AddField("user_2", Server.username);
+
+        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/school-management-system/unity/add_friend.php", form);
+        yield return www.SendWebRequest();
+        switch(www.result) {
+            case UnityWebRequest.Result.ConnectionError:
+                Debug.Log("Get Data - Connection Error");
+                break;
+            case UnityWebRequest.Result.DataProcessingError:
+                Debug.Log("Get Data - Data Processing Error");
+                break;
+            case UnityWebRequest.Result.ProtocolError:
+                Debug.Log("Get Data - HTTP Error");
+                break;
+            case UnityWebRequest.Result.Success:
+                Debug.Log("Added friend with success!");
+                break;
+            default:
+                break;
+        }      
     }
 }

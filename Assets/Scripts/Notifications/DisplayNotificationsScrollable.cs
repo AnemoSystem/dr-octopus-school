@@ -10,6 +10,7 @@ public class DisplayNotificationsScrollable : MonoBehaviour
 {
     public GameObject recieveList;
     public DisplayMessage simpleMessage;
+    public DisplayMessage addFriendMessage;
 
     public GameObject template;
     public Transform parent;
@@ -40,7 +41,7 @@ public class DisplayNotificationsScrollable : MonoBehaviour
     }
 
     void Start() {
-        //Server.username = "jooj";
+        Server.username = "jooj";
 
         CloseWindow();
         loading.SetActive(true);
@@ -227,14 +228,24 @@ public class DisplayNotificationsScrollable : MonoBehaviour
             case UnityWebRequest.Result.Success:
                 string result = www.downloadHandler.text.ToString();
                 string[] details = result.Split('=');
-                simpleMessage.SetMessage(
-                    details[0],
-                    details[1],
-                    details[2],
-                    details[3]
-                );
+                if(details[4] == "F") {
+                    addFriendMessage.SetMessage(
+                        details[0],
+                        details[1],
+                        details[2],
+                        details[3]
+                    );
+                    addFriendMessage.gameObject.SetActive(true);
+                } else {
+                    simpleMessage.SetMessage(
+                        details[0],
+                        details[1],
+                        details[2],
+                        details[3]
+                    );
+                    simpleMessage.gameObject.SetActive(true);
+                }
                 loading.SetActive(false);
-                simpleMessage.gameObject.SetActive(true);
                 break;
             default:
                 break;
@@ -281,6 +292,7 @@ public class DisplayNotificationsScrollable : MonoBehaviour
 
     public void CloseMessage() {
         simpleMessage.gameObject.SetActive(false);
+        addFriendMessage.gameObject.SetActive(false);
         recieveList.SetActive(true);
         ResetList();
     }

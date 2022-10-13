@@ -3806,6 +3806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recieveList: {fileID: 564761734}
   simpleMessage: {fileID: 895611531}
+  addFriendMessage: {fileID: 0}
   template: {fileID: 2260128630136700831, guid: 2ce63936649fc604eadd6f051ac93240, type: 3}
   parent: {fileID: 258390954}
   spritesIcon:
@@ -27894,7 +27895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1079020410
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29314,7 +29315,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1169205034
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39561,6 +39562,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1777879749}
+  - component: {fileID: 1777879750}
   m_Layer: 5
   m_Name: AddFriendMessage
   m_TagString: Untagged
@@ -39594,6 +39596,22 @@ RectTransform:
   m_AnchoredPosition: {x: -24.043, y: 148.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1777879750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777879748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fad778114cc0004bb7bd79ac0c69afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 786647734}
+  message: {fileID: 1625566458}
+  date: {fileID: 672504512}
+  issuer: {fileID: 798196747}
 --- !u!1 &1789085260
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,9 @@ TagManager:
   - Shop
   - ObstacleRunner
   - ObstaclePatternRunner
+  - PlatformFrogger
+  - ObstacleFrogger
+  - BarrierFrogger
   layers:
   - Default
   - TransparentFX
@@ -22,9 +25,9 @@ TagManager:
   - ObjectsMap
   - PlayerBounds
   - Enemy
-  - 
-  - 
-  - 
+  - PlatformFrogger
+  - ObstacleFrogger
+  - BarrierFrogger
   - 
   - 
   - 

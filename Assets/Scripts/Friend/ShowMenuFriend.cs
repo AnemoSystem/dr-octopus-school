@@ -12,6 +12,7 @@ public class ShowMenuFriend : MonoBehaviour
     public GameObject UIMessage;
     public InputField inputMessage;
     public GameObject playerView;
+    public GameObject windowResults;
 
     [Header("Message Itens")]
     public Text title;
@@ -39,12 +40,19 @@ public class ShowMenuFriend : MonoBehaviour
     }
 
     public void CloseMenuMessage() {
+        OpenWindowResults(false);
         UIMessage.SetActive(false);
         playerView.SetActive(true);
     }
 
+    public void OpenWindowResults(bool value) {
+        windowResults.SetActive(value);
+        if(!value) CloseMenuMessage();
+    }
+
     void OnEnable() {
         playerView.SetActive(true);
+        OpenWindowResults(false);
         CloseWindow();
         CloseMenuMessage();
     }
@@ -66,5 +74,18 @@ public class ShowMenuFriend : MonoBehaviour
 
     public void SetFriendName(string name) {
         friendName.text = name;
+    }
+
+    public void SendFriendRequest() {
+        DisplayMessage.SendMessage(
+            title.text,
+            inputMessage.text,
+            "F",
+            "N",
+            Server.username,
+            friendName.text,
+            this
+        );
+        OpenWindowResults(true);
     }
 }

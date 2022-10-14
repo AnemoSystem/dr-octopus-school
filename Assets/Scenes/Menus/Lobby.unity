@@ -412,6 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 734860833}
   - component: {fileID: 734860834}
+  - component: {fileID: 734860835}
   m_Layer: 0
   m_Name: UpdateNumberPlayers
   m_TagString: Untagged
@@ -447,6 +448,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonTextA: {fileID: 1224313264}
   buttonTextB: {fileID: 1343990148}
+--- !u!114 &734860835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734860832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d05633653d0814f9f4a4c8e766d7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1224313262
 GameObject:
   m_ObjectHideFlags: 0

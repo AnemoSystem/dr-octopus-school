@@ -25,6 +25,7 @@ public class Server : MonoBehaviour
     public static string mainServer = "http://localhost";
     public static bool firstOpenning = false;
     public static string idServer = "";
+    public static bool canStartDialogue = false;
 
     public void Login() {
         StartCoroutine(Upload());

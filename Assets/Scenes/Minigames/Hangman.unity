@@ -1082,6 +1082,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0caf97d3fef23d4e910192e7cec60ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wordContainer: {fileID: 1844103007}
+  keyboardContainer: {fileID: 1386580300}
+  letterContainer: {fileID: 7190664633830888368, guid: c2d82923f0ec23742adad06ca6455630, type: 3}
+  hangmanStages:
+  - {fileID: 1423690637}
+  - {fileID: 1885690504}
+  - {fileID: 737376734}
+  - {fileID: 1238845165}
+  - {fileID: 1217350712}
+  - {fileID: 521588037}
+  letterButton: {fileID: 3339114446481139830, guid: 08d3845be3df72048af9c3a7fecfc280, type: 3}
+  possibleWord: {fileID: 4900000, guid: af7a1914b6573a5498f052bd9293b538, type: 3}
 --- !u!4 &1356905155
 Transform:
   m_ObjectHideFlags: 0
@@ -1129,7 +1141,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.989, y: 0.56537837}
-  m_AnchoredPosition: {x: 1.6392975, y: 0.11401367}
+  m_AnchoredPosition: {x: 1.6392822, y: 0.11401367}
   m_SizeDelta: {x: 3.2786999, y: -0.29399872}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1386580302

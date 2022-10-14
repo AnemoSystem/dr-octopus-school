@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
     public GameObject MenuNews;
-    public GameObject MenuConfig;
+    public GameObject MenuSettings;
     public GameObject MenuNotif;
     public GameObject MenuMap;
 
@@ -14,6 +15,7 @@ public class MenuController : MonoBehaviour
     public GameObject menuEmoji;
     public GameObject menuStudent;
     public GameObject menuShop;
+    public GameObject menuFriend;
 
     public GameObject black;
     public GameObject windowConfirm;
@@ -25,6 +27,22 @@ public class MenuController : MonoBehaviour
     }
     */
 
+    // Menu Friend
+    public void OpenMenuFriend(CustomBodyPart cs, string playerName) {
+        PlayerMoving(false);
+        black.SetActive(true);
+        menuFriend.SetActive(true);
+        ShowMenuFriend sf = menuFriend.GetComponent<ShowMenuFriend>();
+        sf.SetFriend(cs);
+        sf.SetFriendName(playerName);
+    }
+
+    public void CloseMenuFriend() {
+        PlayerMoving(true);
+        menuFriend.SetActive(false);
+        black.SetActive(false);        
+    }
+
     // News
     public void OpenMenuNews() {
         //MenuNews.SetActive(true);
@@ -35,13 +53,15 @@ public class MenuController : MonoBehaviour
         MenuNews.SetActive(false);
     }
 
-    // Configurations
-    public void OpenMenuConfig() {
-        MenuConfig.SetActive(true);
+    // Settings
+    public void OpenMenuSettings() {
+        MenuSettings.SetActive(true);
+        black.SetActive(true);
     }
 
-    public void CloseMenuConfig () {
-        MenuConfig.SetActive(false);
+    public void CloseMenuSettings() {
+        MenuSettings.SetActive(false);
+        black.SetActive(false);
     }
 
     // Notifications
@@ -56,10 +76,12 @@ public class MenuController : MonoBehaviour
     // Map
     public void OpenMenuMap() {
         MenuMap.SetActive(true);
+        black.SetActive(true);
     }
 
     public void CloseMenuMap () {
         MenuMap.SetActive(false);
+        black.SetActive(false);
     }
 
     public void SendMessage() {

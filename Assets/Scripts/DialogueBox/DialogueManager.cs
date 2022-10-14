@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,11 +16,15 @@ public class DialogueManager : MonoBehaviour
     private bool isWriting;
     private string lastSentence;
 
+    public UnityEvent OnEndDialogue;
+    private float waitInit = 1.2f;
+
     void Start() {
         sentences = new Queue<string>();
         activate = false;
         isWriting = false;
         blackBK.SetActive(false);
+        dialogueText.text = "";
     }
 
     public void StartDialogue(Dialogue dialogue) {
@@ -33,6 +38,13 @@ public class DialogueManager : MonoBehaviour
         foreach(string sentence in dialogue.sentences) {
             sentences.Enqueue(sentence);
         }
+        dialogueText.text = "";
+        StartCoroutine(DelayForAnimation());
+        //DisplayNextSentence();
+    }
+
+    IEnumerator DelayForAnimation() {
+        yield return new WaitForSeconds(waitInit);
         DisplayNextSentence();
     }
 
@@ -69,11 +81,13 @@ public class DialogueManager : MonoBehaviour
     }
 
     void EndDialogue() {
+        waitInit = 0.4f;
         Server.canMove = true;
         activate = false;
         isWriting = false;
         anim.SetBool("isOpen", false);
         blackBK.SetActive(false);
+        OnEndDialogue.Invoke();
     }
 
     public bool getActivate() {

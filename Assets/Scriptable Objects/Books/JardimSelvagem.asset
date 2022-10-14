@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8e40f037230d749a27f077f09c7be7, type: 3}
+  m_Name: JardimSelvagem
+  m_EditorClassIdentifier: 
+  pages:
+  - {fileID: 21300000, guid: 53115895ca4abff4794d290af4793e60, type: 3}
+  - {fileID: 21300000, guid: 9481d4b547ce5704499da87ab8b8d1e7, type: 3}
+  - {fileID: 21300000, guid: 744b335965c168740acafc22fa977604, type: 3}
+  - {fileID: 21300000, guid: 5a89a2d93701bdd409ef8c78bb2ca987, type: 3}
+  - {fileID: 21300000, guid: 569cfb378f5142a4a8e207b771598bd5, type: 3}
+  - {fileID: 21300000, guid: a4eb3a4932bceb14ebd2e972c9875933, type: 3}
+  - {fileID: 21300000, guid: e0d201ae14637984fba6c5c25e3c2a91, type: 3}
+  - {fileID: 21300000, guid: a67257e16e6a23e429eb34c8fb5dff32, type: 3}
+  - {fileID: 21300000, guid: 5c45d55a19f086c49a10885e97fa364a, type: 3}
+  - {fileID: 21300000, guid: aef5e63d36f1a5d47b4f9f8562587c51, type: 3}
+  - {fileID: 21300000, guid: 5549b162f2905b4458f260781a550615, type: 3}
+  - {fileID: 21300000, guid: 30236285d41667247b8cc535992d25f4, type: 3}
+  - {fileID: 21300000, guid: b7811dc61c4a53c4884acc3cbb5ac77f, type: 3}
+  - {fileID: 21300000, guid: fa80832f27ec1c7469b40f7ae968a0d6, type: 3}
+  - {fileID: 21300000, guid: 2d21d0de208df8a46a675ec40f44f400, type: 3}
+  - {fileID: 21300000, guid: e61a1560468303d468794258ff04a5f5, type: 3}
+  - {fileID: 21300000, guid: 2e00f712d5b488e4981cd39b22bfe35f, type: 3}
+  - {fileID: 21300000, guid: 69f10a0463cb06f4b9f1f74790c23304, type: 3}
+  - {fileID: 21300000, guid: 1de4f95c7b956344daa551ded02bd235, type: 3}
+  - {fileID: 21300000, guid: 209560c4088fbf549bcd8fd182e29d33, type: 3}
+  title: Jardim Selvagem
+  frontSprite: {fileID: 1701290548101157957, guid: 68cfe5942d653c54494f519a12e3037c, type: 3}
+  openedSprite: {fileID: -5186900770979106494, guid: 68cfe5942d653c54494f519a12e3037c, type: 3}
+  backwardSprite: {fileID: 1230883041982368979, guid: 68cfe5942d653c54494f519a12e3037c, type: 3}

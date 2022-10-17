@@ -16,6 +16,11 @@ public class GameManagerFrogger : MonoBehaviour
     private int score;
     private int time;
 
+    public GameObject menu;
+    public GameObject map;
+    public GameObject inGame;
+
+
     private float respawnTime;
 
     private void Awake()
@@ -25,20 +30,33 @@ public class GameManagerFrogger : MonoBehaviour
         homes = FindObjectsOfType<Home>();
         frogger = FindObjectOfType<Frogger>();
     }
-
+/*
     private void Start()
     {
         NewGame();
     }
-
-    private void NewGame()
+*/
+    public void NewGame()
     {
-        gameOverMenu.SetActive(false);
 
+        inGame.SetActive(true);
+        map.SetActive(true);
+        gameOverMenu.SetActive(false);
+        menu.SetActive(false);
         SetScore(0);
         SetLives(3);
         NewLevel();
     }
+/* 
+        public void NewGame()
+    {
+        gameOverMenu.SetActive(false);
+        
+        SetScore(0);
+        SetLives(3);
+        NewLevel();
+    }
+    */
 
     private void NewLevel()
     {

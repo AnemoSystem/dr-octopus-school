@@ -1,4 +1,3 @@
-/* transformado em comentário para evitar erros de compilação no projeto
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -67,7 +66,7 @@ public class HangmanController : MonoBehaviour
 
     private string generateWord()
     {
-        string[] wordList = possibleWord.text.Split("\n");
+        string[] wordList = possibleWord.text.Split('\n');
         string line = wordList[Random.Range(0, wordList.Length - 1)];
         return line.Substring(0, line.Length - 1);
     }
@@ -114,4 +113,4 @@ public class HangmanController : MonoBehaviour
         }
     }
 
-}*/
+}

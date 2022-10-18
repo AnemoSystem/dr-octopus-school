@@ -25,10 +25,10 @@ TagManager:
   - ObjectsMap
   - PlayerBounds
   - Enemy
+  - NPC
   - PlatformFrogger
   - ObstacleFrogger
   - BarrierFrogger
-  - 
   - 
   - 
   - 

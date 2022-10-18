@@ -2837,13 +2837,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuNews: {fileID: 1426640787}
-  MenuConfig: {fileID: 1634895696}
+  MenuSettings: {fileID: 0}
   MenuNotif: {fileID: 978350063}
   MenuMap: {fileID: 614264821}
   MenuPlayer: {fileID: 709834309}
   menuEmoji: {fileID: 0}
   menuStudent: {fileID: 0}
   menuShop: {fileID: 0}
+  menuFriend: {fileID: 0}
   black: {fileID: 0}
   windowConfirm: {fileID: 0}
 --- !u!4 &483528962
@@ -4668,6 +4669,8 @@ MonoBehaviour:
   - {fileID: 2027230314}
   - {fileID: 1060394897}
   - {fileID: 1472448823}
+  options: []
+  loading: {fileID: 0}
 --- !u!1 &714708233
 GameObject:
   m_ObjectHideFlags: 0
@@ -18105,11 +18108,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7721422735598082645, guid: 04c8f94d233c3df44b8fead71ac9ca64, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.0293012
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7721422735598082645, guid: 04c8f94d233c3df44b8fead71ac9ca64, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.852261
+      value: -4.76
       objectReference: {fileID: 0}
     - target: {fileID: 7721422735598082645, guid: 04c8f94d233c3df44b8fead71ac9ca64, type: 3}
       propertyPath: m_LocalPosition.z

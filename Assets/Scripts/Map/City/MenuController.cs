@@ -37,6 +37,12 @@ public class MenuController : MonoBehaviour
         sf.SetFriendName(playerName);
     }
 
+    public void SimpleOpenMenuFriend() {
+        PlayerMoving(false);
+        black.SetActive(true);
+        menuFriend.SetActive(true);
+    }
+
     public void CloseMenuFriend() {
         PlayerMoving(true);
         menuFriend.SetActive(false);

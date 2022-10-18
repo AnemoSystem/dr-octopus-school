@@ -94,6 +94,7 @@ public class ListFriends : MonoBehaviour
 
                         f.SetFriendName(friend_names[i]);
                         f.SetID(friend_id[i]);
+                        f.SetMenuController(transform.GetChild(2).gameObject);
                     }
                 }
                 break;

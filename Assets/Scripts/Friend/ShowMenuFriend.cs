@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class ShowMenuFriend : MonoBehaviour
 {
@@ -58,14 +59,14 @@ public class ShowMenuFriend : MonoBehaviour
     }
 
     void Update() {
-        SearchParts();
+        SearchParts(friend.idSkin, friend.idLegs, friend.idTorso, friend.idHair);
     }
     
-    void SearchParts() {
-        customBody.idSkin = friend.idSkin;
-        customBody.idLegs = friend.idLegs;
-        customBody.idTorso = friend.idTorso;
-        customBody.idHair = friend.idHair;
+    void SearchParts(int skin, int legs, int torso, int hair) {
+        customBody.idSkin = skin;
+        customBody.idLegs = legs;
+        customBody.idTorso = torso;
+        customBody.idHair = hair;
     }
 
     public void SetFriend(CustomBodyPart cs) {

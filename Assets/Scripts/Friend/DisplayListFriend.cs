@@ -14,10 +14,12 @@ public class DisplayListFriend : MonoBehaviour
 
     public GameObject menuController;
     public SelectMenuFriend controlMenuFriend;
+    public bool openDirectly = false;
 
     void Start() {
         controlMenuFriend = menuController.GetComponent<SelectMenuFriend>();
-        gameObject.GetComponent<Button>().onClick.AddListener(Open);
+        if(!openDirectly)
+            gameObject.GetComponent<Button>().onClick.AddListener(Open);
     }
 
     void Open() {

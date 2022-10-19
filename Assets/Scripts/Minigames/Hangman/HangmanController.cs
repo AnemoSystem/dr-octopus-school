@@ -7,30 +7,22 @@ using TMPro;
 public class HangmanController : MonoBehaviour
 {
     [SerializeField] GameObject wordContainer;
-    [SerializeField] GameObject keyboardContainer;
+    [SerializeField] GameObject keyboardContainer; //maybe obsolete
     [SerializeField] GameObject letterContainer;
     [SerializeField] GameObject[] hangmanStages;
-    [SerializeField] GameObject letterButton;
+    [SerializeField] GameObject letterButton; //obsolete, will be removed later
     [SerializeField] TextAsset possibleWord;
+    public TMP_InputField letterInput;
     
     private string word;
     private int incorrectGuesses, correctGuesses;
 
     void Start()
     {
-        InitialiseButtons();
-        InitialiseGame();
+        InitializeGame();
     }
 
-    private void InitialiseButtons()
-    {
-        for(int i = 65; i <= 90; i++)
-        {
-            CreateButton(i);
-        }
-    }
-
-    private void InitialiseGame()
+    private void InitializeGame()
     {
         //reset data back to original state
         incorrectGuesses = 0;
@@ -57,12 +49,13 @@ public class HangmanController : MonoBehaviour
 
     }
 
-    private void CreateButton(int i)
+    //obsolete
+    /*private void CreateButton(int i)
     {
         GameObject temp = Instantiate(letterButton, keyboardContainer.transform);
         temp.GetComponentInChildren<TextMeshProUGUI>().text = ((char)i).ToString();
         temp.GetComponent<Button>().onClick.AddListener(delegate { CheckLetter(((char)i).ToString()); });
-    }
+    }*/
 
     private string generateWord()
     {
@@ -71,7 +64,21 @@ public class HangmanController : MonoBehaviour
         return line.Substring(0, line.Length - 1);
     }
 
-    private void CheckLetter(string inputLetter)
+    public void InputButton()
+    {
+        string inputLetter = letterInput.text;
+        Debug.Log(inputLetter);
+        if(inputLetter == "" || inputLetter == " ")
+        {
+            return;
+        }
+
+        //CheckLetter(inputLetter);
+        letterInput.text = "";
+    }
+
+    //obsolete
+    /*private void CheckLetter(string inputLetter)
     {
         bool letterInWord = false;
         for(int i = 0; i < word.Length; i++)
@@ -89,7 +96,7 @@ public class HangmanController : MonoBehaviour
             hangmanStages[incorrectGuesses - 1].SetActive(true);
         }
         CheckOutcome();
-    }
+    }*/
 
     private void CheckOutcome()
     {
@@ -99,7 +106,7 @@ public class HangmanController : MonoBehaviour
             {
                 wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].color = Color.green;
             }
-            Invoke("InitialiseGame", 3f);
+            Invoke("InitializeGame", 3f);
         }
 
         if(incorrectGuesses == hangmanStages.Length) //lose
@@ -109,7 +116,7 @@ public class HangmanController : MonoBehaviour
                 wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].color = Color.red;
                 wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].text = word[i].ToString();
             }
-            Invoke("InitialiseGame", 3f);
+            Invoke("InitializeGame", 3f);
         }
     }
 

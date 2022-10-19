@@ -1,6 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManagerFrogger : MonoBehaviour
 {
@@ -16,6 +17,13 @@ public class GameManagerFrogger : MonoBehaviour
     private int score;
     private int time;
 
+    public GameObject menu;
+    public GameObject map;
+    public GameObject inGame;
+    public GameObject water;
+//    public LoadWithTransition transition;
+
+
     private float respawnTime;
 
     private void Awake()
@@ -25,20 +33,33 @@ public class GameManagerFrogger : MonoBehaviour
         homes = FindObjectsOfType<Home>();
         frogger = FindObjectOfType<Frogger>();
     }
-
+/*
     private void Start()
     {
         NewGame();
     }
-
-    private void NewGame()
+*/
+    public void NewGame()
     {
+        water.SetActive(true);
+        inGame.SetActive(true);
+        map.SetActive(true);
         gameOverMenu.SetActive(false);
-
+        menu.SetActive(false);
         SetScore(0);
         SetLives(3);
         NewLevel();
     }
+/* 
+        public void NewGame()
+    {
+        gameOverMenu.SetActive(false);
+        
+        SetScore(0);
+        SetLives(3);
+        NewLevel();
+    }
+    */
 
     private void NewLevel()
     {
@@ -90,17 +111,17 @@ public class GameManagerFrogger : MonoBehaviour
         gameOverMenu.SetActive(true);
 
         StopAllCoroutines();
-        StartCoroutine(CheckForPlayAgain());
+//        StartCoroutine(CheckForPlayAgain());
     }
-
+/*
     private IEnumerator CheckForPlayAgain()
     {
         bool playAgain = false;
 
         while (!playAgain)
         {
-            if (Input.GetKeyDown(KeyCode.Return)) {
-                playAgain = true;
+            if(Input.GetKeyDown(KeyCode.R)) {
+                transition.FadeIn(SceneManager.GetActiveScene().name);
             }
 
             yield return null;
@@ -108,6 +129,7 @@ public class GameManagerFrogger : MonoBehaviour
 
         NewGame();
     }
+*/
 
     public void AdvancedRow()
     {

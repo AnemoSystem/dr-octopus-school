@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MessageController : MonoBehaviour
 { 
     public SelectMenuFriend selectMenu;
+    public GameObject window;
 
     [Header("Message Section")]
     public GameObject menuMessage;
@@ -20,10 +21,13 @@ public class MessageController : MonoBehaviour
         if(status) {
             from.text = "De:\n" + Server.username;
             to.text = "Para:\n" + selectMenu.username.text;
+        } else {
+            window.SetActive(false);
         }
     }
 
     public void SendSimpleMessage(bool forSchool) {
+        /*
         string type = forSchool ? "P" : "S";
         DisplayMessage.SendMessage(
             title.text,
@@ -34,6 +38,29 @@ public class MessageController : MonoBehaviour
             selectMenu.username.text,
             this
         );
+        */
+        if(forSchool) {
+            DisplayMessage.SendMessage(
+                title.text,
+                message.text,
+                "P",
+                "N",
+                Server.username,
+                "admin",
+                this
+            );
+        } else {
+            DisplayMessage.SendMessage(
+                title.text,
+                message.text,
+                "S",
+                "N",
+                Server.username,
+                selectMenu.username.text,
+                this
+            );
+        }
+        window.SetActive(true);
     }
 
     void OnDisable() {

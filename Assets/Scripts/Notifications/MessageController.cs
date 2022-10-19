@@ -15,18 +15,25 @@ public class MessageController : MonoBehaviour
     public InputField title;
     public InputField message;
 
-    public void OpenMessageMenu(bool status) {
-        menuMessage.SetActive(status);
-        selectMenu.gameObject.SetActive(!status);
-        if(status) {
-            from.text = "De:\n" + Server.username;
+    public void OpenMessageMenu(bool forSchool) {
+        menuMessage.SetActive(true);
+        selectMenu.gameObject.SetActive(false);
+        from.text = "De:\n" + Server.username;
+        if(forSchool)
+            to.text = "Para:\nEquipe da Escola";
+        else
             to.text = "Para:\n" + selectMenu.username.text;
-        } else {
-            window.SetActive(false);
-        }
     }
 
-    public void SendSimpleMessage(bool forSchool) {
+    public void CloseMessageMenu() {
+        menuMessage.SetActive(false);
+        selectMenu.gameObject.SetActive(!true);
+        window.SetActive(false);
+        title.text = "";
+        message.text = "";
+    }
+
+    public void SendSimpleMessage() {
         /*
         string type = forSchool ? "P" : "S";
         DisplayMessage.SendMessage(
@@ -39,7 +46,7 @@ public class MessageController : MonoBehaviour
             this
         );
         */
-        if(forSchool) {
+        if(to.text == "Para:\nEquipe da Escola") {
             DisplayMessage.SendMessage(
                 title.text,
                 message.text,

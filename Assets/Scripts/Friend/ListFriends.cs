@@ -25,7 +25,7 @@ public class ListFriends : MonoBehaviour
     }
 
     void OnEnable() {
-        Server.username = "jooj";
+        //Server.username = "jooj";
         StartSearch();
     }
 

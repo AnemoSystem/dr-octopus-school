@@ -16,6 +16,7 @@ public class MenuController : MonoBehaviour
     public GameObject menuStudent;
     public GameObject menuShop;
     public GameObject menuFriend;
+    public GameObject menuUIFriend;
 
     public GameObject black;
     public GameObject windowConfirm;
@@ -47,6 +48,13 @@ public class MenuController : MonoBehaviour
         PlayerMoving(true);
         menuFriend.SetActive(false);
         black.SetActive(false);        
+    }
+
+    // Menu UI Friend (List of Friends)
+    public void OpenUIFriend(bool status) {
+        PlayerMoving(!status);
+        menuFriend.SetActive(status);
+        black.SetActive(status);
     }
 
     // News

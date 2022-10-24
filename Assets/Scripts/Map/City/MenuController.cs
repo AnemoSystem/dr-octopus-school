@@ -191,10 +191,12 @@ public class MenuController : MonoBehaviour
     public void OpenWindowConfirm() {
         windowConfirm.SetActive(true);
         black.SetActive(true);
+        PlayerMoving(false);
     }
 
     public void CloseWindowConfirm() {
         windowConfirm.SetActive(false);
         black.SetActive(false);
+        PlayerMoving(true);
     }
 }

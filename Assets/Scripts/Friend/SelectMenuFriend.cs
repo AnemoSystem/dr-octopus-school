@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.Events;
 
 public class SelectMenuFriend : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class SelectMenuFriend : MonoBehaviour
     public CustomBodyPart controller;
     public GameObject confirmDeleteWindow;
     public GameObject playerViewGameObject;
+    public UnityEvent OnDeleteFriend;
 
     public void SetBodyParts(int s, int t, int l, int h) {
         controller.idSkin = s;
@@ -40,6 +42,7 @@ public class SelectMenuFriend : MonoBehaviour
         StartCoroutine(StartDeleteFriend(id));
         Open(false);
         OpenDeleteWindow(false);
+        OnDeleteFriend.Invoke();
     }
 
     IEnumerator StartDeleteFriend(string friendID) {

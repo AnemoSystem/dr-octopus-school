@@ -20,7 +20,9 @@ public class ListFriends : MonoBehaviour
         friend_status.Clear();
     }
 
-    void StartSearch() {
+    public void StartSearch() {
+        Debug.Log("Start Searching!");
+        DestroyAllFriends();
         ResetAllArrays();
         StartCoroutine(CoroutineFriends());
     }
@@ -43,6 +45,10 @@ public class ListFriends : MonoBehaviour
     }
 
     void OnDisable() {
+        DestroyAllFriends();
+    }
+
+    void DestroyAllFriends() {
         int count = parent.childCount;
         for(int i = 0; i < count; i++)
         {

@@ -53,7 +53,7 @@ public class MenuController : MonoBehaviour
     // Menu UI Friend (List of Friends)
     public void OpenUIFriend(bool status) {
         PlayerMoving(!status);
-        menuFriend.SetActive(status);
+        menuUIFriend.SetActive(status);
         black.SetActive(status);
     }
 

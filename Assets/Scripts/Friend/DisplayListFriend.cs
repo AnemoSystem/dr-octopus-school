@@ -91,6 +91,7 @@ public class DisplayListFriend : MonoBehaviour
                     bodyPartsSelected[3]
                 );
                 controlMenuFriend.SetUsername(friend.text);
+                controlMenuFriend.SetID(id);
                 break;
             default:
                 break;

@@ -12,6 +12,7 @@ public class ListFriends : MonoBehaviour
 
     public GameObject instanceFriend;
     public Transform parent;
+    public GameObject[] whichDeactivate;
 
     void ResetAllArrays() {
         friend_id.Clear();
@@ -27,6 +28,12 @@ public class ListFriends : MonoBehaviour
     void OnEnable() {
         //Server.username = "jooj";
         StartSearch();
+        ActivateGameObjects(false);
+    }
+
+    void ActivateGameObjects(bool status) {
+        foreach(GameObject g in whichDeactivate)
+            g.SetActive(status);
     }
 
     IEnumerator CoroutineFriends() {
@@ -94,7 +101,7 @@ public class ListFriends : MonoBehaviour
 
                         f.SetFriendName(friend_names[i]);
                         f.SetID(friend_id[i]);
-                        f.SetMenuController(transform.GetChild(2).gameObject);
+                        f.SetMenuController(transform.GetChild(3).gameObject);
                     }
                 }
                 break;

@@ -14,6 +14,7 @@ public class ShowMenuFriend : MonoBehaviour
     public InputField inputMessage;
     public GameObject playerView;
     public GameObject windowResults;
+    public GameObject buttonFriend;
 
     [Header("Message Itens")]
     public Text title;
@@ -52,6 +53,7 @@ public class ShowMenuFriend : MonoBehaviour
     }
 
     void OnEnable() {
+        StartCoroutine(VerifyFriendship());
         playerView.SetActive(true);
         OpenWindowResults(false);
         CloseWindow();
@@ -88,5 +90,37 @@ public class ShowMenuFriend : MonoBehaviour
             this
         );
         OpenWindowResults(true);
+    }
+
+    IEnumerator VerifyFriendship() {
+        WWWForm form = new WWWForm();
+        form.AddField("user_1", Server.username);
+        form.AddField("user_2", friendName.text);
+
+        UnityWebRequest www = UnityWebRequest.Post(
+            Server.mainServer + "/school-management-system/unity/verify_friends.php", 
+            form
+        );
+
+        yield return www.SendWebRequest();
+        
+        switch (www.result)
+        {
+            case UnityWebRequest.Result.ConnectionError:
+                Debug.Log("Connection Error");
+                break;
+            case UnityWebRequest.Result.DataProcessingError:
+                Debug.Log("Data Processing Error");
+                break;
+            case UnityWebRequest.Result.ProtocolError:
+                Debug.Log("HTTP Error");
+                break;
+            case UnityWebRequest.Result.Success:
+                Debug.Log("Removed with success!");
+                string result = www.downloadHandler.text.ToString();
+                if(result == "exists") buttonFriend.SetActive(false);
+                else buttonFriend.SetActive(true);
+                break;
+        }
     }
 }

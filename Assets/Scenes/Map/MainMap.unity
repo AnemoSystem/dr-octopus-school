@@ -24392,6 +24392,7 @@ MonoBehaviour:
   inputMessage: {fileID: 607204899}
   playerView: {fileID: 1017272069}
   windowResults: {fileID: 1252574288}
+  buttonFriend: {fileID: 912450777}
   title: {fileID: 1274139964}
   from: {fileID: 660087314}
   to: {fileID: 1317113554}

@@ -1196,6 +1196,7 @@ MonoBehaviour:
   whichScene: Runner
   isIndividualScene: 1
   loadingTransition: {fileID: 505804842}
+  anotherTriggers: []
 --- !u!114 &121346610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32472,7 +32473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1499113097
 Transform:
   m_ObjectHideFlags: 0
@@ -32503,6 +32504,9 @@ MonoBehaviour:
   whichScene: test
   isIndividualScene: 0
   loadingTransition: {fileID: 505804842}
+  anotherTriggers:
+  - {fileID: 1825444786}
+  - {fileID: 2047127335}
 --- !u!61 &1499113099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32585,6 +32589,7 @@ MonoBehaviour:
   whichScene: Runner
   isIndividualScene: 1
   loadingTransition: {fileID: 505804842}
+  anotherTriggers: []
 --- !u!114 &1501760225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32997,10 +33002,8 @@ PolygonCollider2D:
       - {x: 24.686342, y: -4.453223}
       - {x: 24.335192, y: 1.1967254}
       - {x: 22.546988, y: 1.3194532}
-      - {x: 22.109573, y: -2.6021981}
-      - {x: 20.153881, y: -3.4812465}
-      - {x: 17.885727, y: -3.5590286}
-      - {x: 18.033401, y: -0.94912577}
+      - {x: 22.042465, y: -0.67284155}
+      - {x: 18.217949, y: -0.44581556}
       - {x: 15.019003, y: -0.098780155}
       - {x: 11.047714, y: 0.25427675}
 --- !u!4 &1530370725
@@ -36714,6 +36717,7 @@ MonoBehaviour:
   whichScene: City
   isIndividualScene: 0
   loadingTransition: {fileID: 505804842}
+  anotherTriggers: []
 --- !u!61 &1825444789
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39672,7 +39676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2047127336
 Transform:
   m_ObjectHideFlags: 0
@@ -39703,6 +39707,7 @@ MonoBehaviour:
   whichScene: test
   isIndividualScene: 0
   loadingTransition: {fileID: 505804842}
+  anotherTriggers: []
 --- !u!61 &2047127338
 BoxCollider2D:
   m_ObjectHideFlags: 0

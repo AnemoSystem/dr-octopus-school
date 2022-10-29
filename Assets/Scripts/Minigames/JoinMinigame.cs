@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class JoinMinigame : MonoBehaviour
 {
     private ChangeRoom changeRoom;
-    public string minigameName;
     public MenuController controller;
     public Button yesButton;
 
@@ -18,8 +17,6 @@ public class JoinMinigame : MonoBehaviour
 
     void OnMouseDown() {
         controller.OpenWindowConfirm();
-        changeRoom.whichScene = minigameName;
-        changeRoom.isIndividualScene = true;
         yesButton.onClick.AddListener(Open);
     }
 

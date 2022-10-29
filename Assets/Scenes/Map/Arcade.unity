@@ -1173,6 +1173,7 @@ MonoBehaviour:
   whichScene: Runner
   isIndividualScene: 1
   loadingTransition: {fileID: 505804842}
+  anotherTriggers: []
 --- !u!114 &121346610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22343,7 +22344,7 @@ MonoBehaviour:
   minX: -6
   minY: -1
   maxY: 0
-  maxX: -3
+  maxX: -1
   menuPlayer: {fileID: 709834311}
 --- !u!4 &870677133
 Transform:
@@ -22353,7 +22354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870677131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.29, y: -0.96, z: -146.63611}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 455994842}
@@ -23856,6 +23857,7 @@ MonoBehaviour:
   inputMessage: {fileID: 607204899}
   playerView: {fileID: 1017272069}
   windowResults: {fileID: 1252574288}
+  buttonFriend: {fileID: 912450777}
   title: {fileID: 1274139964}
   from: {fileID: 660087314}
   to: {fileID: 1317113554}
@@ -24452,8 +24454,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1007314630}
   - component: {fileID: 1007314633}
-  - component: {fileID: 1007314632}
-  - component: {fileID: 1007314631}
   m_Layer: 3
   m_Name: BorderUp
   m_TagString: Untagged
@@ -24475,53 +24475,6 @@ Transform:
   m_Father: {fileID: 614192091}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 80, y: 0, z: 0}
---- !u!61 &1007314631
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007314629}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.061655387}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.87668896}
-  m_EdgeRadius: 0
---- !u!50 &1007314632
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007314629}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &1007314633
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25845,7 +25798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e09faf551b6f1b45bad341043325e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigameName: Blockfall
   controller: {fileID: 483528961}
   yesButton: {fileID: 99224829}
 --- !u!114 &1092382491
@@ -25864,6 +25816,7 @@ MonoBehaviour:
   whichScene: 
   isIndividualScene: 0
   loadingTransition: {fileID: 505804842}
+  anotherTriggers: []
 --- !u!1 &1099050898
 GameObject:
   m_ObjectHideFlags: 0
@@ -26253,7 +26206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1148119074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30982,6 +30935,7 @@ MonoBehaviour:
   whichScene: Runner
   isIndividualScene: 1
   loadingTransition: {fileID: 505804842}
+  anotherTriggers: []
 --- !u!114 &1501760225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31591,10 +31545,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 12.419136, y: 6.464747}
-      - {x: 3.0046964, y: 6.9124923}
-      - {x: -4.883728, y: 7.1460876}
-      - {x: -5.0854225, y: 6.266881}
+    - - {x: 10.037104, y: 6.3796744}
+      - {x: 10.060791, y: 14.881657}
+      - {x: -4.226475, y: 15.079461}
+      - {x: -4.4158287, y: 6.975942}
+      - {x: -6.014582, y: 6.128617}
       - {x: -16.430172, y: 6.05127}
       - {x: -13.230824, y: 3.851554}
       - {x: -13.245189, y: -1.7510474}
@@ -31603,10 +31558,8 @@ PolygonCollider2D:
       - {x: -1.95677, y: -4.501662}
       - {x: -1.0601616, y: 4.7021}
       - {x: 7.35928, y: 4.7632837}
-      - {x: 7.5239773, y: -4.1928024}
-      - {x: 13.403416, y: -4.590344}
-      - {x: 14.155612, y: -2.0085697}
-      - {x: 9.247916, y: -0.7226057}
+      - {x: 6.8699493, y: -4.0292964}
+      - {x: 8.752449, y: -4.1161504}
       - {x: 9.098612, y: 3.6860995}
       - {x: 16.678705, y: 4.5899987}
       - {x: 15.354094, y: -1.7023239}
@@ -31628,7 +31581,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1532784171
 GameObject:
@@ -32555,7 +32508,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e09faf551b6f1b45bad341043325e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigameName: Runner
   controller: {fileID: 483528961}
   yesButton: {fileID: 99224829}
 --- !u!114 &1613372028
@@ -32571,9 +32523,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 776202383}
-  whichScene: 
-  isIndividualScene: 0
+  whichScene: Runner
+  isIndividualScene: 1
   loadingTransition: {fileID: 505804842}
+  anotherTriggers:
+  - {fileID: 471256543}
 --- !u!1 &1616699156
 GameObject:
   m_ObjectHideFlags: 0
@@ -34998,6 +34952,8 @@ MonoBehaviour:
   whichScene: City
   isIndividualScene: 0
   loadingTransition: {fileID: 505804842}
+  anotherTriggers:
+  - {fileID: 1613372023}
 --- !u!61 &1825444789
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36972,7 +36928,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e09faf551b6f1b45bad341043325e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigameName: SpaceFight
   controller: {fileID: 483528961}
   yesButton: {fileID: 99224829}
 --- !u!114 &1997025990
@@ -36991,6 +36946,7 @@ MonoBehaviour:
   whichScene: 
   isIndividualScene: 0
   loadingTransition: {fileID: 505804842}
+  anotherTriggers: []
 --- !u!1 &2003886744
 GameObject:
   m_ObjectHideFlags: 0
@@ -37225,7 +37181,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2027230312
 GameObject:

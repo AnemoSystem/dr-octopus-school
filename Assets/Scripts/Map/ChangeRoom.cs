@@ -12,12 +12,14 @@ public class ChangeRoom : MonoBehaviourPunCallbacks
     public TransitionLoading loadingTransition;
 
     private string roomName;
+    public GameObject[] anotherTriggers;
 
     void Start() {
         roomName = whichScene;
     }
 
     public void ChangeScene() {
+        Server.canMove = false;
         StartCoroutine(StartChanging());
     }
 
@@ -30,7 +32,10 @@ public class ChangeRoom : MonoBehaviourPunCallbacks
     IEnumerator StartChanging() {
         loadingTransition.FadeIn();
         yield return new WaitForSeconds(0.4f);
+        Server.canMove = true;
         PhotonNetwork.LeaveRoom();
+        foreach(GameObject a in anotherTriggers)
+            a.SetActive(false);
         //Debug.Log("encontrou");
     }
 

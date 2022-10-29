@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map/City.unity
     guid: d4f3ec3f95dae2a489554c710edaf281
+  - enabled: 1
+    path: Assets/Scenes/Map/Arcade.unity
+    guid: 317fe4a7e023f6e4a9f08952abed1894
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Runner.unity
+    guid: 0dd56272d101747448cf04ed4cffce91
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Results.unity
+    guid: d34e5454f51daf045b5ee01f60acf4d7
   m_configObjects: {}

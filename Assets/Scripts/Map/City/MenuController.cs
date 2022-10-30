@@ -17,8 +17,10 @@ public class MenuController : MonoBehaviour
     public GameObject menuShop;
     public GameObject menuFriend;
     public GameObject menuUIFriend;
+    public GameObject menuLibrary;
 
     public GameObject black;
+    public GameObject book;
     public GameObject windowConfirm;
 
     /*
@@ -202,5 +204,17 @@ public class MenuController : MonoBehaviour
         windowConfirm.SetActive(false);
         black.SetActive(false);
         PlayerMoving(true);
+    }
+
+    public void OpenLibrary(bool status) {
+        menuLibrary.SetActive(status);
+        black.SetActive(status);
+        PlayerMoving(!status);
+    }
+
+    public void OpenBook(bool status) {
+        book.SetActive(status);
+        black.SetActive(status);
+        PlayerMoving(!status);        
     }
 }

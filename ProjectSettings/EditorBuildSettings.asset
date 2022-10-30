@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map/SchoolSections/SchoolEntrace.unity
     guid: 40431053e78385c41b9f36ebc80ba178
+  - enabled: 1
+    path: Assets/Scenes/Map/SchoolSections/Hall.unity
+    guid: 7391e6e747a61fe48a710941e97a0336
   m_configObjects: {}

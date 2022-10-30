@@ -6028,7 +6028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455994841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.9559097, y: -1.2757756, z: -0.00063323975}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 870677133}
@@ -6454,7 +6454,9 @@ MonoBehaviour:
   menuShop: {fileID: 0}
   menuFriend: {fileID: 960566456}
   menuUIFriend: {fileID: 376328722}
+  menuLibrary: {fileID: 0}
   black: {fileID: 1823626553}
+  book: {fileID: 0}
   windowConfirm: {fileID: 2142271320}
 --- !u!4 &483528962
 Transform:
@@ -11326,8 +11328,9 @@ MonoBehaviour:
   minX: 2
   minY: -6
   maxY: -2
-  maxX: 10
+  maxX: 5
   menuPlayer: {fileID: 709834311}
+  changeColor: 0
 --- !u!4 &870677133
 Transform:
   m_ObjectHideFlags: 0

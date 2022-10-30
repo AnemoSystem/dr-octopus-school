@@ -81,10 +81,14 @@ public class MenuController : MonoBehaviour
     // Notifications
     public void OpenMenuNotif() {
         MenuNotif.SetActive(true);
+        black.SetActive(true);
+        PlayerMoving(false);
     }
 
     public void CloseMenuNotif () {
         MenuNotif.SetActive(false);
+        black.SetActive(false);
+        PlayerMoving(true);
     }
 
     // Map

@@ -11677,7 +11677,7 @@ GameObject:
   - component: {fileID: 891020755}
   - component: {fileID: 891020754}
   m_Layer: 5
-  m_Name: CloseStudent
+  m_Name: Close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11748,7 +11748,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 483528961}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseMenuStudent
+        m_MethodName: CloseMenuNotif
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

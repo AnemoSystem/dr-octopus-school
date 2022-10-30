@@ -17,7 +17,7 @@ public class Movimentation : MonoBehaviour
     private float rotationZ;
     private Vector3 difference;
     private Text playerUsernameLabel;
-    //private Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     [SerializeField]
     private DetectAreaMouse detectAreaMouse;
@@ -40,7 +40,7 @@ public class Movimentation : MonoBehaviour
         StartCoroutine(FindDetectAreaMouse());
         playerUsernameLabel = transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
         anim = GetComponent<Animator>();
-        //rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         speed = maxSpeed;
     }
 

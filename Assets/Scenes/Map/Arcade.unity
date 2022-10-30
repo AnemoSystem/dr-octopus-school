@@ -1009,7 +1009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105593837}
   - component: {fileID: 105593838}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chair (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1343,7 +1343,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: 1f17e0746b7338549a046402bbf6b6f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1502,7 +1502,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 4697484140e4f6b4baf6296e6dc3f1d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1866,7 +1866,7 @@ GameObject:
   - component: {fileID: 170094133}
   - component: {fileID: 170094135}
   - component: {fileID: 170094134}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13448,7 +13448,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 14
   m_Sprite: {fileID: 21300000, guid: 076f7cf49f417e443808fef5366769f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15556,7 +15556,7 @@ GameObject:
   - component: {fileID: 374280402}
   - component: {fileID: 374280404}
   - component: {fileID: 374280403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15635,7 +15635,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 643f106c84a2ffd48ae7b20ffb517bd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -16015,7 +16015,7 @@ GameObject:
   - component: {fileID: 381573821}
   - component: {fileID: 381573820}
   - component: {fileID: 381573819}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Table (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16050,7 +16050,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010742992, y: 0.19659513}
+  m_Offset: {x: 0.029413939, y: -0.033991396}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -16061,7 +16061,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5545845, y: 0.3640195}
+  m_Size: {x: 3.3283992, y: 2.4320064}
   m_EdgeRadius: 0
 --- !u!50 &381573820
 Rigidbody2D:
@@ -16812,7 +16812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 447574531}
   - component: {fileID: 447574532}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21546,7 +21546,7 @@ GameObject:
   - component: {fileID: 798534570}
   - component: {fileID: 798534569}
   - component: {fileID: 798534568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Table (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21581,7 +21581,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010742992, y: 0.19659513}
+  m_Offset: {x: 0.034386754, y: -0.08915657}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -21592,7 +21592,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5545845, y: 0.3640195}
+  m_Size: {x: 3.183143, y: 2.1988468}
   m_EdgeRadius: 0
 --- !u!50 &798534569
 Rigidbody2D:
@@ -22062,7 +22062,7 @@ GameObject:
   - component: {fileID: 834726108}
   - component: {fileID: 834726110}
   - component: {fileID: 834726109}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22502,7 +22502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 882757690}
   - component: {fileID: 882757691}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chair (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23302,7 +23302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 903520961}
   - component: {fileID: 903520962}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23948,7 +23948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 970253850}
   - component: {fileID: 970253851}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Arc3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24009,7 +24009,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 1f17e0746b7338549a046402bbf6b6f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -24806,7 +24806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1019982693}
   - component: {fileID: 1019982694}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25813,10 +25813,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 776202383}
-  whichScene: 
-  isIndividualScene: 0
+  whichScene: Blockfall
+  isIndividualScene: 1
   loadingTransition: {fileID: 505804842}
-  anotherTriggers: []
+  anotherTriggers:
+  - {fileID: 471256543}
+  - {fileID: 1613372023}
+  - {fileID: 1997025985}
 --- !u!1 &1099050898
 GameObject:
   m_ObjectHideFlags: 0
@@ -28047,7 +28050,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1296027575}
   - component: {fileID: 1296027576}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chair (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31078,7 +31081,7 @@ GameObject:
   - component: {fileID: 1515063029}
   - component: {fileID: 1515063028}
   - component: {fileID: 1515063027}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Table (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31113,7 +31116,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010742992, y: 0.19659513}
+  m_Offset: {x: 0.017576098, y: 0.39639276}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -31124,7 +31127,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5545845, y: 0.3640195}
+  m_Size: {x: 3.2354648, y: 1.3161677}
   m_EdgeRadius: 0
 --- !u!50 &1515063028
 Rigidbody2D:
@@ -31899,7 +31902,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1581852694}
   - component: {fileID: 1581852695}
-  m_Layer: 0
+  - component: {fileID: 1581852696}
+  m_Layer: 7
   m_Name: Arc1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31963,7 +31967,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: 4697484140e4f6b4baf6296e6dc3f1d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -31975,6 +31979,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1581852696
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581852693}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.6603167, y: -1.3746818}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.875}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.320634, y: 3.3959715}
+  m_EdgeRadius: 0
 --- !u!1 &1593893642
 GameObject:
   m_ObjectHideFlags: 0
@@ -32528,6 +32558,8 @@ MonoBehaviour:
   loadingTransition: {fileID: 505804842}
   anotherTriggers:
   - {fileID: 471256543}
+  - {fileID: 1997025985}
+  - {fileID: 1092382486}
 --- !u!1 &1616699156
 GameObject:
   m_ObjectHideFlags: 0
@@ -34146,7 +34178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1773026665}
   - component: {fileID: 1773026666}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Arc4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34207,7 +34239,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 4697484140e4f6b4baf6296e6dc3f1d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -34368,7 +34400,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 643f106c84a2ffd48ae7b20ffb517bd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -34617,7 +34649,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 14
   m_Sprite: {fileID: 21300000, guid: 1f17e0746b7338549a046402bbf6b6f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -34954,6 +34986,8 @@ MonoBehaviour:
   loadingTransition: {fileID: 505804842}
   anotherTriggers:
   - {fileID: 1613372023}
+  - {fileID: 1997025985}
+  - {fileID: 1092382486}
 --- !u!61 &1825444789
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36025,7 +36059,7 @@ GameObject:
   - component: {fileID: 1972024423}
   - component: {fileID: 1972024425}
   - component: {fileID: 1972024424}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36943,10 +36977,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 776202383}
-  whichScene: 
-  isIndividualScene: 0
+  whichScene: SpaceFight
+  isIndividualScene: 1
   loadingTransition: {fileID: 505804842}
-  anotherTriggers: []
+  anotherTriggers:
+  - {fileID: 471256543}
+  - {fileID: 1613372023}
+  - {fileID: 1092382486}
 --- !u!1 &2003886744
 GameObject:
   m_ObjectHideFlags: 0
@@ -37779,7 +37816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2070856555}
   - component: {fileID: 2070856556}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Arc2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37840,7 +37877,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 076f7cf49f417e443808fef5366769f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

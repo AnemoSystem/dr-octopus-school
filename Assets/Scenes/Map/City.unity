@@ -4962,7 +4962,6 @@ GameObject:
   m_Component:
   - component: {fileID: 377506496}
   - component: {fileID: 377506499}
-  - component: {fileID: 377506498}
   - component: {fileID: 377506497}
   m_Layer: 0
   m_Name: Post
@@ -5012,27 +5011,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.035125017, y: 0.03931153}
   m_EdgeRadius: 0
---- !u!50 &377506498
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377506495}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &377506499
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29796,9 +29774,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1395191984}
   - component: {fileID: 1395191988}
-  - component: {fileID: 1395191987}
-  - component: {fileID: 1395191986}
   - component: {fileID: 1395191985}
+  - component: {fileID: 1395191986}
   m_Layer: 0
   m_Name: TrafficLight
   m_TagString: Untagged
@@ -29839,8 +29816,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &1395191986
-BoxCollider2D:
+--- !u!70 &1395191986
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -29852,40 +29829,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.011097927, y: -0.27886683}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.21, y: 0.6}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.041945755, y: 0.04226637}
-  m_EdgeRadius: 0
---- !u!50 &1395191987
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395191983}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Offset: {x: 0.013751757, y: -0.2509822}
+  m_Size: {x: 0.15189229, y: 0.16543692}
+  m_Direction: 0
 --- !u!212 &1395191988
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29925,7 +29871,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 12
   m_Sprite: {fileID: -4585031799566294454, guid: 5e972e7081e32e04db65ad18f4640fd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -31823,7 +31769,8 @@ MonoBehaviour:
   whichScene: MainMap
   isIndividualScene: 0
   loadingTransition: {fileID: 505804842}
-  anotherTriggers: []
+  anotherTriggers:
+  - {fileID: 2047127335}
 --- !u!61 &1499113099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32604,7 +32551,7 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -1.4166746, y: -1.1622934}
-      - {x: -7.665505, y: -1.4362559}
+      - {x: -8.706763, y: -1.6445079}
       - {x: -14.516529, y: -1.3852634}
       - {x: -14.673943, y: -2.481143}
       - {x: -17.533371, y: -2.246652}
@@ -32624,9 +32571,9 @@ PolygonCollider2D:
       - {x: 11.163533, y: 3.1280665}
       - {x: 9.997623, y: 2.7193174}
       - {x: 9.902253, y: 5.200432}
-      - {x: 7.1959906, y: 5.201275}
-      - {x: 7.4173017, y: 0.89054346}
-      - {x: 1.9966707, y: 1.429699}
+      - {x: 8.489063, y: 5.290452}
+      - {x: 7.506479, y: 1.2026644}
+      - {x: 0.61441994, y: 1.0284007}
       - {x: -1.4181972, y: 5.3980365}
 --- !u!4 &1530370725
 Transform:

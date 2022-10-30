@@ -44,4 +44,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map/SchoolSections/Hall.unity
     guid: 7391e6e747a61fe48a710941e97a0336
+  - enabled: 1
+    path: Assets/Scenes/Map/SchoolSections/Library.unity
+    guid: b4d334ee34d381440a43114201c643b2
+  - enabled: 1
+    path: Assets/Scenes/Map/SchoolSections/SchoolF1.unity
+    guid: 3e69585e10595f44cac3cca365a79ea6
+  - enabled: 1
+    path: Assets/Scenes/Map/SchoolSections/SchoolF2.unity
+    guid: e020c14b7b660fa4e87b7bb88b10f676
+  - enabled: 1
+    path: Assets/Scenes/Map/SchoolSections/Classroom.unity
+    guid: e5fb49395040a3e4a8ca507ba1ff62c9
   m_configObjects: {}

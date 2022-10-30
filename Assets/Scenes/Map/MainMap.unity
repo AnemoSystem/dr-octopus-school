@@ -6127,7 +6127,9 @@ MonoBehaviour:
   menuShop: {fileID: 1282302723}
   menuFriend: {fileID: 960566456}
   menuUIFriend: {fileID: 534686041}
+  menuLibrary: {fileID: 0}
   black: {fileID: 1823626553}
+  book: {fileID: 0}
   windowConfirm: {fileID: 2142271320}
 --- !u!4 &483528962
 Transform:
@@ -23583,6 +23585,7 @@ MonoBehaviour:
   maxY: -6
   maxX: 6
   menuPlayer: {fileID: 709834311}
+  changeColor: 0
 --- !u!4 &870677133
 Transform:
   m_ObjectHideFlags: 0
@@ -34867,10 +34870,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 15.401003, y: 2.829534}
-      - {x: 17.186638, y: 8.521304}
-      - {x: 10.423437, y: 8.384927}
-      - {x: 10.276501, y: 4.158152}
+    - - {x: 15.610247, y: 3.8469973}
+      - {x: 17.539122, y: 4.7483587}
+      - {x: 17.07699, y: 11.646248}
+      - {x: 10.916848, y: 11.893637}
+      - {x: 11.153678, y: 4.2129755}
       - {x: -9.017202, y: 4.091522}
       - {x: -10.876697, y: 2.2302806}
       - {x: -5.490459, y: 1.9486547}

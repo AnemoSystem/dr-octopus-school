@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8e40f037230d749a27f077f09c7be7, type: 3}
+  m_Name: Conjuncoes
+  m_EditorClassIdentifier: 
+  pages:
+  - {fileID: 21300000, guid: 5e7db152346207643ab7a46cb0ca8af7, type: 3}
+  - {fileID: 21300000, guid: d4dfb87a9e1b57a489bea58d28967446, type: 3}
+  title: "Conjun\xE7\xF5es"
+  frontSprite: {fileID: 6694930940088317484, guid: daafe2bc05671e84dafcfce991ae6503, type: 3}
+  openedSprite: {fileID: 2789571943485810294, guid: daafe2bc05671e84dafcfce991ae6503, type: 3}
+  backwardSprite: {fileID: 1099547981644067591, guid: daafe2bc05671e84dafcfce991ae6503, type: 3}

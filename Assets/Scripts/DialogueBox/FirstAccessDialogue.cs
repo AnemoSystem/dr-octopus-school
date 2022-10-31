@@ -29,7 +29,8 @@ public class FirstAccessDialogue : MonoBehaviour
         Server.canStartDialogue = false;
         Destroy(trigger.gameObject);
         Destroy(blackBK);
-        Destroy(trigger.getManager().gameObject);    
+        Destroy(trigger.getManager().gameObject);
+        Server.firstOpenning = false;
     }
 
     IEnumerator Stopping() {

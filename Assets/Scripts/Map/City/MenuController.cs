@@ -16,6 +16,7 @@ public class MenuController : MonoBehaviour
     public GameObject menuStudent;
     public GameObject menuShop;
     public GameObject menuFriend;
+    public GameObject menuUIFriend;
 
     public GameObject black;
     public GameObject windowConfirm;
@@ -37,10 +38,23 @@ public class MenuController : MonoBehaviour
         sf.SetFriendName(playerName);
     }
 
+    public void SimpleOpenMenuFriend() {
+        PlayerMoving(false);
+        black.SetActive(true);
+        menuFriend.SetActive(true);
+    }
+
     public void CloseMenuFriend() {
         PlayerMoving(true);
         menuFriend.SetActive(false);
         black.SetActive(false);        
+    }
+
+    // Menu UI Friend (List of Friends)
+    public void OpenUIFriend(bool status) {
+        PlayerMoving(!status);
+        menuUIFriend.SetActive(status);
+        black.SetActive(status);
     }
 
     // News
@@ -177,10 +191,12 @@ public class MenuController : MonoBehaviour
     public void OpenWindowConfirm() {
         windowConfirm.SetActive(true);
         black.SetActive(true);
+        PlayerMoving(false);
     }
 
     public void CloseWindowConfirm() {
         windowConfirm.SetActive(false);
         black.SetActive(false);
+        PlayerMoving(true);
     }
 }

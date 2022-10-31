@@ -1040,9 +1040,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 542609995}
-  whichScene: MainMap
+  whichScene: Arcade
   isIndividualScene: 0
   loadingTransition: {fileID: 882794146}
+  reference: {fileID: 0}
 --- !u!1 &1432814467
 GameObject:
   m_ObjectHideFlags: 0

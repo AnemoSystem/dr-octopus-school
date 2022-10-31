@@ -16,22 +16,22 @@ EditorBuildSettings:
     guid: 440b4d4201bb283488cda1bbf3b9cdd6
   - enabled: 1
     path: Assets/Scenes/Map/MainMap.unity
-    guid: ab1f972eda6fae14697e350f1cff4d21
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/Map/MainMap(NEW).unity
-    guid: d514f2910b6c38844862037958a4d280
-  - enabled: 0
-    path: Assets/Scenes/Minigames/Hockey.unity
-    guid: 985696dfbb12bff4eb339da513e279bb
-  - enabled: 0
-    path: Assets/Scenes/Map/City(NEW).unity
-    guid: 0f8fcce010bb42541a614760ba24abca
+    guid: 098402fdd35dce343b898a8cfb5ab34c
+  - enabled: 1
+    path: Assets/Scenes/Map/City.unity
+    guid: d4f3ec3f95dae2a489554c710edaf281
+  - enabled: 1
+    path: Assets/Scenes/Map/Arcade.unity
+    guid: 317fe4a7e023f6e4a9f08952abed1894
   - enabled: 1
     path: Assets/Scenes/Minigames/Runner.unity
     guid: 0dd56272d101747448cf04ed4cffce91
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Blockfall.unity
+    guid: 73cd1c8d9eb65f947a7146cb9bcd038f
+  - enabled: 1
+    path: Assets/Scenes/Minigames/SpaceFight.unity
+    guid: fad903f2b5addd249878eb1b7b392e5f
   - enabled: 1
     path: Assets/Scenes/Minigames/Results.unity
     guid: d34e5454f51daf045b5ee01f60acf4d7

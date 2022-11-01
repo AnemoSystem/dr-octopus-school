@@ -27,7 +27,8 @@ public class Results : MonoBehaviour
         form.AddField("username", Server.username);
         form.AddField("coins", Server.bonusCoins);
         
-        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer +"/school-management-system/unity/update_coins.php", form);
+        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer +"/unity/update_coins.php", form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         
         switch (www.result)

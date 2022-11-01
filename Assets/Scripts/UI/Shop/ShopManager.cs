@@ -87,7 +87,8 @@ public class ShopManager : MonoBehaviour
         form.AddField("type", type);
         form.AddField("test", 0);
 
-        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/school-management-system/unity/get_itens.php", form);
+        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/unity/get_itens.php", form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         
         switch (www.result)
@@ -132,7 +133,8 @@ public class ShopManager : MonoBehaviour
         form.AddField("type", buyType);
         form.AddField("coins", playerCoins);
 
-        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/school-management-system/unity/get_itens.php", form);
+        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/unity/get_itens.php", form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         
         switch (www.result)

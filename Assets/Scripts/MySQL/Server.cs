@@ -22,7 +22,8 @@ public class Server : MonoBehaviour
     public static bool canMove = true;
     public static int bonusCoins = 0;
     public static string actualMinigame = "";
-    public static string mainServer = "http://localhost";
+    public static string mainServer = "https://anemostudy.x10.mx";
+    //public static string mainServer = "http://localhost/school-management-system/";
     public static bool firstOpenning = false;
     public static string idServer = "";
     public static bool canStartDialogue = false;
@@ -46,7 +47,8 @@ public class Server : MonoBehaviour
         form.AddField("password", passwordField.text);
         
         //UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/login.php", form);
-        UnityWebRequest www = UnityWebRequest.Post(mainServer + "/school-management-system/unity/login.php", form);
+        UnityWebRequest www = UnityWebRequest.Post(mainServer + "/unity/login.php", form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         
         switch (www.result)
@@ -99,7 +101,8 @@ public class Server : MonoBehaviour
         loadingIndicator.SetActive(false);
 
         if(updateEntries) {
-            www = UnityWebRequest.Post(mainServer + "/school-management-system/unity/update_entries.php", form);
+            www = UnityWebRequest.Post(mainServer + "/unity/update_entries.php", form);
+            www.certificateHandler = new BypassCertificate();
             yield return www.SendWebRequest();
             switch(www.result)
             {

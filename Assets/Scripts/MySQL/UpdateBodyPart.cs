@@ -24,7 +24,8 @@ public class UpdateBodyPart : MonoBehaviour
         form.AddField("id_legs", cs.playerBodyPart.idLegs);
 
         //UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/send_data.php", form);
-        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/school-management-system/unity/send_data.php", form);
+        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/unity/send_data.php", form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         
         switch (www.result)

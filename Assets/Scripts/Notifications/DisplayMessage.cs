@@ -42,7 +42,8 @@ public class DisplayMessage : MonoBehaviour
         form.AddField("to", to);
 
         UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + 
-        "/school-management-system/unity/notifications/send_message.php", form);
+        "/unity/notifications/send_message.php", form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         switch (www.result)
         {

@@ -50,10 +50,10 @@ public class SelectMenuFriend : MonoBehaviour
         form.AddField("id", friendID);
         Debug.Log(friendID);
         UnityWebRequest www = UnityWebRequest.Post(
-            Server.mainServer + "/school-management-system/unity/remove_friend.php", 
+            Server.mainServer + "/unity/remove_friend.php", 
             form
         );
-
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         
         switch (www.result)

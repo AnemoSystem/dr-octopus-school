@@ -857,6 +857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usernameRef: {fileID: 6861989330009924722}
+  changeColor: 0
 --- !u!50 &7721422735598082646
 Rigidbody2D:
   serializedVersion: 4

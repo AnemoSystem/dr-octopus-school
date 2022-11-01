@@ -20,6 +20,7 @@ public class SpawnPlayers : MonoBehaviour
     CustomBodyPart custom;
 
     public MenuPlayerController menuPlayer;
+    public bool changeColor = false;
 
     void Start() {
         GameObject p = GameObject.Find("Player");
@@ -28,6 +29,8 @@ public class SpawnPlayers : MonoBehaviour
         if(p == null && Movimentation.LocalPlayerInstance == null) {
             p = PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
             p.name = Server.username;
+            Reference uname = p.GetComponent<Reference>();
+            uname.changeColor = this.changeColor;
             custom = p.transform.GetChild(4).gameObject.GetComponent<CustomBodyPart>();
             StartCoroutine(GetDataFromUser());
         }
@@ -38,7 +41,8 @@ public class SpawnPlayers : MonoBehaviour
         form.AddField("username", Server.username);
         
         //UnityWebRequest www = UnityWebRequest.Post("https://revisory-claws.000webhostapp.com/unity/get_data.php", form);
-        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/school-management-system/unity/get_data.php", form);
+        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/unity/get_data.php", form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         
         switch (www.result)

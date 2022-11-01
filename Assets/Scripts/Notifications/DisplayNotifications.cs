@@ -60,9 +60,9 @@ public class DisplayNotifications : MonoBehaviour
         form.AddField("from_type", from_type);
 
         UnityWebRequest www = UnityWebRequest.Post(
-            Server.mainServer + "/school-management-system/unity/notifications/get_number_notifications.php", 
+            Server.mainServer + "/unity/notifications/get_number_notifications.php", 
             form);
-        
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
 
         switch(www.result) {
@@ -92,8 +92,9 @@ public class DisplayNotifications : MonoBehaviour
         form.AddField("from_type", from_type);
 
         UnityWebRequest www = UnityWebRequest.Post(
-            Server.mainServer + "/school-management-system/unity/notifications/get_notifications.php", 
+            Server.mainServer + "/unity/notifications/get_notifications.php", 
             form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
 
         switch(www.result) {

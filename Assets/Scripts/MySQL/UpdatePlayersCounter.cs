@@ -35,7 +35,8 @@ public class UpdatePlayersCounter : MonoBehaviour
         form.AddField("type", type);
         form.AddField("room", room);
 
-        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/school-management-system/unity/number_players.php", form);
+        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/unity/number_players.php", form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         switch(www.result) {
             case UnityWebRequest.Result.ConnectionError:

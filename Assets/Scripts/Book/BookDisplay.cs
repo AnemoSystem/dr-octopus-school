@@ -28,7 +28,7 @@ public class BookDisplay : MonoBehaviour
     }
 
     public void ShowBook(BookInfo whichInfo) {
-        bookSprite.gameObject.SetActive(false);
+        bookSprite.gameObject.SetActive(true);
         info = whichInfo;
         ResetBook();        
     }

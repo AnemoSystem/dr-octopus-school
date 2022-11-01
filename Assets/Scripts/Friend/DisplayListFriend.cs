@@ -61,10 +61,10 @@ public class DisplayListFriend : MonoBehaviour
         form.AddField("username", friend.text);
 
         UnityWebRequest www = UnityWebRequest.Post(
-            Server.mainServer + "/school-management-system/unity/search_actual_menu_itens.php", 
+            Server.mainServer + "/unity/search_actual_menu_itens.php", 
             form
         );
-
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         
         switch (www.result)

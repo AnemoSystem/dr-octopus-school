@@ -98,10 +98,10 @@ public class ShowMenuFriend : MonoBehaviour
         form.AddField("user_2", friendName.text);
 
         UnityWebRequest www = UnityWebRequest.Post(
-            Server.mainServer + "/school-management-system/unity/verify_friends.php", 
+            Server.mainServer + "/unity/verify_friends.php", 
             form
         );
-
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         
         switch (www.result)

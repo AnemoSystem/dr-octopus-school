@@ -63,10 +63,10 @@ public class ListFriends : MonoBehaviour
         form.AddField("order", order);
 
         UnityWebRequest www = UnityWebRequest.Post(
-            Server.mainServer + "/school-management-system/unity/list_friends.php", 
+            Server.mainServer + "/unity/list_friends.php", 
             form
         );
-
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         
         switch (www.result)

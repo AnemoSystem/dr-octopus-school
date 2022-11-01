@@ -75,9 +75,9 @@ public class DisplayNotificationsScrollable : MonoBehaviour
         form.AddField("username", Server.username);
 
         UnityWebRequest www = UnityWebRequest.Post(
-            Server.mainServer + "/school-management-system/unity/notifications/get_number_notifications.php", 
+            Server.mainServer + "/unity/notifications/get_number_notifications.php", 
             form);
-        
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
 
         switch(www.result) {
@@ -104,8 +104,9 @@ public class DisplayNotificationsScrollable : MonoBehaviour
         form.AddField("username", Server.username); 
 
         UnityWebRequest www = UnityWebRequest.Post(
-            Server.mainServer + "/school-management-system/unity/notifications/get_notifications.php", 
+            Server.mainServer + "/unity/notifications/get_notifications.php", 
             form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
 
         switch(www.result) {
@@ -213,8 +214,9 @@ public class DisplayNotificationsScrollable : MonoBehaviour
         loading.SetActive(true);
 
         UnityWebRequest www = UnityWebRequest.Post(
-            Server.mainServer + "/school-management-system/unity/notifications/simple_message.php", 
+            Server.mainServer + "/unity/notifications/simple_message.php", 
             form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
 
         switch(www.result) {
@@ -263,8 +265,9 @@ public class DisplayNotificationsScrollable : MonoBehaviour
         recieveList.SetActive(false);
 
         UnityWebRequest www = UnityWebRequest.Post(
-            Server.mainServer + "/school-management-system/unity/notifications/delete_notifications.php", 
+            Server.mainServer + "/unity/notifications/delete_notifications.php", 
             form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         
         switch(www.result) {
@@ -334,7 +337,8 @@ public class DisplayNotificationsScrollable : MonoBehaviour
         form.AddField("user_1", whichFriend);
         form.AddField("user_2", Server.username);
 
-        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/school-management-system/unity/add_friend.php", form);
+        UnityWebRequest www = UnityWebRequest.Post(Server.mainServer + "/unity/add_friend.php", form);
+        www.certificateHandler = new BypassCertificate();
         yield return www.SendWebRequest();
         switch(www.result) {
             case UnityWebRequest.Result.ConnectionError:

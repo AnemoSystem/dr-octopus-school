@@ -53,6 +53,10 @@ public class DisplayNotificationsScrollable : MonoBehaviour
         ResetList();
     }
 
+    void OnEnable() {
+        ResetList();
+    }
+
     void ResetList() {
         foreach(Transform child in parent) {
             Destroy(child.gameObject);

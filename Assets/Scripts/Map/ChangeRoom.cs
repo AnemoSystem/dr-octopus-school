@@ -26,7 +26,12 @@ public class ChangeRoom : MonoBehaviourPunCallbacks
     void OnTriggerEnter2D(Collider2D other) {
         //transition.FadeIn(whichScene);
         //PhotonNetwork.DestroyPlayerObjects(1);
-        ChangeScene();
+        /*
+        Reference r = other.gameObject.GetComponent<Reference>();
+        if(r.usernameRef.text == Server.username) ChangeScene();
+        */
+        PhotonView ph = other.gameObject.GetComponent<PhotonView>();
+        if(ph.IsMine) ChangeScene();
     }
 
     IEnumerator StartChanging() {
@@ -34,6 +39,8 @@ public class ChangeRoom : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(0.4f);
         Server.canMove = true;
         PhotonNetwork.LeaveRoom();
+        while(PhotonNetwork.InRoom)
+            yield return null;
         foreach(GameObject a in anotherTriggers)
             a.SetActive(false);
         //Debug.Log("encontrou");

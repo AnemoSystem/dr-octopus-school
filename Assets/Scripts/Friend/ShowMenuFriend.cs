@@ -21,6 +21,10 @@ public class ShowMenuFriend : MonoBehaviour
     public Text from;
     public Text to;
 
+    void Start() {
+        Reset();
+    }
+
     public void OpenWindow() {
         playerView.SetActive(false);
         windowConfirm.SetActive(true);
@@ -30,34 +34,38 @@ public class ShowMenuFriend : MonoBehaviour
         playerView.SetActive(true);
         windowConfirm.SetActive(false);
     }
-
-    public void OpenMenuMessage() {
-        inputMessage.text = "";
-        title.text = "Pedido de amizade para " + friendName.text;
-        from.text = "De:\n" + Server.username;
-        to.text = "Para:\n" + friendName.text;
-        CloseWindow();
-        playerView.SetActive(false);
-        UIMessage.SetActive(true);
-    }
-
-    public void CloseMenuMessage() {
-        OpenWindowResults(false);
-        UIMessage.SetActive(false);
-        playerView.SetActive(true);
+    
+    public void OpenMenuMessage(bool status) {
+        if(status) {
+            inputMessage.text = "";
+            title.text = "Pedido de amizade para " + friendName.text;
+            from.text = "De:\n" + Server.username;
+            to.text = "Para:\n" + friendName.text;
+            CloseWindow();
+            playerView.SetActive(false);
+            UIMessage.SetActive(true);
+        }
+        else {
+            playerView.SetActive(true);
+            UIMessage.SetActive(false);            
+        }
     }
 
     public void OpenWindowResults(bool value) {
         windowResults.SetActive(value);
-        if(!value) CloseMenuMessage();
+        if(!value) Reset();
     }
 
     void OnEnable() {
         StartCoroutine(VerifyFriendship());
+        Reset();
+    }
+
+    public void Reset() {
         playerView.SetActive(true);
         OpenWindowResults(false);
         CloseWindow();
-        CloseMenuMessage();
+        UIMessage.SetActive(false);
     }
 
     void Update() {

@@ -1540,7 +1540,6 @@ GameObject:
   - component: {fileID: 121346612}
   - component: {fileID: 121346611}
   - component: {fileID: 121346610}
-  - component: {fileID: 121346609}
   m_Layer: 5
   m_Name: Yes
   m_TagString: Shop
@@ -1568,23 +1567,6 @@ RectTransform:
   m_AnchoredPosition: {x: -985, y: 525}
   m_SizeDelta: {x: 62.906, y: 19.06}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &121346609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121346607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3922aeb89f0fdba49afe37b4687852d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition: {fileID: 776202383}
-  whichScene: Runner
-  isIndividualScene: 1
-  loadingTransition: {fileID: 505804842}
-  anotherTriggers: []
 --- !u!114 &121346610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1632,14 +1614,14 @@ MonoBehaviour:
       - m_Target: {fileID: 960566458}
         m_TargetAssemblyTypeName: ShowMenuFriend, Assembly-CSharp
         m_MethodName: OpenMenuMessage
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &121346611
 MonoBehaviour:

@@ -73,11 +73,13 @@ public class MenuController : MonoBehaviour
     public void OpenMenuSettings() {
         MenuSettings.SetActive(true);
         black.SetActive(true);
+        PlayerMoving(false);
     }
 
     public void CloseMenuSettings() {
         MenuSettings.SetActive(false);
         black.SetActive(false);
+        PlayerMoving(true);
     }
 
     // Notifications

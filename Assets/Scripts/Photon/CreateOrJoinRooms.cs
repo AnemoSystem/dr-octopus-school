@@ -11,21 +11,29 @@ public class CreateOrJoinRooms : MonoBehaviourPunCallbacks
     public Button[] buttons;
     public GameObject loadingIndicator;
 
+    private string[] roomNames = {"City", "StrangePlace", "SchoolEntrace", "MainMap"};
+    private string roomSelected;
+
     public void StartRoom(string roomName) {
+        int index = Random.Range(0, roomName.Length);
+        roomSelected = roomNames[index];
+
         loadingIndicator.SetActive(true);
         foreach(Button b in buttons) {
             b.interactable = false;
         }
-        PhotonNetwork.JoinOrCreateRoom(roomName + "_MainMap", new RoomOptions() { MaxPlayers = 10 }, null);
+
         if(roomName == "A")
             Server.idServer = "A";
         else
             Server.idServer = "B";
+
+        PhotonNetwork.JoinOrCreateRoom(Server.idServer + "_" + roomSelected, new RoomOptions() { MaxPlayers = 10 }, null);
     }
 
     public override void OnJoinedRoom() {
         //PhotonNetwork.LoadLevel("MainMap");
-        transition.FadeInLevel("MainMap");
+        transition.FadeInLevel(roomSelected);
         Server.canMove = false;
     }
 }

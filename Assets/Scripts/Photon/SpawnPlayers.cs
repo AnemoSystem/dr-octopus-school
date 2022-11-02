@@ -29,6 +29,7 @@ public class SpawnPlayers : MonoBehaviour
         if(p == null && Movimentation.LocalPlayerInstance == null) {
             p = PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
             p.name = Server.username;
+            //PhotonPlayer.player = p;
             Reference uname = p.GetComponent<Reference>();
             uname.changeColor = this.changeColor;
             custom = p.transform.GetChild(4).gameObject.GetComponent<CustomBodyPart>();

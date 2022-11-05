@@ -33,7 +33,7 @@ public class Spaceship : MonoBehaviour
         PlayerPrefs.SetInt("HP",health);
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal")*speed,0));
         rb.AddForce(new Vector2(0,Input.GetAxis("Vertical")*speed));
-        if(Input.GetKey(KeyCode.Space) && delay>100)
+        if(Input.GetKey(KeyCode.Space) && delay>90)
             Shoot();
         delay++;
     }

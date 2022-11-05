@@ -16,7 +16,8 @@ public class CreateOrJoinRooms : MonoBehaviourPunCallbacks
 
     public void StartRoom(string roomName) {
         int index = Random.Range(0, roomName.Length);
-        roomSelected = roomNames[index];
+        //roomSelected = roomNames[index];
+        roomSelected = "MainMap";
 
         loadingIndicator.SetActive(true);
         foreach(Button b in buttons) {

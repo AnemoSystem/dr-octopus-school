@@ -13,12 +13,15 @@ public class MenuSettings : MonoBehaviour
 
     //Resolution[] resolutions;
 
-    public void UpdateFullScreenCheckbox() {
+    void UpdateFullScreenCheckbox() {
         fullScreenToggle.isOn = Screen.fullScreen;
     }
 
     void OnEnable() {
         UpdateFullScreenCheckbox();
+        if(fullScreenToggle.isOn) {
+            Screen.fullScreen = true;
+        }
     }
 
     void Start ()

@@ -20,7 +20,7 @@ public class DisplayNotifications : MonoBehaviour
     List<string> id = new List<string>();
 
     void Start() {
-        Server.username = "jooj";
+        //Server.username = "jooj";
         foreach(NotificationIcon icon in icons)
             icon.gameObject.SetActive(false);
         StartCoroutine(OpenDisplay(0, "I"));

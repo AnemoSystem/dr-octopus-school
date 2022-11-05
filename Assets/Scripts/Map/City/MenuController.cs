@@ -99,11 +99,13 @@ public class MenuController : MonoBehaviour
     public void OpenMenuMap() {
         MenuMap.SetActive(true);
         black.SetActive(true);
+        PlayerMoving(false);
     }
 
     public void CloseMenuMap () {
         MenuMap.SetActive(false);
         black.SetActive(false);
+        PlayerMoving(true);
     }
 
     public void SendMessage() {

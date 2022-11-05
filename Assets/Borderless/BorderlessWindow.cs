@@ -38,7 +38,7 @@ public class BorderlessWindow
 
 
     // This attribute will make the method execute on game launch, after the Unity Logo Splash Screen.
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void InitializeOnLoad()
     {
 #if !UNITY_EDITOR && UNITY_STANDALONE_WIN   // Dont do this while on Unity Editor!

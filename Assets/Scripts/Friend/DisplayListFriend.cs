@@ -17,7 +17,7 @@ public class DisplayListFriend : MonoBehaviour
     public bool openDirectly = false;
 
     void Start() {
-        Server.username = "jooj";
+        //Server.username = "jooj";
         controlMenuFriend = menuController.GetComponent<SelectMenuFriend>();
         if(!openDirectly)
             gameObject.GetComponent<Button>().onClick.AddListener(Open);

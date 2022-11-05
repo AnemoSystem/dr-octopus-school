@@ -21,7 +21,6 @@ public class GameManagerFrogger : MonoBehaviour
     public GameObject map;
     public GameObject inGame;
     public GameObject water;
-//    public LoadWithTransition transition;
 
 
     private float respawnTime;
@@ -33,12 +32,7 @@ public class GameManagerFrogger : MonoBehaviour
         homes = FindObjectsOfType<Home>();
         frogger = FindObjectOfType<Frogger>();
     }
-/*
-    private void Start()
-    {
-        NewGame();
-    }
-*/
+
     public void NewGame()
     {
         water.SetActive(true);
@@ -50,16 +44,6 @@ public class GameManagerFrogger : MonoBehaviour
         SetLives(3);
         NewLevel();
     }
-/* 
-        public void NewGame()
-    {
-        gameOverMenu.SetActive(false);
-        
-        SetScore(0);
-        SetLives(3);
-        NewLevel();
-    }
-    */
 
     private void NewLevel()
     {
@@ -111,25 +95,7 @@ public class GameManagerFrogger : MonoBehaviour
         gameOverMenu.SetActive(true);
 
         StopAllCoroutines();
-//        StartCoroutine(CheckForPlayAgain());
     }
-/*
-    private IEnumerator CheckForPlayAgain()
-    {
-        bool playAgain = false;
-
-        while (!playAgain)
-        {
-            if(Input.GetKeyDown(KeyCode.R)) {
-                transition.FadeIn(SceneManager.GetActiveScene().name);
-            }
-
-            yield return null;
-        }
-
-        NewGame();
-    }
-*/
 
     public void AdvancedRow()
     {
@@ -147,6 +113,7 @@ public class GameManagerFrogger : MonoBehaviour
         {
             SetLives(lives + 1);
             SetScore(score + 1000);
+            Server.bonusCoins += 5;
             Invoke(nameof(NewLevel), 1f);
         }
         else {

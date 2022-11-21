@@ -7,6 +7,10 @@ using UnityEngine.Networking;
 
 public class Server : MonoBehaviour
 {
+    // Constants
+    public const string localServer = "http://localhost/school-management-system/";
+    public const string webServer = "https://anemostudy.x10.mx";
+
     public InputField usernameField;
     public InputField passwordField;
     public Text errorDisplay;
@@ -22,7 +26,7 @@ public class Server : MonoBehaviour
     public static bool canMove = true;
     public static int bonusCoins = 0;
     public static string actualMinigame = "";
-    public static string mainServer = "https://anemostudy.x10.mx";
+    public static string mainServer = webServer;
     //public static string mainServer = "http://localhost/school-management-system/";
     public static bool firstOpenning = false;
     public static string idServer = "";

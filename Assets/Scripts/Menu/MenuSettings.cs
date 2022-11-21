@@ -8,6 +8,7 @@ public class MenuSettings : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public Toggle fullScreenToggle;
+    public Toggle localServerToggle;
 
     //public Dropdown resolutionDropdown;
 
@@ -17,11 +18,29 @@ public class MenuSettings : MonoBehaviour
         fullScreenToggle.isOn = Screen.fullScreen;
     }
 
+    public void UpdateLocalServerCheckbox() {
+        if(Server.mainServer == Server.webServer) {
+            Server.mainServer = "http://localhost/school-management-system/";
+            localServerToggle.isOn = true;
+        }
+        else {
+            Server.mainServer = "https://anemostudy.x10.mx";
+            localServerToggle.isOn = false;
+        }
+    }
+
     void OnEnable() {
         UpdateFullScreenCheckbox();
         if(fullScreenToggle.isOn) {
             Screen.fullScreen = true;
         }
+
+        if(Server.mainServer == Server.webServer) {
+            localServerToggle.isOn = false;
+        }
+        else {
+            localServerToggle.isOn = true;
+        }        
     }
 
     void Start ()

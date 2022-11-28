@@ -7066,7 +7066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &533982249
 Transform:
   m_ObjectHideFlags: 0
@@ -29559,6 +29559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: b85f85b7ddf453c4ab8eb9a59000afa2, type: 2}
   fullScreenToggle: {fileID: 47874523}
+  localServerToggle: {fileID: 0}
 --- !u!1 &1341049721
 GameObject:
   m_ObjectHideFlags: 0

@@ -366,11 +366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2442284503977027860, guid: abbe31ab214f83145bcf1f35ec546a01, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 400.00003
+      value: 400.00006
       objectReference: {fileID: 0}
     - target: {fileID: 2442284503977027860, guid: abbe31ab214f83145bcf1f35ec546a01, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 224.90569
+      value: 224.9057
       objectReference: {fileID: 0}
     - target: {fileID: 2442284503977027860, guid: abbe31ab214f83145bcf1f35ec546a01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -633,11 +633,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2442284503977027860, guid: b4799274c616f064aa73c753d760b3aa, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 400.00003
+      value: 400.00006
       objectReference: {fileID: 0}
     - target: {fileID: 2442284503977027860, guid: b4799274c616f064aa73c753d760b3aa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 224.90569
+      value: 224.9057
       objectReference: {fileID: 0}
     - target: {fileID: 2442284503977027860, guid: b4799274c616f064aa73c753d760b3aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

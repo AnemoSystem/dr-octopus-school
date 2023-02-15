@@ -16,7 +16,7 @@ All game elements were heavely inspired by a browser game called "Club Penguin",
   # 🐧Press F to pay respects...
  ```
 <br>
-Our first problem was to "How to create an online game?", we already knew how to create and manipulate databases, but this was a new experience. <br>
+Our first problem was to "How to create an online game?", we already knew how to create and manipulate databases, but this was a totally new experience. <br>
 With a lot of researches, Mr.Guisamuel finded the Photon system, with is a multiplayer engine free to use, and then decided to use it. <br><br>
 
 After that, our team was divided focusing to create a fully online game within less than an year! Setting differents functions to each member!<br>

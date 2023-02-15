@@ -19,7 +19,7 @@ All game elements were heavely inspired by a browser game called "Club Penguin",
 Our first problem was to "How to create an online game?", we already knew how to create and manipulate databases, but this was a totally new experience. <br>
 With a lot of researches, Mr.Guisamuel finded the Photon system, with is a multiplayer engine free to use, and then decided to use it. <br><br>
 
-After that, our team was divided focusing to create a fully online game within less than an year! Setting differents functions to each member!<br>
+After that, our team was divided focusing to create a fully online game within less than an year! Setting differents functions to each member!<br><br>
 
 <h2> 🟪 Game Mechanics 🟪 </h2>
 The game contain a lot of mechanics, such as customization, many minigames, the hability to talk in a chat or via letters, being able to acess your grades and even comunicate with the school!<br>

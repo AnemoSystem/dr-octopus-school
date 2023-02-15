@@ -21,12 +21,12 @@ With a lot of researches, Mr.Guisamuel finded the Photon system, with is a multi
 
 After that, our team was divided focusing to create a fully online game within less than an year! Setting differents functions to each member!<br><br>
 
-<h2> 🟪 Game Mechanics 🟪 </h2>
+<h2> 🟢 Game Mechanics 🟢 </h2>
 The game contain a lot of mechanics, such as customization, many minigames, the hability to talk in a chat or via letters, being able to acess your grades and even comunicate with the school!<br>
 And even better! It works wich full access to online elements, such as seeing other players on the map and their messages!<br><br>
 Since the idea was to only being able to enter using an created account, the system would only allow the school to create their students accounts (making a safier and easier to moderate system).<br><br>
 
-<h2> 🔷 Conclusion 🔷 </h2>
+<h2> 🟪 Conclusion 🟪 </h2>
 Gladly, the public loved our project :) <br>
 Plus, we had a lot of fun working on it!<br><br>
 

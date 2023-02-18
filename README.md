@@ -7,7 +7,7 @@ A game designed for students and teachers who are interesteds in a faster way to
 This school game and all his components made were our Final Paper project, focused to make students life easier. <br><br>
 
 <h2> 🟩 About our project 🟩 </h2>
-The idea of the game was created by PlopesK, followed by all members aprovance. <br>
+The idea of the game was created by <a href="https://github.com/PlopesK">@PlopesK</a>, followed by all members aprovance. <br>
 It would be a project focused on manking a game integrated with a school system. <br><br>
 With the idea stabilized, we only had to decide were to produce it. We were between Unity and Godot to initiate, choosing to utile Unity in the end, since it has more support to do researches. <br>
 All game elements were heavely inspired by a browser game called "Club Penguin", with sadly isn't acessible by the public anymore, since it was closed...<br><br>
@@ -17,7 +17,7 @@ All game elements were heavely inspired by a browser game called "Club Penguin",
  ```
 <br>
 Our first problem was to "How to create an online game?", we already knew how to create and manipulate databases, but this was a totally new experience. <br>
-With a lot of researches, Mr.Guisamuel finded the Photon system, with is a multiplayer engine free to use, and then decided to use it. <br><br>
+With a lot of researches, <a href="https://github.com/mrguisamuel">@mrguisamuel</a> finded the Photon system, with is a multiplayer engine free to use, and then decided to use it. <br><br>
 
 After that, our team was divided focusing to create a fully online game within less than an year! Setting differents functions to each member!<br><br>
 

@@ -1,6 +1,6 @@
 <h1> Dr. Octopus School 🐙</h1>
 <p align="center">
-  <img src="README-img/menu.jpg" alt="AnemoSystem Logo" loading="lazy" style="height:350px;"><br>
+  <img src="https://user-images.githubusercontent.com/73722088/219819548-147df912-59fb-4077-8fbe-29047bdcc994.jpg" alt="AnemoSystem Logo" loading="lazy" style="height:350px;"><br>
 </p>
 
 A game designed for students and teachers who are interesteds in a faster way to communicate between each other. <br>
@@ -35,5 +35,5 @@ And even better, we learned a lot! Both about how to work alongside team members
 
 <h3>Take a look at our website here: <a href="https://github.com/GGGCD-TCC/anemo-system-website"> Anemo System Website </a></h3>
 <a href="https://gggcd-tcc.github.io/anemo-system-website/">
- <img src="README-img/logo.png" alt="AnemoSystem Logo" loading="lazy" style="width:100px; height:100px;">
+ <img src="https://user-images.githubusercontent.com/73722088/219819837-ff627db9-177c-4f1e-871f-9563af1cb12a.png" alt="AnemoSystem Logo" loading="lazy" style="width:100px; height:100px;">
 </a>
